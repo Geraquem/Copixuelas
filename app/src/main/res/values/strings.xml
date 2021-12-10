@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Copixuelas</string>
+    <string name="contentDescription">contentDescription</string>
+
+    <string name="averquepasa">A VER QUE PASA</string>
+    <string name="moneda">EL JUEGO DE LA MONEDA</string>
+    <string name="quepreferirias">QUÉ PREFERIRÍAS</string>
+    <string name="maletin">EL JUEGO DEL MALETÍN</string>
+</resources>
