@@ -1,6 +1,6 @@
 package com.mmfsin.copixuelas.main
 
-class MainPresenter(val mainView: MainView?): MainInteractor.IMainInteractor {
+class MainPresenter(var mainView: MainView?): MainInteractor.IMainInteractor {
 
     private val interactor = MainInteractor(this)
 
@@ -10,5 +10,9 @@ class MainPresenter(val mainView: MainView?): MainInteractor.IMainInteractor {
 
     override fun onSuccess(phrase: String) {
         mainView?.showIntroPhrase(phrase)
+    }
+
+    fun onDestroy(){
+        mainView = null
     }
 }

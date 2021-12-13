@@ -1,6 +1,6 @@
 package com.mmfsin.copixuelas.main
 
-interface MainView {
+interface  MainView {
     fun showIntroDialog()
     fun showIntroPhrase(phrase: String)
 }
