@@ -8,4 +8,7 @@
     <string name="moneda">EL JUEGO DE LA MONEDA</string>
     <string name="quepreferirias">QUÉ PREFERIRÍAS</string>
     <string name="maletin">EL JUEGO DEL MALETÍN</string>
+
+    <string name="howToPlay">¿Cómo se juega?</string>
+    <string name="ok">ENTENDIDO</string>
 </resources>

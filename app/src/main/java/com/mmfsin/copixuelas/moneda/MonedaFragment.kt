@@ -7,17 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
+import com.mmfsin.copixuelas.instructions.IFragmentComunication
+import com.mmfsin.copixuelas.instructions.InstructionsFragment
 
-class MonedaFragment: Fragment() {
+class MonedaFragment(private val listener: IFragmentComunication): Fragment() {
 
-    lateinit var mContext : Context
+
+    lateinit var mContext: Context
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_moneda, container, false)
+        return inflater.inflate(R.layout.fragment_quepreferirias, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -29,4 +32,7 @@ class MonedaFragment: Fragment() {
         mContext = context
     }
 
+    private fun showInstructions(){
+        listener.showFragmentInstructions(InstructionsFragment(listener, "avqp"))
+    }
 }

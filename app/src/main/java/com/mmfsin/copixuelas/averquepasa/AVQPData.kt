@@ -1,4 +1,4 @@
-package com.mmfsin.copixuelas.averquepasa.data
+package com.mmfsin.copixuelas.averquepasa
 
 object AVQPData {
 

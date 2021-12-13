@@ -11,8 +11,4 @@ class MainPresenter(var mainView: MainView?): MainInteractor.IMainInteractor {
     override fun onSuccess(phrase: String) {
         mainView?.showIntroPhrase(phrase)
     }
-
-    fun onDestroy(){
-        mainView = null
-    }
 }

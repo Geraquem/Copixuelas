@@ -3,13 +3,14 @@ package com.mmfsin.copixuelas.main
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.mmfsin.copixuelas.instructions.IFragmentComunication
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.averquepasa.AVQPFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), MainView {
+class MainActivity : AppCompatActivity(), MainView, IFragmentComunication {
 
-    private val presenter = MainPresenter(this)
+    private val presenter by lazy { MainPresenter(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,10 +18,10 @@ class MainActivity : AppCompatActivity(), MainView {
 
         presenter.showIntroPhrase()
 
-        button_avqp.setOnClickListener { openFragment(AVQPFragment()) }
+        button_avqp.setOnClickListener { openFragment(AVQPFragment(this)) }
         button_moneda.setOnClickListener { }
         button_quepreferirias.setOnClickListener { }
-        button_maletin.setOnClickListener { openFragment(AVQPFragment()) }
+        button_maletin.setOnClickListener { }
     }
 
     private fun openFragment(fragment: Fragment) {
@@ -31,15 +32,21 @@ class MainActivity : AppCompatActivity(), MainView {
     }
 
     override fun showIntroDialog() {
-        TODO("Not yet implemented")
+
     }
 
     override fun showIntroPhrase(phrase: String) {
         introPhrase.text = phrase
     }
 
-    override fun onDestroy() {
-        presenter.onDestroy()
-        super.onDestroy()
+    override fun closeFragment() {
+        supportFragmentManager.popBackStack()
+    }
+
+    override fun showFragmentInstructions(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.instructionContainer, fragment)
+            .addToBackStack(null)
+            .commit()
     }
 }

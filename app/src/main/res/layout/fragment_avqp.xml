@@ -2,27 +2,48 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:id="@+id/screen"
-    android:background="@color/white"
+    android:background="@drawable/bg_avqp"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/ezet"
-        android:text="@string/averquepasa"
-        android:textColor="@color/white" />
+        <ImageView
+            android:id="@+id/info"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="15dp"
+            android:background="@drawable/ic_info"
+            android:contentDescription="@string/contentDescription" />
 
-    <TextView
-        android:id="@+id/textPhrase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="REGLA bla bla blabla blabla blabla blabla blabla blabla blabla bla"
-        android:textColor="@color/black"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/avqp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/info"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/ezet"
+            android:gravity="center"
+            android:text="@string/averquepasa"
+            android:textColor="@color/white"
+            android:textSize="45sp" />
 
+        <TextView
+            android:id="@+id/textPhrase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/avqp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="56dp"
+            android:layout_marginBottom="64dp"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="bottom|center|top"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
 
 </RelativeLayout>
