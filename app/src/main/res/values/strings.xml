@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Copixuelas</string>
+    <string name="appNameBold"><b>COPIXUELAS</b></string>
+
     <string name="contentDescription">contentDescription</string>
 
     <string name="averquepasa">A VER QUE PASA</string>

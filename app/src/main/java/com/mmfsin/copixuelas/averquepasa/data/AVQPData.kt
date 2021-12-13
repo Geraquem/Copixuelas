@@ -1,8 +1,8 @@
 package com.mmfsin.copixuelas.averquepasa.data
 
-object Data {
+object AVQPData {
 
-    private fun getPruebas(): List<String> {
+    fun getPruebas(): List<String> {
         val pruebas = mutableListOf<String>()
         pruebas.add("Elige a una persona.\nTodo el mundo tiene que ignorarle hasta que no se acabe su copa.")
         pruebas.add("Elige a una persona. No puede hablar hasta que tú digas.\nSi lo hace bebe.")
