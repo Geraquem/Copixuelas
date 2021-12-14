@@ -7,12 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
-import com.mmfsin.copixuelas.instructions.IFragmentComunication
-import com.mmfsin.copixuelas.instructions.InstructionsFragment
+import com.mmfsin.copixuelas.instructions.IFragmentCommunication
 import kotlinx.android.synthetic.main.fragment_moneda.*
 
-class MonedaFragment(private val listener: IFragmentComunication): Fragment() {
+class MonedaFragment(private val listener: IFragmentCommunication) : Fragment(), MonedaView {
 
+    private val presenter by lazy { MonedaPresenter(this) }
 
     lateinit var mContext: Context
 
@@ -26,13 +26,11 @@ class MonedaFragment(private val listener: IFragmentComunication): Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        showInstructions()
+
         coin.setOnClickListener {
-            val random = (1..6).random()
-            if (random % 2 == 0) {
-                flipCoin(R.drawable.ic_moneda_cara, mContext.getString(R.string.cara))
-            } else {
-                flipCoin(R.drawable.ic_moneda_cruz, mContext.getString(R.string.cruz))
-            }
+            presenter.coinPressed()
         }
     }
 
@@ -42,10 +40,10 @@ class MonedaFragment(private val listener: IFragmentComunication): Fragment() {
     }
 
     private fun showInstructions() {
-        listener.showFragmentInstructions(InstructionsFragment(listener, "avqp"))
+        listener.showFragmentInstructions(listener, "moneda")
     }
 
-    private fun flipCoin(imageId: Int, result: String) {
+    override fun flipCoin(imageId: Int, result: String) {
         coin.animate().apply {
             duration = 1000
             rotationYBy(1800f)
@@ -55,5 +53,8 @@ class MonedaFragment(private val listener: IFragmentComunication): Fragment() {
             coinResult.text = result
             coin.isClickable = true
         }.start()
+    }
+
+    override fun showMoneda() {
     }
 }

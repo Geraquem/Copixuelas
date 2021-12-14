@@ -8,11 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.averquepasa.AVQPData.getPruebas
-import com.mmfsin.copixuelas.instructions.IFragmentComunication
-import com.mmfsin.copixuelas.instructions.InstructionsFragment
+import com.mmfsin.copixuelas.instructions.IFragmentCommunication
 import kotlinx.android.synthetic.main.fragment_avqp.*
 
-class AVQPFragment(private val listener: IFragmentComunication) : Fragment() {
+class AVQPFragment(private val listener: IFragmentCommunication) : Fragment() {
 
     private val presenter by lazy { AVQPPresenter() }
     private var indexList = ArrayList<Int>()
@@ -43,7 +42,7 @@ class AVQPFragment(private val listener: IFragmentComunication) : Fragment() {
     }
 
     private fun showInstructions(){
-        listener.showFragmentInstructions(InstructionsFragment(listener, "avqp"))
+        listener.showFragmentInstructions(listener, "avqp")
     }
 
     private fun showPhrase() {

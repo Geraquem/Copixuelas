@@ -7,10 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
-import com.mmfsin.copixuelas.instructions.IFragmentComunication
+import com.mmfsin.copixuelas.instructions.IFragmentCommunication
 import com.mmfsin.copixuelas.instructions.InstructionsFragment
 
-class QuePrefeririasFragment(private val listener: IFragmentComunication) : Fragment() {
+class QuePrefeririasFragment(private val listener: IFragmentCommunication) : Fragment() {
 
     lateinit var mContext: Context
 
@@ -31,7 +31,7 @@ class QuePrefeririasFragment(private val listener: IFragmentComunication) : Frag
         mContext = context
     }
 
-    private fun showInstructions(){
-        listener.showFragmentInstructions(InstructionsFragment(listener, "avqp"))
+    private fun showInstructions() {
+        listener.showFragmentInstructions(listener, "quepreferirias")
     }
 }

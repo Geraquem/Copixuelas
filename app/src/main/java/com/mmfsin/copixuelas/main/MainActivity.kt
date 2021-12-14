@@ -5,13 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.averquepasa.AVQPFragment
-import com.mmfsin.copixuelas.instructions.IFragmentComunication
+import com.mmfsin.copixuelas.instructions.IFragmentCommunication
+import com.mmfsin.copixuelas.instructions.InstructionsFragment
 import com.mmfsin.copixuelas.maletin.MaletinFragment
 import com.mmfsin.copixuelas.moneda.MonedaFragment
 import com.mmfsin.copixuelas.quepreferirias.QuePrefeririasFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), MainView, IFragmentComunication {
+class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
 
     private val presenter by lazy { MainPresenter(this) }
 
@@ -46,9 +47,9 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentComunication {
         supportFragmentManager.popBackStack()
     }
 
-    override fun showFragmentInstructions(fragment: Fragment) {
+    override fun showFragmentInstructions(listener: IFragmentCommunication, id: String) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.instructionContainer, fragment)
+            .replace(R.id.instructionContainer, InstructionsFragment(listener, id))
             .addToBackStack(null)
             .commit()
     }

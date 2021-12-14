@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
 import kotlinx.android.synthetic.main.fragment_avqp_instrucciones.*
 
-class InstructionsFragment(val listener: IFragmentComunication, val type: String) : Fragment() {
+class InstructionsFragment(private val listener: IFragmentCommunication, private val type: String) : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
