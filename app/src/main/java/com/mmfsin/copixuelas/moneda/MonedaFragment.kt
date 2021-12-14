@@ -8,11 +8,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.instructions.IFragmentCommunication
+import com.mmfsin.copixuelas.moneda.MonedaData.getPreguntas
 import kotlinx.android.synthetic.main.fragment_moneda.*
 
 class MonedaFragment(private val listener: IFragmentCommunication) : Fragment(), MonedaView {
 
     private val presenter by lazy { MonedaPresenter(this) }
+
+    private val preguntas = getPreguntas()
+    private var indexList = ArrayList<Int>()
+    private var numQuestion = 0
 
     lateinit var mContext: Context
 
@@ -29,8 +34,21 @@ class MonedaFragment(private val listener: IFragmentCommunication) : Fragment(),
 
         showInstructions()
 
-        coin.setOnClickListener {
-            presenter.coinPressed()
+        indexList = presenter.setUpArray()
+
+        showQuestion()
+        presenter.showQuestion()
+
+        continueButton.setOnClickListener {
+            presenter.resetCoin()
+            presenter.showCoin()
+        }
+
+        coin.setOnClickListener { presenter.coinPressed() }
+
+        againButton.setOnClickListener {
+            againButton.visibility = View.GONE
+            showQuestion()
         }
     }
 
@@ -43,18 +61,45 @@ class MonedaFragment(private val listener: IFragmentCommunication) : Fragment(),
         listener.showFragmentInstructions(listener, "moneda")
     }
 
+    override fun showQuestion() {
+        numQuestion++
+        pregunta.text = preguntas[indexList[numQuestion]]
+        if (numQuestion == preguntas.size - 1) {
+            numQuestion = -1
+        }
+        linearPregunta.visibility = View.VISIBLE
+        linearMoneda.visibility = View.GONE
+    }
+
+    override fun showCoin() {
+
+        linearPregunta.visibility = View.GONE
+        linearMoneda.visibility = View.VISIBLE
+    }
+
+    override fun resetCoin() {
+        coin.isClickable = true
+        coin.setImageResource(R.drawable.ic_moneda_neutro)
+        coinResult.text = ""
+        theQuestionWas.text = ""
+    }
+
     override fun flipCoin(imageId: Int, result: String) {
         coin.animate().apply {
             duration = 1000
             rotationYBy(1800f)
             coin.isClickable = false
         }.withEndAction {
+            againButton.visibility = View.VISIBLE
             coin.setImageResource(imageId)
             coinResult.text = result
-            coin.isClickable = true
+            setQuestionIfTails(result)
         }.start()
     }
 
-    override fun showMoneda() {
+    private fun setQuestionIfTails(result: String) {
+        if (result == "CRUZ") {
+            theQuestionWas.text = mContext.getString(R.string.theQuestionWas, pregunta.text)
+        }
     }
 }

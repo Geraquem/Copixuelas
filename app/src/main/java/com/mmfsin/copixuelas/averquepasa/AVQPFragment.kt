@@ -14,9 +14,9 @@ import kotlinx.android.synthetic.main.fragment_avqp.*
 class AVQPFragment(private val listener: IFragmentCommunication) : Fragment() {
 
     private val presenter by lazy { AVQPPresenter() }
-    private var indexList = ArrayList<Int>()
 
     private val pruebas = getPruebas()
+    private var indexList = ArrayList<Int>()
     private var numPhrase = -1
 
     private lateinit var mContext: Context

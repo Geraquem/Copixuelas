@@ -12,6 +12,10 @@
     <string name="howToPlay">¿Cómo se juega?</string>
     <string name="ok">ENTENDIDO</string>
 
+    <string name="explication">PULSA <b>CONTINUAR</b></string>
+    <string name="explication2">LUEGO DALE EL MÓVIL A ESA PERSONA</string>
+    <string name="continueButton"><b>CONTINUAR</b></string>
+    <string name="theQuestionWas">La pregunta era\n %1$s</string>
     <string name="cara">CARA</string>
     <string name="cruz">CRUZ</string>
 </resources>

@@ -1,19 +1,17 @@
 package com.mmfsin.copixuelas.averquepasa
 
+import com.mmfsin.copixuelas.averquepasa.AVQPData.getPruebas
+
 class AVQPPresenter {
 
-    fun setUpArray() : ArrayList<Int>{
-        val list = AVQPData.getPruebas()
+    fun setUpArray(): ArrayList<Int> {
+        val list = getPruebas()
         val indexList = ArrayList<Int>()
-        for (i in 0..list.size) {
+        for (i in list.indices) {
             indexList.add(i)
         }
-        for(i in indexList.size downTo 1){
-            val position = (0..i).random()
-            val tmp = indexList[i-1]
-            indexList[i-1] = indexList[position]
-            indexList[position] = tmp
-        }
+
+        indexList.shuffle()
         return indexList
     }
 }

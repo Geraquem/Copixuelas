@@ -4,6 +4,12 @@ object AVQPData {
 
     fun getPruebas(): List<String> {
         val pruebas = mutableListOf<String>()
+        pruebas.add("a")
+        pruebas.add("b")
+        pruebas.add("c")
+        pruebas.add("d")
+        pruebas.add("e")
+        /*
         pruebas.add("Elige a una persona.\nTodo el mundo tiene que ignorarle hasta que no se acabe su copa.")
         pruebas.add("Elige a una persona. No puede hablar hasta que tú digas.\nSi lo hace bebe.")
         pruebas.add("REGLA\n\nSolo tú puedes ponerte disimuladamente un dedo en la nariz. El resto te tiene que copiar, el último en hacerlo bebe.")
@@ -166,6 +172,7 @@ object AVQPData {
         pruebas.add("Todo el mundo bebe tantos tragos como días seguidos haya estado sin ducharse.")
         pruebas.add("La persona que tengas en frente y tú os llenaís las copas hasta arriba.\nA la de 3 os la bebéis entera.\nEl que pierda se toma un chupito.")
         pruebas.add("Durante una ronda solo puedes hablar con los verbos en imperativo.\nSi no lo hacer, beber.")
+        */
         return pruebas
     }
 }
