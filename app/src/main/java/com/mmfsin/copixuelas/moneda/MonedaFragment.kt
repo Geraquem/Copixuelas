@@ -72,7 +72,6 @@ class MonedaFragment(private val listener: IFragmentCommunication) : Fragment(),
     }
 
     override fun showCoin() {
-
         linearPregunta.visibility = View.GONE
         linearMoneda.visibility = View.VISIBLE
     }

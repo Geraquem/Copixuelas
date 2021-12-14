@@ -45,7 +45,7 @@
             android:id="@+id/continueButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/bg_continue_moneda"
+            android:background="@drawable/bg_moneda_continue_button"
             android:elevation="5dp"
             android:fontFamily="sans-serif-condensed-medium"
             android:gravity="center"
@@ -61,6 +61,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_marginHorizontal="20dp"
         android:orientation="vertical"
         android:visibility="gone"
         tools:ignore="UseCompoundDrawables">
@@ -79,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="25dp"
             android:fontFamily="@font/easy_print"
             android:textColor="@color/black"
             android:textSize="35sp" />
@@ -103,7 +104,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/ic_replay"
+        android:background="@drawable/ic_moneda_replay"
         android:contentDescription="@string/contentDescription"
         android:visibility="gone" />
 
