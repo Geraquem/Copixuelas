@@ -3,9 +3,12 @@ package com.mmfsin.copixuelas.main
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.mmfsin.copixuelas.instructions.IFragmentComunication
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.averquepasa.AVQPFragment
+import com.mmfsin.copixuelas.instructions.IFragmentComunication
+import com.mmfsin.copixuelas.maletin.MaletinFragment
+import com.mmfsin.copixuelas.moneda.MonedaFragment
+import com.mmfsin.copixuelas.quepreferirias.QuePrefeririasFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView, IFragmentComunication {
@@ -19,9 +22,9 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentComunication {
         presenter.showIntroPhrase()
 
         button_avqp.setOnClickListener { openFragment(AVQPFragment(this)) }
-        button_moneda.setOnClickListener { }
-        button_quepreferirias.setOnClickListener { }
-        button_maletin.setOnClickListener { }
+        button_moneda.setOnClickListener { openFragment(MonedaFragment(this)) }
+        button_quepreferirias.setOnClickListener { openFragment(QuePrefeririasFragment(this)) }
+        button_maletin.setOnClickListener { openFragment(MaletinFragment(this)) }
     }
 
     private fun openFragment(fragment: Fragment) {

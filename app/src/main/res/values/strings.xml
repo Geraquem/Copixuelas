@@ -11,4 +11,7 @@
 
     <string name="howToPlay">¿Cómo se juega?</string>
     <string name="ok">ENTENDIDO</string>
+
+    <string name="cara">CARA</string>
+    <string name="cruz">CRUZ</string>
 </resources>
