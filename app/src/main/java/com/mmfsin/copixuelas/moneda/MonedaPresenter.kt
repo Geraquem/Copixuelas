@@ -2,6 +2,7 @@ package com.mmfsin.copixuelas.moneda
 
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
+import com.mmfsin.copixuelas.averquepasa.AVQPData
 import com.mmfsin.copixuelas.moneda.MonedaData.getPreguntas
 
 class MonedaPresenter(private val monedaView: MonedaView): Fragment() {
@@ -9,7 +10,7 @@ class MonedaPresenter(private val monedaView: MonedaView): Fragment() {
     fun setUpArray(): ArrayList<Int> {
         val list = getPreguntas()
         val indexList = ArrayList<Int>()
-        for (i in 0..list.size) {
+        for (i in list.indices) {
             indexList.add(i)
         }
 

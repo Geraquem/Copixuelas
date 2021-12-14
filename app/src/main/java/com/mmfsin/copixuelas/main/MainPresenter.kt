@@ -1,14 +1,12 @@
 package com.mmfsin.copixuelas.main
 
-class MainPresenter(var mainView: MainView?): MainInteractor.IMainInteractor {
+import com.mmfsin.copixuelas.main.data.MainData
 
-    private val interactor = MainInteractor(this)
+class MainPresenter(var mainView: MainView) {
 
-    fun showIntroPhrase(){
-        interactor.getIntroPhrase()
-    }
-
-    override fun onSuccess(phrase: String) {
-        mainView?.showIntroPhrase(phrase)
+    fun showIntroPhrase() {
+        val list = MainData.getDataIntroPhrases()
+        val random = (list.indices).random()
+        mainView.showIntroPhrase(list[random])
     }
 }

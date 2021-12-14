@@ -8,9 +8,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.instructions.IFragmentCommunication
-import com.mmfsin.copixuelas.instructions.InstructionsFragment
+import com.mmfsin.copixuelas.quepreferirias.QuePrefeririasData.getDilemmas
+import kotlinx.android.synthetic.main.fragment_quepreferirias.*
 
-class QuePrefeririasFragment(private val listener: IFragmentCommunication) : Fragment() {
+class QuePrefeririasFragment(private val listener: IFragmentCommunication) : Fragment(),
+    QuePrefeririasView {
+
+    private val presenter by lazy { QuePrefeririasPresenter(this) }
+
+    private val dilemmas = getDilemmas()
+    private var indexList = ArrayList<Int>()
+    private var numDilemma = 0
 
     lateinit var mContext: Context
 
@@ -24,6 +32,43 @@ class QuePrefeririasFragment(private val listener: IFragmentCommunication) : Fra
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        showInstructions()
+        indexList = presenter.setUpArray()
+        presenter.setUpText()
+
+        prevButton.setOnClickListener {
+            numDilemma--
+            presenter.setUpText()
+        }
+
+        nextButton.setOnClickListener {
+            numDilemma++
+            presenter.setUpText()
+        }
+    }
+
+    override fun setUpText() {
+        presenter.checkButtons(numDilemma, dilemmas.size)
+        val dilemma = dilemmas[indexList[numDilemma]]
+        top.text = dilemma.split("%OR%")[0]
+        bottom.text = dilemma.split("%OR%")[1]
+    }
+
+    override fun prevButton(isVisible: Boolean) {
+        prevButton.visibility = if (isVisible) {
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
+    }
+
+    override fun nextButton(isVisible: Boolean) {
+        nextButton.visibility = if (isVisible) {
+            View.VISIBLE
+        } else {
+            View.GONE
+        }
     }
 
     override fun onAttach(context: Context) {
