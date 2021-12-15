@@ -22,7 +22,7 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:fontFamily="@font/ezet"
+            android:fontFamily="@font/boogaloo"
             android:gravity="center"
             android:text="@string/averquepasa"
             android:textColor="@color/white"

@@ -5,6 +5,7 @@
       <map>
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable-v24/bg_another_app.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable-v24/bg_linear_instrucciones.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable-v24/bg_maletin_phase_two.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable-v24/bg_quepref_top.xml" value="0.3356164383561644" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable-v24/ic_quepref_ko.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable-v24/ic_quepref_ok.xml" value="0.3769230769230769" />
@@ -23,14 +24,17 @@
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_close.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_info.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_maletin_one_closed.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_maletin_one_money.xml" value="0.3630769230769231" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_maletin_one_open.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_maletin_two_closed.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_maletin_two_money.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_maletin_two_open.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_moneda_cara.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_moneda_cruz.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_moneda_neutro.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_moneda_replay.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_quepref_next.xml" value="0.3356164383561644" />
+        <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_replay.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_sketch1639386597922.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_sketch1639560105085.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/layout/activity_main.xml" value="0.35260416666666666" />

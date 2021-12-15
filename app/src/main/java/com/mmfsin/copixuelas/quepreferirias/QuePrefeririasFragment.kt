@@ -2,6 +2,7 @@ package com.mmfsin.copixuelas.quepreferirias
 
 import android.content.Context
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.instructions.IFragmentCommunication
 import com.mmfsin.copixuelas.quepreferirias.QuePrefeririasData.getDilemmas
+import com.mmfsin.copixuelas.removeLinksUnderline
 import kotlinx.android.synthetic.main.fragment_quepreferirias.*
 
 class QuePrefeririasFragment(private val listener: IFragmentCommunication) : Fragment(),
@@ -46,6 +48,9 @@ class QuePrefeririasFragment(private val listener: IFragmentCommunication) : Fra
             numDilemma++
             presenter.setUpText()
         }
+
+        otherApp.movementMethod = LinkMovementMethod.getInstance()
+        otherApp.removeLinksUnderline()
     }
 
     override fun setUpText() {

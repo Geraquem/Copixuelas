@@ -14,9 +14,8 @@ class MaletinFragment(private val listener: IFragmentCommunication) : Fragment()
 
     private val presenter by lazy { MaletinPresenter(this) }
 
-    private val closed: String = "CLOSED"
-    private val opened: String = "OPENED"
     private val money: String = "MONEY"
+    private val empty: String = "EMPTY"
 
     private var phase: Int = 1
 
@@ -40,15 +39,84 @@ class MaletinFragment(private val listener: IFragmentCommunication) : Fragment()
         maletinOne.setOnClickListener {
             maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_money)
             if (phase == 1) {
-                maletinOne.tag = money
-                //setImagen
-                phase = 2
+                doPhaseOne("ONE")
+            } else if (phase == 2) {
+                maletinTwo.isClickable = false
+                if (maletinOne.tag == money) {
+                    maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_money)
+                } else {
+                    maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_opened)
+                }
+                retryButton.visibility = View.VISIBLE
             }
         }
 
         maletinTwo.setOnClickListener {
-            presenter.setTag(maletinOne, opened)
+            if (phase == 1) {
+                doPhaseOne("TWO")
+
+            } else if (phase == 2) {
+                maletinOne.isClickable = false
+                if (maletinTwo.tag == money) {
+                    maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_money)
+                } else {
+                    maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_opened)
+                }
+                retryButton.visibility = View.VISIBLE
+            }
         }
+
+        phaseTwoButton.setOnClickListener() { doPhaseTwo() }
+
+        retryButton.setOnClickListener { replayGame() }
+    }
+
+    private fun doPhaseOne(maletin: String) {
+        when (maletin) {
+            "ONE" -> {
+                maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_money)
+                maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_opened)
+
+                maletinOne.tag = money
+                maletinTwo.tag = empty
+
+            }
+            "TWO" -> {
+                maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_opened)
+                maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_money)
+
+                maletinOne.tag = empty
+                maletinTwo.tag = money
+            }
+        }
+        phaseTwoButton.visibility = View.VISIBLE
+    }
+
+    private fun doPhaseTwo() {
+        phase = 2
+
+        phaseTwoButton.visibility = View.GONE
+        phrase.text = mContext.getText(R.string.whereIsTheMoney)
+
+        maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_closed)
+        maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_closed)
+    }
+
+    override fun replayGame() {
+        phase = 1
+
+        phrase.text = mContext.getText(R.string.hideTheMoney)
+
+        phaseTwoButton.visibility = View.GONE
+        retryButton.visibility = View.GONE
+
+        maletinOne.tag = empty
+        maletinTwo.tag = empty
+        maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_opened)
+        maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_opened)
+
+        maletinOne.isClickable = true
+        maletinTwo.isClickable = true
     }
 
     private fun showInstructions() {
@@ -58,14 +126,5 @@ class MaletinFragment(private val listener: IFragmentCommunication) : Fragment()
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
-    }
-
-    override fun replayGame() {
-//        phase = 1
-//        presenter.setTag(maletinOne, opened)
-//        presenter.setTag(maletinTwo, opened)
-//
-//        maletinOne.setImageResource(R.drawable.ic_maletin_one_open)
-//        maletinTwo.setImageResource(R.drawable.ic_maletin_two_open)
     }
 }

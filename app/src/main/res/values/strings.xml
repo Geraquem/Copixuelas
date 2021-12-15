@@ -25,9 +25,12 @@
 
     <!-- QUE PREFERIRIAS -->
     <string name="or">O</string>
-    <string name="otherApp">Pulsa aqui para una verisón mejorada de\nQué Preferirías</string>
+    <string name="queprefeririasQuestion">¿QUÉ PREFERIRÍAS?</string>
+    <string name="otherApp"><a href="https://play.google.com/store/apps/details?id=com.mmfsin.quepreferirias&amp;hl=es&amp;gl=US">Pulsa aqui para una versión mejorada de\nQUÉ PREFERIRÍAS</a></string>
 
     <!-- MALETIN -->
-    <string name="hideTheMoney">¿DONDE QUIERES GUARDAR EL DINERO?</string>
+    <string name="hideTheMoney"><b>¿DONDE QUIERES GUARDAR EL DINERO?</b></string>
+    <string name="whereIsTheMoney"><b>¿DONDE ESTÁ EL DINERO?</b></string>
+    <string name="close">CERRAR MALETINES</string>
 
 </resources>

@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="60dp"
-            android:fontFamily="@font/easy_print"
+            android:fontFamily="@font/boogaloo"
             android:gravity="center"
             android:textColor="@color/black"
             android:textSize="23sp" />
@@ -99,12 +99,12 @@
 
     <ImageView
         android:id="@+id/againButton"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="40dp"
-        android:background="@drawable/ic_moneda_replay"
+        android:background="@drawable/ic_replay"
         android:contentDescription="@string/contentDescription"
         android:visibility="gone" />
 
