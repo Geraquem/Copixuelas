@@ -28,5 +28,6 @@
     <string name="otherApp">Pulsa aqui para una verisón mejorada de\nQué Preferirías</string>
 
     <!-- MALETIN -->
+    <string name="hideTheMoney">¿DONDE QUIERES GUARDAR EL DINERO?</string>
 
 </resources>

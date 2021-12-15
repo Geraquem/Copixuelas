@@ -8,9 +8,17 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.instructions.IFragmentCommunication
-import com.mmfsin.copixuelas.instructions.InstructionsFragment
+import kotlinx.android.synthetic.main.fragment_maletin.*
 
-class MaletinFragment(private val listener: IFragmentCommunication) : Fragment() {
+class MaletinFragment(private val listener: IFragmentCommunication) : Fragment(), MaletinView {
+
+    private val presenter by lazy { MaletinPresenter(this) }
+
+    private val closed: String = "CLOSED"
+    private val opened: String = "OPENED"
+    private val money: String = "MONEY"
+
+    private var phase: Int = 1
 
     lateinit var mContext: Context
 
@@ -24,6 +32,27 @@ class MaletinFragment(private val listener: IFragmentCommunication) : Fragment()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+//        showInstructions()
+
+        replayGame()
+
+        maletinOne.setOnClickListener {
+            maletinOne.setBackgroundResource(R.drawable.ic_sketch1639560105085)
+            //            if(phase == 1){
+//                maletinOne.tag = money
+//                //setImagen
+//                phase = 2
+//            }
+        }
+
+        maletinTwo.setOnClickListener {
+            presenter.setTag(maletinOne, opened)
+        }
+    }
+
+    private fun showInstructions() {
+        listener.showFragmentInstructions(listener, "maletin")
     }
 
     override fun onAttach(context: Context) {
@@ -31,7 +60,12 @@ class MaletinFragment(private val listener: IFragmentCommunication) : Fragment()
         mContext = context
     }
 
-    private fun showInstructions() {
-        listener.showFragmentInstructions(listener, "maletin")
+    override fun replayGame() {
+//        phase = 1
+//        presenter.setTag(maletinOne, opened)
+//        presenter.setTag(maletinTwo, opened)
+//
+//        maletinOne.setImageResource(R.drawable.ic_maletin_one_open)
+//        maletinTwo.setImageResource(R.drawable.ic_maletin_two_open)
     }
 }
