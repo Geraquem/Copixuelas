@@ -36,6 +36,8 @@ class MaletinFragment(private val listener: IFragmentCommunication) : Fragment()
 
         replayGame()
 
+        info.setOnClickListener { showInstructions() }
+
         maletinOne.setOnClickListener {
             maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_money)
             if (phase == 1) {

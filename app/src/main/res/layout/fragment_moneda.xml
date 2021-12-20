@@ -7,6 +7,18 @@
     android:focusable="true"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/info"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/ic_question_mark_black"
+        android:contentDescription="@string/contentDescription" />
+
     <LinearLayout
         android:id="@+id/linearPregunta"
         android:layout_width="match_parent"

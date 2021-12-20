@@ -21,17 +21,14 @@ class InstructionsFragment(private val listener: IFragmentCommunication, private
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        when (type) {
-//            getString(R.string.averquepasa) -> System.out.println("787987")
-//            getString(R.string.moneda) -> instructions.text = getString(R.string.monedaInstructions)
-//            getString(R.string.queprefieresQuestion) -> System.out.println("787987")
-//            getString(R.string.averquepasa) -> System.out.println("787987")
-//        }
+        instructions.text = when (type) {
+            getString(R.string.averquepasa) -> getText(R.string.avqpInstructions)
+            getString(R.string.moneda) -> getText(R.string.monedaInstructions)
+            getString(R.string.queprefieresQuestion) -> getText(R.string.queprefieresInstructions)
+            getString(R.string.averquepasa) -> getText(R.string.maletinInstructions)
+            else -> getString(R.string.app_name)
+        }
 
         close.setOnClickListener { listener.closeFragment() }
-    }
-
-    private fun avqp() {
-
     }
 }

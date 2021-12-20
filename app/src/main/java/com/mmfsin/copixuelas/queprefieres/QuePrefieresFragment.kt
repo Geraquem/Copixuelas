@@ -40,6 +40,8 @@ class QuePrefieresFragment(private val listener: IFragmentCommunication) : Fragm
         indexList = presenter.setUpArray()
         presenter.setUpText()
 
+        info.setOnClickListener { showInstructions() }
+
         prevButton.setOnClickListener {
             numDilemma--
             presenter.setUpText()

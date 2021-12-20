@@ -39,6 +39,8 @@ class MonedaFragment(private val listener: IFragmentCommunication) : Fragment(),
         showQuestion()
         presenter.showQuestion()
 
+        info.setOnClickListener { showInstructions() }
+
         continueButton.setOnClickListener {
             presenter.resetCoin()
             presenter.showCoin()
