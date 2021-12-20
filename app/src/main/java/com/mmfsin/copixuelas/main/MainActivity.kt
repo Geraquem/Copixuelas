@@ -9,7 +9,7 @@ import com.mmfsin.copixuelas.instructions.IFragmentCommunication
 import com.mmfsin.copixuelas.instructions.InstructionsFragment
 import com.mmfsin.copixuelas.maletin.MaletinFragment
 import com.mmfsin.copixuelas.moneda.MonedaFragment
-import com.mmfsin.copixuelas.quepreferirias.QuePrefeririasFragment
+import com.mmfsin.copixuelas.queprefieres.QuePrefieresFragment
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
 
         button_avqp.setOnClickListener { openFragment(AVQPFragment(this)) }
         button_moneda.setOnClickListener { openFragment(MonedaFragment(this)) }
-        button_quepreferirias.setOnClickListener { openFragment(QuePrefeririasFragment(this)) }
+        button_quepreferirias.setOnClickListener { openFragment(QuePrefieresFragment(this)) }
         button_maletin.setOnClickListener { openFragment(MaletinFragment(this)) }
     }
 

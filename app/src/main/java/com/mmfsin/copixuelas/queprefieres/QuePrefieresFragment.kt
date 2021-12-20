@@ -1,4 +1,4 @@
-package com.mmfsin.copixuelas.quepreferirias
+package com.mmfsin.copixuelas.queprefieres
 
 import android.content.Context
 import android.os.Bundle
@@ -9,14 +9,14 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.instructions.IFragmentCommunication
-import com.mmfsin.copixuelas.quepreferirias.QuePrefeririasData.getDilemmas
+import com.mmfsin.copixuelas.queprefieres.QuePrefieresData.getDilemmas
 import com.mmfsin.copixuelas.removeLinksUnderline
 import kotlinx.android.synthetic.main.fragment_quepreferirias.*
 
-class QuePrefeririasFragment(private val listener: IFragmentCommunication) : Fragment(),
-    QuePrefeririasView {
+class QuePrefieresFragment(private val listener: IFragmentCommunication) : Fragment(),
+    QuePrefieresView {
 
-    private val presenter by lazy { QuePrefeririasPresenter(this) }
+    private val presenter by lazy { QuePrefieresPresenter(this) }
 
     private val dilemmas = getDilemmas()
     private var indexList = ArrayList<Int>()

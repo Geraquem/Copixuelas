@@ -135,7 +135,7 @@
                     android:layout_marginHorizontal="6dp"
                     android:fontFamily="@font/emilys"
                     android:gravity="center"
-                    android:text="@string/quepreferirias"
+                    android:text="@string/queprefieres"
                     android:textColor="@color/green"
                     android:textSize="22sp" />
 

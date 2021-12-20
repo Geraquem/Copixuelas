@@ -4,9 +4,10 @@
 
     <string name="contentDescription">contentDescription</string>
 
+    <!-- MAIN -->
     <string name="averquepasa">A VER QUE PASA</string>
     <string name="moneda">EL JUEGO DE LA MONEDA</string>
-    <string name="quepreferirias">QUÉ PREFERIRÍAS</string>
+    <string name="queprefieres">QUÉ PREFIERES</string>
     <string name="maletin">EL JUEGO DEL MALETÍN</string>
 
     <!-- INSTRUCCIONES -->
@@ -25,7 +26,7 @@
 
     <!-- QUE PREFERIRIAS -->
     <string name="or">O</string>
-    <string name="queprefeririasQuestion">¿QUÉ PREFERIRÍAS?</string>
+    <string name="queprefeririasQuestion">¿QUÉ PREFIERES?</string>
     <string name="otherApp"><a href="https://play.google.com/store/apps/details?id=com.mmfsin.quepreferirias&amp;hl=es&amp;gl=US">Pulsa aqui para una versión mejorada de\nQUÉ PREFERIRÍAS</a></string>
 
     <!-- MALETIN -->
