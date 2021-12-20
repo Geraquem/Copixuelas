@@ -24,8 +24,7 @@ class InstructionsFragment(private val listener: IFragmentCommunication, private
         instructions.text = when (type) {
             getString(R.string.averquepasa) -> getText(R.string.avqpInstructions)
             getString(R.string.moneda) -> getText(R.string.monedaInstructions)
-            getString(R.string.queprefieresQuestion) -> getText(R.string.queprefieresInstructions)
-            getString(R.string.averquepasa) -> getText(R.string.maletinInstructions)
+            getString(R.string.maletin) -> getText(R.string.maletinInstructions)
             else -> getString(R.string.app_name)
         }
 

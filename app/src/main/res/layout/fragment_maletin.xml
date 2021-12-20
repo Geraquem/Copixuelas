@@ -18,32 +18,30 @@
         android:background="@drawable/ic_question_mark_black"
         android:contentDescription="@string/contentDescription" />
 
-    <TextView
-        android:id="@+id/phrase"
-        android:layout_below="@id/info"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="15dp"
-        android:fontFamily="@font/boogaloo"
-        android:gravity="center"
-        android:textColor="@color/black"
-        android:textSize="25sp" />
-
     <ScrollView
-        android:layout_below="@+id/phrase"
+        android:layout_below="@+id/info"
         android:id="@+id/scroll"
-        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <LinearLayout
+            android:layout_gravity="center"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/phrase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/boogaloo"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="25sp" />
 
             <ImageView
                 android:id="@+id/maletinOne"
@@ -59,49 +57,35 @@
             <ImageView
                 android:id="@+id/maletinTwo"
                 android:layout_width="250dp"
-                android:layout_centerHorizontal="true"
                 android:layout_height="250dp"
-                android:layout_below="@+id/maletinOne"
                 android:layout_gravity="center"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:background="@drawable/ic_maletin_two_opened"
                 android:contentDescription="@string/contentDescription" />
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/phaseTwoButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:background="@drawable/bg_maletin_phase_two"
+                android:elevation="5dp"
+                android:fontFamily="@font/easy_print"
+                android:gravity="center"
+                android:paddingVertical="15dp"
+                android:text="@string/close"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
+            <ImageView
+                android:id="@+id/retryButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/ic_replay"
+                android:contentDescription="@string/contentDescription" />
+        </LinearLayout>
 
     </ScrollView>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/scroll"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/phaseTwoButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="30dp"
-            android:background="@drawable/bg_maletin_phase_two"
-            android:elevation="5dp"
-            android:fontFamily="@font/easy_print"
-            android:gravity="center"
-            android:paddingVertical="15dp"
-            android:text="@string/close"
-            android:textColor="@color/black"
-            android:textSize="22sp" />
-
-        <ImageView
-            android:id="@+id/retryButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/ic_replay"
-            android:contentDescription="@string/contentDescription" />
-    </LinearLayout>
-
 
 </RelativeLayout>

@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
 
         button_avqp.setOnClickListener { openFragment(AVQPFragment(this)) }
         button_moneda.setOnClickListener { openFragment(MonedaFragment(this)) }
-        button_quepreferirias.setOnClickListener { openFragment(QuePrefieresFragment(this)) }
+        button_quepreferirias.setOnClickListener { openFragment(QuePrefieresFragment()) }
         button_maletin.setOnClickListener { openFragment(MaletinFragment(this)) }
     }
 

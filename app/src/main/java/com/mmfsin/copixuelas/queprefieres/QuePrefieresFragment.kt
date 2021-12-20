@@ -13,7 +13,7 @@ import com.mmfsin.copixuelas.queprefieres.QuePrefieresData.getDilemmas
 import com.mmfsin.copixuelas.removeLinksUnderline
 import kotlinx.android.synthetic.main.fragment_quepreferirias.*
 
-class QuePrefieresFragment(private val listener: IFragmentCommunication) : Fragment(),
+class QuePrefieresFragment : Fragment(),
     QuePrefieresView {
 
     private val presenter by lazy { QuePrefieresPresenter(this) }
@@ -35,12 +35,8 @@ class QuePrefieresFragment(private val listener: IFragmentCommunication) : Fragm
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        showInstructions()
-
         indexList = presenter.setUpArray()
         presenter.setUpText()
-
-        info.setOnClickListener { showInstructions() }
 
         prevButton.setOnClickListener {
             numDilemma--
@@ -82,9 +78,5 @@ class QuePrefieresFragment(private val listener: IFragmentCommunication) : Fragm
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
-    }
-
-    private fun showInstructions() {
-        listener.showFragmentInstructions(listener, getString(R.string.queprefieres))
     }
 }
