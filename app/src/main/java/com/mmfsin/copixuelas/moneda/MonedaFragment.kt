@@ -58,7 +58,7 @@ class MonedaFragment(private val listener: IFragmentCommunication) : Fragment(),
     }
 
     private fun showInstructions() {
-        listener.showFragmentInstructions(listener, "moneda")
+        listener.showFragmentInstructions(listener, getString(R.string.moneda))
     }
 
     override fun showQuestion() {

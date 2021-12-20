@@ -32,7 +32,7 @@ class MaletinFragment(private val listener: IFragmentCommunication) : Fragment()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        showInstructions()
+        showInstructions()
 
         replayGame()
 
@@ -120,7 +120,7 @@ class MaletinFragment(private val listener: IFragmentCommunication) : Fragment()
     }
 
     private fun showInstructions() {
-        listener.showFragmentInstructions(listener, "maletin")
+        listener.showFragmentInstructions(listener, getString(R.string.maletin))
     }
 
     override fun onAttach(context: Context) {

@@ -12,7 +12,15 @@
 
     <!-- INSTRUCCIONES -->
     <string name="howToPlay">¿Cómo se juega?</string>
-    <string name="ok">ENTENDIDO</string>
+    <string name="avqpInstructions">AAAAAAAAAA</string>
+    <string name="monedaInstructions">Solo una persona lee la pregunta en silencio\n\n
+        Luego pulsa el botón <b>CONTINUAR</b> y le da el móvil a quien encaje con la pregunta\n\n
+        Esa persona gira la moneda y\n\n
+        Si sale <b><i>CARA</i></b> nunca se sabrá cuál era la pregunta\n\n
+        Si sale <b><i>CRUZ</i></b> se revela la pregunta
+    Esa</string>
+    <string name="queprefieresInstructions">AAAAAAAAAA</string>
+    <string name="maletinInstructions">AAAAAAAAAA</string>
 
     <!-- AVQP -->
 
@@ -26,7 +34,7 @@
 
     <!-- QUE PREFERIRIAS -->
     <string name="or">O</string>
-    <string name="queprefeririasQuestion">¿QUÉ PREFIERES?</string>
+    <string name="queprefieresQuestion">¿QUÉ PREFIERES?</string>
     <string name="otherApp"><a href="https://play.google.com/store/apps/details?id=com.mmfsin.quepreferirias&amp;hl=es&amp;gl=US">Pulsa aqui para una versión mejorada de\nQUÉ PREFERIRÍAS</a></string>
 
     <!-- MALETIN -->

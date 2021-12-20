@@ -23,6 +23,7 @@
             android:layout_marginBottom="60dp"
             android:fontFamily="@font/boogaloo"
             android:gravity="center"
+            android:textAllCaps="true"
             android:textColor="@color/black"
             android:textSize="23sp" />
 
@@ -56,56 +57,70 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/linearMoneda"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginHorizontal="20dp"
-        android:orientation="vertical"
-        android:visibility="gone"
-        tools:ignore="UseCompoundDrawables">
+        android:layout_centerInParent="true">
 
-        <ImageView
-            android:id="@+id/coin"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/ic_moneda_neutro"
-            android:contentDescription="@string/contentDescription" />
-
-        <TextView
-            android:id="@+id/coinResult"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="25dp"
-            android:fontFamily="@font/easy_print"
-            android:textColor="@color/black"
-            android:textSize="35sp" />
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/theQuestionWas"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="sans-serif-condensed"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:textSize="23sp" />
+            <LinearLayout
+                android:id="@+id/linearMoneda"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="15dp"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:ignore="UseCompoundDrawables">
 
-    </LinearLayout>
+                <ImageView
+                    android:id="@+id/coin"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/ic_moneda_neutro"
+                    android:contentDescription="@string/contentDescription" />
 
-    <ImageView
-        android:id="@+id/againButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="40dp"
-        android:background="@drawable/ic_replay"
-        android:contentDescription="@string/contentDescription"
-        android:visibility="gone" />
+                <TextView
+                    android:id="@+id/coinResult"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="25dp"
+                    android:fontFamily="@font/easy_print"
+                    android:textColor="@color/black"
+                    android:textSize="35sp" />
+
+                <TextView
+                    android:id="@+id/theQuestionWas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:fontFamily="sans-serif-condensed"
+                    android:gravity="center"
+                    android:textColor="@color/black"
+                    android:textSize="23sp" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/againButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/ic_replay"
+                android:contentDescription="@string/contentDescription"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

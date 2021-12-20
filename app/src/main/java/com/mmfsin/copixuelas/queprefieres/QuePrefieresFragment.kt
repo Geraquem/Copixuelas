@@ -36,6 +36,7 @@ class QuePrefieresFragment(private val listener: IFragmentCommunication) : Fragm
         super.onViewCreated(view, savedInstanceState)
 
         showInstructions()
+
         indexList = presenter.setUpArray()
         presenter.setUpText()
 
@@ -82,6 +83,6 @@ class QuePrefieresFragment(private val listener: IFragmentCommunication) : Fragm
     }
 
     private fun showInstructions() {
-        listener.showFragmentInstructions(listener, "quepreferirias")
+        listener.showFragmentInstructions(listener, getString(R.string.queprefieres))
     }
 }

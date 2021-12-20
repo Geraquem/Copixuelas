@@ -41,10 +41,6 @@ class AVQPFragment(private val listener: IFragmentCommunication) : Fragment() {
         screen.setOnClickListener { showPhrase() }
     }
 
-    private fun showInstructions(){
-        listener.showFragmentInstructions(listener, "avqp")
-    }
-
     private fun showPhrase() {
         numPhrase++
         textPhrase.text = pruebas[indexList[numPhrase]]
@@ -56,5 +52,9 @@ class AVQPFragment(private val listener: IFragmentCommunication) : Fragment() {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
+    }
+
+    private fun showInstructions(){
+        listener.showFragmentInstructions(listener, getString(R.string.averquepasa))
     }
 }

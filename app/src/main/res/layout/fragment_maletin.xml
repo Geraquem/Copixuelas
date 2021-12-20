@@ -6,21 +6,35 @@
     android:clickable="true"
     android:focusable="true">
 
+    <ImageView
+        android:id="@+id/info"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/ic_question_mark_black"
+        android:contentDescription="@string/contentDescription" />
+
     <TextView
         android:id="@+id/phrase"
+        android:layout_below="@id/info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="15dp"
         android:fontFamily="@font/boogaloo"
         android:gravity="center"
         android:textColor="@color/black"
-        android:textSize="20sp" />
+        android:textSize="25sp" />
 
     <ScrollView
+        android:layout_below="@+id/phrase"
         android:id="@+id/scroll"
         android:layout_centerInParent="true"
         android:layout_width="match_parent"
