@@ -10,6 +10,9 @@
         android:roundIcon="@mipmap/icon_copixuelas_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Copixuelas">
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-4515698012373396~1752845078"/>
         <activity
             android:name=".main.MainActivity"
             android:exported="true"

@@ -1,51 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DDD93"
     tools:context=".main.MainActivity">
 
-    <TextView
-        android:id="@+id/appName"
+    <FrameLayout
+        android:id="@+id/frameAd"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/emilys"
-        android:gravity="center"
-        android:layout_above="@id/scroll"
-        android:text="@string/appNameBold"
-        android:layout_marginHorizontal="15dp"
-        android:textColor="@color/black"
-        android:textSize="45sp" />
+        android:background="@color/black">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            ads:adSize="BANNER" />
+
+    </FrameLayout>
 
     <ScrollView
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/unicorn"
+        android:layout_below="@+id/frameAd"
         android:layout_centerInParent="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
-            android:layout_marginTop="15dp"
             android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/appName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:layout_marginHorizontal="15dp"
+                android:fontFamily="@font/emilys"
+                android:gravity="center"
+                android:text="@string/appNameBold"
+                android:textColor="@color/black"
+                android:textSize="45sp" />
 
             <TextView
                 android:id="@+id/introPhrase"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textAllCaps="true"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginBottom="15dp"
+                android:fontFamily="sans-serif-condensed-medium"
                 android:gravity="center"
-                android:textSize="16sp"
-                android:fontFamily="sans-serif-condensed-medium"/>
+                android:textAllCaps="true"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:id="@+id/button_avqp"
@@ -180,13 +195,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/bg_intro_button_more_games"
+                android:fontFamily="@font/atlantis"
                 android:gravity="center"
                 android:paddingVertical="10dp"
-                android:fontFamily="@font/atlantis"
                 android:text="@string/moreGames"
-                android:textColorLink="@color/black"
-                android:background="@drawable/bg_intro_button_more_games"
                 android:textColor="@color/black"
+                android:textColorLink="@color/black"
                 android:textSize="22sp" />
 
         </LinearLayout>
@@ -206,11 +221,13 @@
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/frameAd" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/instructionContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_below="@id/frameAd" />
 
 </RelativeLayout>
