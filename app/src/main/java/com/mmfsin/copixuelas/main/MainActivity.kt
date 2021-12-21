@@ -1,6 +1,7 @@
 package com.mmfsin.copixuelas.main
 
 import android.os.Bundle
+import android.text.method.LinkMovementMethod
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
@@ -10,6 +11,7 @@ import com.mmfsin.copixuelas.instructions.InstructionsFragment
 import com.mmfsin.copixuelas.maletin.MaletinFragment
 import com.mmfsin.copixuelas.moneda.MonedaFragment
 import com.mmfsin.copixuelas.queprefieres.QuePrefieresFragment
+import com.mmfsin.copixuelas.removeLinksUnderline
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
@@ -28,6 +30,8 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
         button_moneda.setOnClickListener { openFragment(MonedaFragment(this)) }
         button_quepreferirias.setOnClickListener { openFragment(QuePrefieresFragment()) }
         button_maletin.setOnClickListener { openFragment(MaletinFragment(this)) }
+        moreGames.movementMethod = LinkMovementMethod.getInstance()
+        moreGames.removeLinksUnderline()
     }
 
     private fun openFragment(fragment: Fragment) {

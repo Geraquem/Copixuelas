@@ -10,14 +10,14 @@
         android:id="@+id/appName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@id/scroll"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="15dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/emilys"
         android:gravity="center"
-        android:layout_above="@id/scroll"
         android:text="@string/appNameBold"
-        android:layout_marginHorizontal="15dp"
         android:textColor="@color/black"
         android:textSize="45sp" />
 
@@ -40,12 +40,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:textAllCaps="true"
                 android:layout_marginHorizontal="30dp"
                 android:layout_marginBottom="15dp"
+                android:fontFamily="sans-serif-condensed-medium"
                 android:gravity="center"
-                android:textSize="16sp"
-                android:fontFamily="sans-serif-condensed-medium"/>
+                android:textAllCaps="true"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:id="@+id/button_avqp"
@@ -180,12 +180,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:background="@drawable/bg_intro_button_more_games"
+                android:fontFamily="@font/atlantis"
                 android:gravity="center"
                 android:paddingVertical="10dp"
-                android:fontFamily="@font/atlantis"
                 android:text="@string/moreGames"
-                android:background="@drawable/bg_intro_button_more_games"
                 android:textColor="@color/black"
+                android:textColorLink="@color/black"
                 android:textSize="22sp" />
 
         </LinearLayout>

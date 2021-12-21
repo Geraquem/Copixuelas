@@ -13,7 +13,8 @@
     <string name="moneda">EL JUEGO DE LA MONEDA</string>
     <string name="queprefieres">QUÉ PREFIERES</string>
     <string name="maletin">EL JUEGO DEL MALETÍN</string>
-    <string name="moreGames">¿MÁS JUEGOS?</string>
+<!--    <string name="moreGames">¿MÁS JUEGOS?</string>-->
+    <string name="moreGames"><a href="https://play.google.com/store/apps/collection/cluster?clp=igM3ChkKEzU1MTgyMTMzMDU5Mjk0Mzk3NzAQCBgDEhgKEmNvbS5tbWZzaW4ueW9udW5jYRABGAMYAQ%3D%3D:S:ANO1ljIt5Vc&amp;gsr=CjqKAzcKGQoTNTUxODIxMzMwNTkyOTQzOTc3MBAIGAMSGAoSY29tLm1tZnNpbi55b251bmNhEAEYAxgB:S:ANO1ljJHODs">¿MÁS JUEGOS?</a></string>
 
     <!-- INSTRUCCIONES -->
     <string name="howToPlay">¿Cómo se juega?</string>

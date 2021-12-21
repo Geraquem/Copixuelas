@@ -181,6 +181,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:gravity="center"
+                    android:textColorLink="@color/black"
                     android:paddingVertical="10dp"
                     android:fontFamily="@font/atlantis"
                     android:text="@string/moreGames"

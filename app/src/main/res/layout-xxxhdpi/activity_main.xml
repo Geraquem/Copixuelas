@@ -184,6 +184,7 @@
                 android:paddingVertical="10dp"
                 android:fontFamily="@font/atlantis"
                 android:text="@string/moreGames"
+                android:textColorLink="@color/black"
                 android:background="@drawable/bg_intro_button_more_games"
                 android:textColor="@color/black"
                 android:textSize="22sp" />

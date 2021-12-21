@@ -180,12 +180,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
+                    android:background="@drawable/bg_intro_button_more_games"
+                    android:fontFamily="@font/atlantis"
                     android:gravity="center"
                     android:paddingVertical="10dp"
-                    android:fontFamily="@font/atlantis"
                     android:text="@string/moreGames"
-                    android:background="@drawable/bg_intro_button_more_games"
                     android:textColor="@color/black"
+                    android:textColorLink="@color/black"
                     android:textSize="22sp" />
 
             </LinearLayout>

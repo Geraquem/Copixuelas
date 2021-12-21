@@ -11,6 +11,7 @@
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable-v24/ic_quepref_ok.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/avqp_logo.xml" value="0.3828125" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/avqp_top.xml" value="0.3828125" />
+        <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/bg_alert_dialog.xml" value="0.3828125" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/bg_avqp_card.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/bg_button.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/bg_button_avqp.xml" value="0.3769230769230769" />
@@ -18,6 +19,7 @@
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/bg_button_moneda.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/bg_button_quepreferirias.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/bg_continue_moneda.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/bg_intro_button_more_games.xml" value="0.3828125" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_button_avqp.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_button_maletin.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_button_moneda.xml" value="0.3769230769230769" />
@@ -42,9 +44,10 @@
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_replay.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_sketch1639386597922.xml" value="0.3769230769230769" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_sketch1639560105085.xml" value="0.3769230769230769" />
+        <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/ic_warning_signal.xml" value="0.3828125" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/drawable/test.xml" value="0.6175" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/layout-hdpi/activity_main.xml" value="0.23783783783783785" />
-        <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/layout-mdpi/activity_main.xml" value="0.21" />
+        <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/layout-mdpi/activity_main.xml" value="0.67" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/layout-xhdpi/activity_main.xml" value="0.21435185185185185" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/layout-xxxhdpi/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/layout/activity_main.xml" value="0.25" />
@@ -54,7 +57,7 @@
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/layout/fragment_instrucciones.xml" value="0.22" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/layout/fragment_maletin.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/layout/fragment_moneda.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/layout/fragment_quepreferirias.xml" value="0.22" />
+        <entry key="..\:/Users/Gershon/Desktop/projects/Copixuelas/app/src/main/res/layout/fragment_quepreferirias.xml" value="0.75" />
       </map>
     </option>
   </component>
