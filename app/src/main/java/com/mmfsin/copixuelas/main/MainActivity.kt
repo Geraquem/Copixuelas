@@ -93,7 +93,6 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
 
     private fun showIntersticial() {
         val rand = (0..6).random()
-        System.out.println("-------------------------------------------> " + rand)
         if (rand == 1 && mInterstitialAd != null) {
             mInterstitialAd!!.show(this)
             loadInterstitial(AdRequest.Builder().build())
