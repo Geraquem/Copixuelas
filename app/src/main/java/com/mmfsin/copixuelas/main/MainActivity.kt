@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
         MobileAds.initialize(this) {}
         val adRequest = AdRequest.Builder().build()
         adView.loadAd(adRequest)
-        loadInstersticial(AdRequest.Builder().build())
+        loadInterstitial(AdRequest.Builder().build())
 
         presenter.showDialog(this)
 
@@ -76,11 +76,11 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
             .commit()
     }
 
-    private fun loadInstersticial(adRequest: AdRequest) {
+    private fun loadInterstitial(adRequest: AdRequest) {
         InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
             override fun onAdFailedToLoad(adError: LoadAdError) {
                 mInterstitialAd = null
-                loadInstersticial(AdRequest.Builder().build())
+                loadInterstitial(AdRequest.Builder().build())
             }
 
             override fun onAdLoaded(interstitialAd: InterstitialAd) {
@@ -92,7 +92,7 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
     private fun showIntersticial() {
         if (mInterstitialAd != null) {
             mInterstitialAd!!.show(this)
-            loadInstersticial(AdRequest.Builder().build())
+            loadInterstitial(AdRequest.Builder().build())
         }
     }
 }
