@@ -34,8 +34,10 @@ class AVQPFragment(private val listener: IFragmentCommunication) : Fragment() {
 
         showInstructions()
 
+        textPhrase.text = getText(R.string.avqpStart)
+
         indexList = presenter.setUpArray()
-        info.setOnClickListener {showInstructions()}
+        info.setOnClickListener { showInstructions() }
         screen.setOnClickListener { showPhrase() }
     }
 

@@ -9,10 +9,11 @@
     <string name="contentDescription">contentDescription</string>
 
     <!-- MAIN -->
-    <string name="averquepasa">A VER QUE PASA</string>
+    <string name="averquepasa">A VER QUÉ PASA</string>
     <string name="moneda">EL JUEGO DE LA MONEDA</string>
     <string name="queprefieres">QUÉ PREFIERES</string>
     <string name="maletin">EL JUEGO DEL MALETÍN</string>
+    <string name="moreGames">¿MÁS JUEGOS?</string>
 
     <!-- INSTRUCCIONES -->
     <string name="howToPlay">¿Cómo se juega?</string>
@@ -21,6 +22,7 @@
     <string name="maletinInstructions">Una persona pone el dinero en un maletín <b>sin que nadie le vea.</b>\n\nDespués los cierra y le dice al resto dónde ha guardado el dinero <i>pudiendo mentir</i>.\n\nQuién acierte dónde está guardado el dinero, <b>gana</b>.</string>
 
     <!-- AVQP -->
+    <string name="avqpStart">PULSA LA PANTALLA PARA COMENZAR</string>
 
     <!-- MONEDA -->
     <string name="explication">PULSA <b>CONTINUAR</b></string>

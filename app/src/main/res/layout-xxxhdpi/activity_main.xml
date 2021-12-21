@@ -19,7 +19,7 @@
         android:text="@string/appNameBold"
         android:layout_marginHorizontal="15dp"
         android:textColor="@color/black"
-        android:textSize="50sp" />
+        android:textSize="45sp" />
 
     <ScrollView
         android:id="@+id/scroll"
@@ -154,7 +154,7 @@
                 android:id="@+id/button_maletin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="15dp"
                 android:background="@drawable/bg_intro_button_maletin"
                 android:gravity="center"
                 android:orientation="vertical"
@@ -175,14 +175,27 @@
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/moreGames"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:paddingVertical="10dp"
+                android:fontFamily="@font/atlantis"
+                android:text="@string/moreGames"
+                android:background="@drawable/bg_intro_button_more_games"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
+
         </LinearLayout>
 
     </ScrollView>
 
     <ImageView
         android:id="@+id/unicorn"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="5dp"
