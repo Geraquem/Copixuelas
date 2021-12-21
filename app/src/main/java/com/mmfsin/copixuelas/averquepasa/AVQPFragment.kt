@@ -32,8 +32,6 @@ class AVQPFragment(private val listener: IFragmentCommunication) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //loading.visible = VISIBLE
-
         showInstructions()
 
         indexList = presenter.setUpArray()

@@ -20,6 +20,8 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        presenter.showDialog(this)
+
         presenter.showIntroPhrase()
 
         button_avqp.setOnClickListener { openFragment(AVQPFragment(this)) }
