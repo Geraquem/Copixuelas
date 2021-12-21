@@ -3,7 +3,7 @@
     <string name="appNameBold"><b>COPIXUELAS</b></string>
 
     <string name="careful">CUIDADO</string>
-    <string name="dialogText">CONSUMIR ALCOHOL ES PERJUDICIAL PARA LA SALUD.\nUTILIZANDO ESTA APLICACIÓN CONFIRMA SER RESPONSABLE DE TODAS LAS REPERCUSIONES QUE EL USO DE COPIXULEAS PUDIESE GENERAR.\n\n<b>SI BEBES, NO CONDUZCAS.</b></string>
+    <string name="dialogText">CONSUMIR ALCOHOL ES PERJUDICIAL PARA LA SALUD.\nUTILIZANDO ESTA APLICACIÓN ASUME SER RESPONSABLE DE TODAS LAS REPERCUSIONES QUE EL USO DE COPIXULEAS PUDIESE GENERAR.\n\n<b>SI BEBES, NO CONDUZCAS.</b></string>
 
     <string name="understood">ENTENDIDO</string>
     <string name="contentDescription">contentDescription</string>

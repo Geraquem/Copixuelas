@@ -8,7 +8,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#32F40404"
+        android:background="@drawable/bg_alert_dialog"
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingVertical="8dp">
@@ -36,11 +36,6 @@
             android:src="@drawable/ic_warning_signal" />
 
     </LinearLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="@color/black" />
 
     <TextView
         android:layout_width="wrap_content"
