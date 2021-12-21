@@ -24,6 +24,7 @@
 
     <!-- AVQP -->
     <string name="avqpStart">PULSA LA PANTALLA PARA COMENZAR</string>
+    <string name="rule">REGLA</string>
 
     <!-- MONEDA -->
     <string name="explication">PULSA <b>CONTINUAR</b></string>

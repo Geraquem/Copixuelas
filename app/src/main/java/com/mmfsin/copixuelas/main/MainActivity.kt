@@ -41,10 +41,6 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
             .commit()
     }
 
-    override fun showIntroDialog() {
-
-    }
-
     override fun showIntroPhrase(phrase: String) {
         introPhrase.text = phrase
     }

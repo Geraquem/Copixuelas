@@ -1,10 +1,12 @@
 package com.mmfsin.copixuelas.averquepasa
 
 import android.content.Context
+import android.graphics.Typeface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.averquepasa.AVQPData.getPruebas
@@ -43,9 +45,21 @@ class AVQPFragment(private val listener: IFragmentCommunication) : Fragment() {
 
     private fun showPhrase() {
         numPhrase++
-        textPhrase.text = pruebas[indexList[numPhrase]]
+        val phrase = pruebas[indexList[numPhrase]]
+        checkIfIsRule(phrase)
+        textPhrase.text = phrase
         if (numPhrase == pruebas.size - 1) {
             numPhrase = -1
+        }
+    }
+
+    private fun checkIfIsRule(phrase: String){
+        if(phrase.contains(getString(R.string.rule))){
+            val typeFace: Typeface? = ResourcesCompat.getFont(mContext, R.font.emilys)
+            textPhrase.typeface = typeFace
+        }else{
+            val typeFace: Typeface? = ResourcesCompat.getFont(mContext, R.font.boogaloo)
+            textPhrase.typeface = typeFace
         }
     }
 
