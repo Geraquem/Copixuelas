@@ -96,7 +96,7 @@ object MonedaData {
         preguntas.add("¿Quién es el más c*chondo/a suele estar?")
         preguntas.add("¿Quién se ha podido llegar a m*sturbar en un sitio público?")
         preguntas.add("¿Quién cambia de personalidad para ligar?")
-        preguntas.add("¿Quién podría llegar a liarse con su mejor amig/a de borrachera?")
+        preguntas.add("¿Quién podría llegar a liarse con su mejor amigo/a de borrachera?")
         preguntas.add("¿Quién crees que llora viendo fotos de su ex?")
         preguntas.add("¿Quién es el que más presume de todo lo que hace?")
         preguntas.add("¿Quién tiene cara de ser homosexual reprimido?")

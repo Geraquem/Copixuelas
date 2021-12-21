@@ -138,7 +138,7 @@ object AVQPData {
         pruebas.add("Todos los tíos beben tantos tragos como centímetros le mida la berenjena ;)")
         pruebas.add("Habla durante 30 segundos sin parar.\nSi no erez capaz bebes.\n\nSaca el modo rollista que llevas dentro.")
         pruebas.add("Junta la punta de la lengua con la persona de tu derecha y subidlo a Instagram.\nLuego bebéis los dos.")
-        pruebas.add("Lee en alto UNA SOLA VEZ la siguiente frase y la persona de tu derecha tiene que repetirla sin mirar el móvil: 'Te quiero tanto que si salvarte significase la muerte y perderte la vida, prefiero morir y salvarte que vivir y perderte'\nSi falla, bebeis los dos.")
+        pruebas.add("Lee en alto UNA SOLA VEZ la siguiente frase y la persona de tu derecha tiene que repetirla sin mirar el móvil:\n'Te quiero tanto que si salvarte significase la muerte y perderte la vida, prefiero morir y salvarte que vivir y perderte'\n\nSi falla, bebeis los dos.")
         pruebas.add("Deja que te soplen el oído e intenta no moverte.\nSi te mueves bebes.")
         pruebas.add("REGLA\n\nCada ve que tú te acabes la copa, todo el mundo se toma un chupito.")
         pruebas.add("Cierra los ojos y que alguien te hable cambiando la voz.\nSi no sabes quién es, bebes.\nSi lo adivinas, chupito quien haya hablado.")
