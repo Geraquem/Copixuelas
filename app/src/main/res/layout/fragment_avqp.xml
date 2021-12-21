@@ -26,28 +26,22 @@
             android:contentDescription="@string/contentDescription"
             android:src="@drawable/avqp_logo" />
 
-        <ScrollView
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/textPhrase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_below="@+id/avqp"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
-            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="center"
             android:layout_marginStart="52dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="56dp"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="64dp">
-
-                <TextView
-                    android:id="@+id/textPhrase"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:fontFamily="@font/boogaloo "
-                    android:gravity="bottom|center|top"
-                    android:textColor="@color/white"
-                    android:textSize="25sp" />
-
-        </ScrollView>
+            android:layout_marginBottom="64dp"
+            android:fontFamily="@font/boogaloo "
+            android:gravity="bottom|center|top"
+            android:textColor="@color/white"
+            android:textSize="25sp" />
 
 </RelativeLayout>

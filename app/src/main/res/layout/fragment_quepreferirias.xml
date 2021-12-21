@@ -7,26 +7,10 @@
     android:focusable="true"
     android:layout_height="match_parent">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:id="@+id/phrase"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        android:fontFamily="@font/boogaloo"
-        android:gravity="center"
-        android:text="@string/queprefieresQuestion"
-        android:textColor="@color/black"
-        android:textSize="40sp" />
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/linearButtons"
-        android:layout_below="@+id/phrase"
         android:layout_marginBottom="10dp">
 
         <LinearLayout
@@ -37,6 +21,20 @@
             android:layout_marginBottom="50dp"
             android:gravity="center"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:id="@+id/phrase"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/boogaloo"
+                android:gravity="center"
+                android:text="@string/queprefieresQuestion"
+                android:textColor="@color/black"
+                android:textSize="40sp" />
 
             <FrameLayout
                 android:layout_width="match_parent"
