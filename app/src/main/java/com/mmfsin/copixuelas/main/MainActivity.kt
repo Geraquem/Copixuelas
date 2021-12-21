@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.text.method.LinkMovementMethod
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
-import com.google.android.gms.ads.MobileAds
+import com.google.android.gms.ads.*
+import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.averquepasa.AVQPFragment
 import com.mmfsin.copixuelas.instructions.IFragmentCommunication
@@ -19,7 +19,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
 
-    lateinit var mAdView: AdView
+    /******* BANNER (CRTL + SHIFT + R)
+     * REAL  ca-app-pub-4515698012373396/5500518392
+     * PRUEBAS ca-app-pub-3940256099942544/6300978111
+
+     ******* INSTERTICIAL
+     * REAL  ca-app-pub-4515698012373396/3619803975
+     * PRUEBAS ca-app-pub-3940256099942544/1033173712
+     */
+
+    private var mInterstitialAd: InterstitialAd? = null
 
     private val presenter by lazy { MainPresenter(this) }
 
@@ -28,15 +37,9 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
         setContentView(R.layout.activity_main)
 
         MobileAds.initialize(this) {}
-
-        /**
-         * REAL  ca-app-pub-4515698012373396/5500518392
-         * PRUEBAS ca-app-pub-3940256099942544/6300978111
-         */
-
-        adView.adUnitId = "ca-app-pub-3940256099942544/6300978111"
         val adRequest = AdRequest.Builder().build()
         adView.loadAd(adRequest)
+        loadInstersticial(AdRequest.Builder().build())
 
         presenter.showDialog(this)
 
@@ -51,10 +54,11 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
     }
 
     private fun openFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, fragment)
-            .addToBackStack(null)
-            .commit()
+        showIntersticial()
+//        supportFragmentManager.beginTransaction()
+//            .replace(R.id.fragmentContainer, fragment)
+//            .addToBackStack(null)
+//            .commit()
     }
 
     override fun showIntroPhrase(phrase: String) {
@@ -70,5 +74,25 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
             .replace(R.id.instructionContainer, InstructionsFragment(listener, id))
             .addToBackStack(null)
             .commit()
+    }
+
+    private fun loadInstersticial(adRequest: AdRequest) {
+        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
+            override fun onAdFailedToLoad(adError: LoadAdError) {
+                mInterstitialAd = null
+                loadInstersticial(AdRequest.Builder().build())
+            }
+
+            override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                mInterstitialAd = interstitialAd
+            }
+        })
+    }
+
+    private fun showIntersticial() {
+        if (mInterstitialAd != null) {
+            mInterstitialAd!!.show(this)
+            loadInstersticial(AdRequest.Builder().build())
+        }
     }
 }
