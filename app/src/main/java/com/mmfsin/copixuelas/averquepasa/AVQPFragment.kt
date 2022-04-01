@@ -10,7 +10,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.averquepasa.AVQPData.getPruebas
-import com.mmfsin.copixuelas.instructions.IFragmentCommunication
+import com.mmfsin.copixuelas.IFragmentCommunication
 import kotlinx.android.synthetic.main.fragment_avqp.*
 
 class AVQPFragment(private val listener: IFragmentCommunication) : Fragment() {

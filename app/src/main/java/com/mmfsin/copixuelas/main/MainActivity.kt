@@ -9,9 +9,10 @@ import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
+import com.mmfsin.copixuelas.IFragmentCommunication
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.averquepasa.AVQPFragment
-import com.mmfsin.copixuelas.instructions.IFragmentCommunication
+import com.mmfsin.copixuelas.aviso.WarningFragment
 import com.mmfsin.copixuelas.instructions.InstructionsFragment
 import com.mmfsin.copixuelas.maletin.MaletinFragment
 import com.mmfsin.copixuelas.moneda.MonedaFragment
@@ -43,7 +44,7 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
         adView.loadAd(adRequest)
         loadInterstitial(AdRequest.Builder().build())
 
-        presenter.showDialog(this)
+        openWarningFragment()
 
         presenter.showIntroPhrase()
 
@@ -53,6 +54,13 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
         button_maletin.setOnClickListener { openFragment(MaletinFragment(this)) }
         moreGames.movementMethod = LinkMovementMethod.getInstance()
         moreGames.removeLinksUnderline()
+    }
+
+    private fun openWarningFragment() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragmentContainer, WarningFragment(this))
+            .addToBackStack(null)
+            .commit()
     }
 
     private fun openFragment(fragment: Fragment) {

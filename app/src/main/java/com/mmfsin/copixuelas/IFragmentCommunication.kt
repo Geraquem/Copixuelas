@@ -1,4 +1,4 @@
-package com.mmfsin.copixuelas.instructions
+package com.mmfsin.copixuelas
 
 interface IFragmentCommunication {
     fun closeFragment()

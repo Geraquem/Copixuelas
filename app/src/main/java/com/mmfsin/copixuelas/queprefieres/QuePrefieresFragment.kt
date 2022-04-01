@@ -8,7 +8,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
-import com.mmfsin.copixuelas.instructions.IFragmentCommunication
 import com.mmfsin.copixuelas.queprefieres.QuePrefieresData.getDilemmas
 import com.mmfsin.copixuelas.removeLinksUnderline
 import kotlinx.android.synthetic.main.fragment_quepreferirias.*

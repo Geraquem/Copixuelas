@@ -1,47 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
     android:id="@+id/screen"
-    android:background="@drawable/bg_avqp"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_avqp">
 
-        <ImageView
-            android:id="@+id/info"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginEnd="15dp"
-            android:layout_marginBottom="5dp"
-            android:background="@drawable/ic_question_mark_white"
-            android:contentDescription="@string/contentDescription" />
+    <ImageView
+        android:id="@+id/info"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/ic_question_mark_white"
+        android:contentDescription="@string/contentDescription" />
 
-        <ImageView
-            android:id="@+id/avqp"
-            android:layout_width="match_parent"
-            android:layout_below="@+id/info"
-            android:layout_height="200dp"
-            android:layout_centerHorizontal="true"
-            android:contentDescription="@string/contentDescription"
-            android:src="@drawable/avqp_logo" />
+    <ImageView
+        android:id="@+id/avqp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@+id/info"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/contentDescription"
+        android:src="@drawable/avqp_logo" />
 
-        <TextView
-            android:id="@+id/textPhrase"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/avqp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_gravity="center"
-            android:layout_marginStart="52dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="56dp"
-            android:layout_marginBottom="64dp"
-            android:fontFamily="@font/boogaloo "
-            android:gravity="bottom|center|top"
-            android:textColor="@color/white"
-            android:textSize="25sp" />
+    <TextView
+        android:id="@+id/textPhrase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/avqp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="56dp"
+        android:layout_marginBottom="64dp"
+        android:autoSizeMaxTextSize="22sp"
+        android:autoSizeMinTextSize="16sp"
+        android:autoSizeStepGranularity="2sp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="@font/boogaloo "
+        android:gravity="bottom|center|top"
+        android:scrollY="@android:dimen/app_icon_size"
+        android:textAllCaps="true"
+        android:textColor="@color/white"/>
 
 </RelativeLayout>

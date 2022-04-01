@@ -4,7 +4,7 @@ import com.mmfsin.copixuelas.averquepasa.AVQPData.getPruebas
 
 class AVQPPresenter {
 
-    fun setUpArray(): ArrayList<Int> {
+    fun  setUpArray(): ArrayList<Int> {
         val list = getPruebas()
         val indexList = ArrayList<Int>()
         for (i in list.indices) {

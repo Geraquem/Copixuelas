@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
-import com.mmfsin.copixuelas.instructions.IFragmentCommunication
+import com.mmfsin.copixuelas.IFragmentCommunication
 import kotlinx.android.synthetic.main.fragment_maletin.*
 
 class MaletinFragment(private val listener: IFragmentCommunication) : Fragment(), MaletinView {
