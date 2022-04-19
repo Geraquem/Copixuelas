@@ -7,12 +7,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.mmfsin.copixuelas.IFragmentCommunication
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.queprefieres.QuePrefieresData.getDilemmas
 import com.mmfsin.copixuelas.removeLinksUnderline
 import kotlinx.android.synthetic.main.fragment_quepreferirias.*
 
-class QuePrefieresFragment : Fragment(),
+class QuePrefieresFragment(private val listener: IFragmentCommunication) : Fragment(),
     QuePrefieresView {
 
     private val presenter by lazy { QuePrefieresPresenter(this) }
@@ -45,6 +46,7 @@ class QuePrefieresFragment : Fragment(),
         nextButton.setOnClickListener {
             numDilemma++
             presenter.setUpText()
+            shouldShowAd()
         }
 
         otherApp.movementMethod = LinkMovementMethod.getInstance()
@@ -77,5 +79,11 @@ class QuePrefieresFragment : Fragment(),
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
+    }
+
+    private fun shouldShowAd(){
+        if(numDilemma % 20 == 0){
+            listener.showAd()
+        }
     }
 }

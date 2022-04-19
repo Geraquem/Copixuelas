@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.IFragmentCommunication
+import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.moneda.MonedaData.getPreguntas
 import kotlinx.android.synthetic.main.fragment_moneda.*
 
@@ -51,6 +51,7 @@ class MonedaFragment(private val listener: IFragmentCommunication) : Fragment(),
         againButton.setOnClickListener {
             againButton.visibility = View.GONE
             showQuestion()
+            shouldShowAd()
         }
     }
 
@@ -101,6 +102,12 @@ class MonedaFragment(private val listener: IFragmentCommunication) : Fragment(),
     private fun setQuestionIfTails(result: String) {
         if (result == "CRUZ") {
             theQuestionWas.text = mContext.getString(R.string.theQuestionWas, pregunta.text)
+        }
+    }
+
+    private fun shouldShowAd() {
+        if (numQuestion % 20 == 0) {
+            listener.showAd()
         }
     }
 }

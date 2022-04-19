@@ -50,7 +50,7 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
 
         button_avqp.setOnClickListener { openFragment(AVQPFragment(this)) }
         button_moneda.setOnClickListener { openFragment(MonedaFragment(this)) }
-        button_quepreferirias.setOnClickListener { openFragment(QuePrefieresFragment()) }
+        button_quepreferirias.setOnClickListener { openFragment(QuePrefieresFragment(this)) }
         button_maletin.setOnClickListener { openFragment(MaletinFragment(this)) }
         moreGames.movementMethod = LinkMovementMethod.getInstance()
         moreGames.removeLinksUnderline()
@@ -102,6 +102,13 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
     private fun showIntersticial() {
         val rand = (0..6).random()
         if (rand == 1 && mInterstitialAd != null) {
+            mInterstitialAd!!.show(this)
+            loadInterstitial(AdRequest.Builder().build())
+        }
+    }
+
+    override fun showAd() {
+        if (mInterstitialAd != null) {
             mInterstitialAd!!.show(this)
             loadInterstitial(AdRequest.Builder().build())
         }

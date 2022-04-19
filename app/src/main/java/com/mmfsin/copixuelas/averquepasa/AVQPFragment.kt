@@ -8,9 +8,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
+import com.mmfsin.copixuelas.IFragmentCommunication
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.averquepasa.AVQPData.getPruebas
-import com.mmfsin.copixuelas.IFragmentCommunication
 import kotlinx.android.synthetic.main.fragment_avqp.*
 
 class AVQPFragment(private val listener: IFragmentCommunication) : Fragment() {
@@ -51,6 +51,7 @@ class AVQPFragment(private val listener: IFragmentCommunication) : Fragment() {
         if (numPhrase == pruebas.size - 1) {
             numPhrase = -1
         }
+        shouldShowAd()
     }
 
     private fun checkIfIsRule(phrase: String){
@@ -68,7 +69,13 @@ class AVQPFragment(private val listener: IFragmentCommunication) : Fragment() {
         mContext = context
     }
 
-    private fun showInstructions(){
+    private fun showInstructions() {
         listener.showFragmentInstructions(listener, getString(R.string.averquepasa))
+    }
+
+    private fun shouldShowAd() {
+        if (numPhrase % 20 == 0) {
+            listener.showAd()
+        }
     }
 }
