@@ -74,7 +74,7 @@ class AVQPFragment(private val listener: IFragmentCommunication) : Fragment() {
     }
 
     private fun shouldShowAd() {
-        if (numPhrase % 20 == 0) {
+        if (numPhrase != 0 && numPhrase % 20 == 0) {
             listener.showAd()
         }
     }
