@@ -87,16 +87,20 @@ class MainActivity : AppCompatActivity(), MainView, IFragmentCommunication {
     }
 
     private fun loadInterstitial(adRequest: AdRequest) {
-        InterstitialAd.load(this,"ca-app-pub-3940256099942544/1033173712", adRequest, object : InterstitialAdLoadCallback() {
-            override fun onAdFailedToLoad(adError: LoadAdError) {
-                mInterstitialAd = null
-                loadInterstitial(AdRequest.Builder().build())
-            }
+        InterstitialAd.load(
+            this,
+            "ca-app-pub-4515698012373396/3619803975",
+            adRequest,
+            object : InterstitialAdLoadCallback() {
+                override fun onAdFailedToLoad(adError: LoadAdError) {
+                    mInterstitialAd = null
+                    loadInterstitial(AdRequest.Builder().build())
+                }
 
-            override fun onAdLoaded(interstitialAd: InterstitialAd) {
-                mInterstitialAd = interstitialAd
-            }
-        })
+                override fun onAdLoaded(interstitialAd: InterstitialAd) {
+                    mInterstitialAd = interstitialAd
+                }
+            })
     }
 
     private fun showIntersticial() {
