@@ -1,86 +1,84 @@
 package com.mmfsin.copixuelas.presentation.queprefieres
 
 import android.content.Context
-import android.os.Bundle
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
+import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.data.local.getQPrefieresData
-import com.mmfsin.copixuelas.domain.interfaces.ICommunication
+import com.mmfsin.copixuelas.databinding.FragmentQueprefieresBinding
+import com.mmfsin.copixuelas.presentation.MainActivity
+import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 
-class QuePrefieresFragment(private val listener: ICommunication) : Fragment(),
-    QuePrefieresView {
+class QuePrefieresFragment : BaseFragment<FragmentQueprefieresBinding>() {
 
-    private val presenter by lazy { QuePrefieresPresenter(this) }
+    private var data = listOf<String>()
+    private var position = 0
 
-    private val dilemmas = getQPrefieresData()
-    private var indexList = ArrayList<Int>()
-    private var numDilemma = 0
+    private lateinit var mContext: Context
 
-    lateinit var mContext: Context
+    override fun inflateView(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentQueprefieresBinding.inflate(inflater, container, false)
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_queprefieres, container, false)
+    override fun setUI() {
+        showInstructions()
+        setAdViewBackground()
+        data = getQPrefieresData().shuffled()
+        setData()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        indexList = presenter.setUpArray()
-        presenter.setUpText()
-
-//        prevButton.setOnClickListener {
-//            numDilemma--
-//            presenter.setUpText()
-//        }
-//
-//        nextButton.setOnClickListener {
-//            numDilemma++
-//            presenter.setUpText()
-//            shouldShowAd()
-//        }
-//
-//        otherApp.movementMethod = LinkMovementMethod.getInstance()
-//        otherApp.removeLinksUnderline()
+    private fun setData() {
+        val split = data[position].split("%OR%")
+        binding.apply {
+            tvTop.text = split[0]
+            tvBottom.text = split[1]
+        }
     }
 
-    override fun setUpText() {
-        presenter.checkButtons(numDilemma, dilemmas.size)
-        val dilemma = dilemmas[indexList[numDilemma]]
-//        top.text = dilemma.split("%OR%")[0]
-//        bottom.text = dilemma.split("%OR%")[1]
+    override fun setListeners() {
+        binding.apply {
+            btnInstructions.setOnClickListener { showInstructions() }
+            btnNext.setOnClickListener {
+                position++
+                if (position > data.size - 1) position = 0
+                setData()
+                shouldShowAd()
+            }
+            btnPrev.setOnClickListener {
+                position--
+                if(position < 0) position = 0
+                setData()
+                shouldShowAd()
+            }
+            tvVivirEsDecidir.setOnClickListener {
+                startActivity(
+                    Intent(
+                        Intent.ACTION_VIEW, Uri.parse(getString(R.string.qr_vivir_es_decidir_url))
+                    )
+                )
+            }
+        }
     }
 
-    override fun prevButton(isVisible: Boolean) {
-//        prevButton.visibility = if (isVisible) {
-//            View.VISIBLE
-//        } else {
-//            View.GONE
-//        }
+    private fun showInstructions() {
+        activity?.let {
+            InstructionsDialog(R.string.inst_qprefieres).show(it.supportFragmentManager, "")
+        }
     }
 
-    override fun nextButton(isVisible: Boolean) {
-//        nextButton.visibility = if (isVisible) {
-//            View.VISIBLE
-//        } else {
-//            View.GONE
-//        }
-    }
+    private fun setAdViewBackground() =
+        activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_qprefieres) }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
     }
 
-    private fun shouldShowAd(){
-        if(numDilemma % 20 == 0){
-            listener.showAd()
+    private fun shouldShowAd() {
+        if (position != 0 && position % 20 == 0) {
+            activity?.let { (it as MainActivity).showInterstitial() }
         }
     }
 }

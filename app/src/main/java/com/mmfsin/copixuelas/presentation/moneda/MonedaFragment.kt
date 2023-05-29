@@ -25,7 +25,7 @@ class MonedaFragment(private val listener: ICommunication) : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_moneda, container, false)
+        return inflater.inflate(R.layout.fragment_moneda_first, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

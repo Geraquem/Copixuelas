@@ -24,7 +24,7 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding>() {
     override fun setUI() {
         showInstructions()
         setAdViewBackground()
-        data = getAVQPData()
+        data = getAVQPData().shuffled()
         binding.tvPhrase.text = getText(R.string.avqp_start)
     }
 
