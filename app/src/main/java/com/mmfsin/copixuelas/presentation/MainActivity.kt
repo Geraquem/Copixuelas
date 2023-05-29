@@ -1,7 +1,6 @@
-package com.mmfsin.copixuelas.presentation.main
+package com.mmfsin.copixuelas.presentation
 
 import android.os.Bundle
-import android.text.method.LinkMovementMethod
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -11,18 +10,17 @@ import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.firebase.messaging.FirebaseMessaging
-import com.mmfsin.copixuelas.domain.interfaces.ICommunication
 import com.mmfsin.copixuelas.R
-import com.mmfsin.copixuelas.presentation.averquepasa.AVQPFragment
-import com.mmfsin.copixuelas.presentation.warning.WarningFragment
+import com.mmfsin.copixuelas.databinding.ActivityMainBinding
+import com.mmfsin.copixuelas.domain.interfaces.ICommunication
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsFragment
-import com.mmfsin.copixuelas.presentation.maletin.MaletinFragment
-import com.mmfsin.copixuelas.presentation.moneda.MonedaFragment
-import com.mmfsin.copixuelas.presentation.queprefieres.QuePrefieresFragment
-import com.mmfsin.copixuelas.utils.removeLinksUnderline
-import kotlinx.android.synthetic.main.activity_main.*
+import com.mmfsin.copixuelas.presentation.main.MainPresenter
+import com.mmfsin.copixuelas.presentation.main.MainView
+import com.mmfsin.copixuelas.presentation.warning.WarningDialog
 
 class MainActivity : AppCompatActivity(), MainView, ICommunication {
+
+    private lateinit var binding: ActivityMainBinding
 
     private var mInterstitialAd: InterstitialAd? = null
 
@@ -30,30 +28,37 @@ class MainActivity : AppCompatActivity(), MainView, ICommunication {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         MobileAds.initialize(this) {}
         val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
+        binding.adView.loadAd(adRequest)
         loadInterstitial(AdRequest.Builder().build())
 
 //        getFCMToken()
+
+        fun setAdViewBackGroundColor(color: Int){
+
+        }
+
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         openWarningFragment()
 
         presenter.showIntroPhrase()
 
-        button_avqp.setOnClickListener { openFragment(AVQPFragment(this)) }
-        button_moneda.setOnClickListener { openFragment(MonedaFragment(this)) }
-        button_quepreferirias.setOnClickListener { openFragment(QuePrefieresFragment(this)) }
-        button_maletin.setOnClickListener { openFragment(MaletinFragment(this)) }
-        moreGames.movementMethod = LinkMovementMethod.getInstance()
-        moreGames.removeLinksUnderline()
+//        button_avqp.setOnClickListener { openFragment(AVQPFragment(this)) }
+//        button_moneda.setOnClickListener { openFragment(MonedaFragment(this)) }
+//        button_quepreferirias.setOnClickListener { openFragment(QuePrefieresFragment(this)) }
+//        button_maletin.setOnClickListener { openFragment(MaletinFragment(this)) }
+//        moreGames.movementMethod = LinkMovementMethod.getInstance()
+//        moreGames.removeLinksUnderline()
     }
 
     private fun openWarningFragment() {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.fragmentContainer, WarningFragment(this)).addToBackStack(null).commit()
+        val dialog = WarningDialog()
+//        activity?.let { WarningFragment().show(this.supportFragmentManager, "") }
     }
 
     private fun openFragment(fragment: Fragment) {
@@ -63,7 +68,7 @@ class MainActivity : AppCompatActivity(), MainView, ICommunication {
     }
 
     override fun showIntroPhrase(phrase: String) {
-        introPhrase.text = phrase
+//        introPhrase.text = phrase
     }
 
     override fun closeFragment() {

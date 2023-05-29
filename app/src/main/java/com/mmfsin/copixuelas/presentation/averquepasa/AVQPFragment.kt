@@ -7,13 +7,49 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
-import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
+import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.data.local.getPruebas
+import com.mmfsin.copixuelas.databinding.FragmentAvqpBinding
 import com.mmfsin.copixuelas.domain.interfaces.ICommunication
-import kotlinx.android.synthetic.main.fragment_avqp.*
 
-class AVQPFragment(private val listener: ICommunication) : Fragment() {
+class AVQPFragment(private val listener: ICommunication) : BaseFragment<FragmentAvqpBinding>() {
+
+    override fun inflateView(
+        inflater: LayoutInflater, container: ViewGroup?
+    ) = FragmentAvqpBinding.inflate(inflater, container, false)
+
+    override fun setUI() {
+        binding.apply {
+
+        }
+    }
+
+    override fun setListeners() {
+        binding.apply {
+
+        }
+    }
+
+
+//    : BaseFragment<ActivityMainBinding>() {
+//
+//        override fun inflateView(
+//            inflater: LayoutInflater, container: ViewGroup?
+//        ) = ActivityMainBinding.inflate(inflater, container, false)
+//
+//        override fun setUI() {
+//            binding.apply {
+//
+//            }
+//        }
+//
+//        override fun setListeners() {
+//            binding.apply {
+//
+//            }
+//        }
+
 
     private val pruebas = getPruebas().shuffled()
     private var numPhrase = -1
@@ -30,18 +66,18 @@ class AVQPFragment(private val listener: ICommunication) : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         showInstructions()
-
-        textPhrase.text = getText(R.string.avqpStart)
-
-        info.setOnClickListener { showInstructions() }
-        screen.setOnClickListener { showPhrase() }
+//
+//        textPhrase.text = getText(R.string.avqpStart)
+//
+//        info.setOnClickListener { showInstructions() }
+//        screen.setOnClickListener { showPhrase() }
     }
 
     private fun showPhrase() {
         numPhrase++
         val phrase = pruebas[numPhrase]
         checkIfIsRule(phrase)
-        textPhrase.text = phrase
+//        textPhrase.text = phrase
         if (numPhrase == pruebas.size - 1) {
             numPhrase = -1
         }
@@ -51,10 +87,10 @@ class AVQPFragment(private val listener: ICommunication) : Fragment() {
     private fun checkIfIsRule(phrase: String) {
         if (phrase.contains(getString(R.string.rule))) {
             val typeFace: Typeface? = ResourcesCompat.getFont(mContext, R.font.emilys)
-            textPhrase.typeface = typeFace
+//            textPhrase.typeface = typeFace
         } else {
             val typeFace: Typeface? = ResourcesCompat.getFont(mContext, R.font.boogaloo)
-            textPhrase.typeface = typeFace
+//            textPhrase.typeface = typeFace
         }
     }
 

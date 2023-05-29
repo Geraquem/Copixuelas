@@ -5,9 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.mmfsin.copixuelas.domain.interfaces.ICommunication
 import com.mmfsin.copixuelas.R
-import kotlinx.android.synthetic.main.fragment_instrucciones.*
+import com.mmfsin.copixuelas.domain.interfaces.ICommunication
 
 class InstructionsFragment(private val listener: ICommunication, private val type: String) : Fragment() {
 
@@ -22,13 +21,13 @@ class InstructionsFragment(private val listener: ICommunication, private val typ
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        instructions.text = when (type) {
-            getString(R.string.averquepasa) -> getText(R.string.avqpInstructions)
-            getString(R.string.moneda) -> getText(R.string.monedaInstructions)
-            getString(R.string.maletin) -> getText(R.string.maletinInstructions)
-            else -> getString(R.string.app_name)
-        }
-
-        close.setOnClickListener { listener.closeFragment() }
+//        instructions.text = when (type) {
+//            getString(R.string.averquepasa) -> getText(R.string.avqpInstructions)
+//            getString(R.string.moneda) -> getText(R.string.monedaInstructions)
+//            getString(R.string.maletin) -> getText(R.string.maletinInstructions)
+//            else -> getString(R.string.app_name)
+//        }
+//
+//        close.setOnClickListener { listener.closeFragment() }
     }
 }

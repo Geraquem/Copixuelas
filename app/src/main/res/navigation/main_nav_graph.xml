@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/categoryFragment">
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.mmfsin.copixuelas.presentation.main.CategoryFragment"
+        android:label="CategoryFragment"
+        tools:layout="@layout/fragment_category">
+        <action
+            android:id="@+id/action_main_to_AVQP"
+            app:destination="@id/avqpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/avqpFragment"
+        android:name="com.mmfsin.copixuelas.presentation.averquepasa.AVQPFragment"
+        android:label="avqpFragment"
+        tools:layout="@layout/fragment_avqp" />
+
+</navigation>

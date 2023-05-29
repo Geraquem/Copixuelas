@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.domain.interfaces.ICommunication
-import kotlinx.android.synthetic.main.fragment_maletin.*
 
 class MaletinFragment(private val listener: ICommunication) : Fragment(), MaletinView {
 
@@ -36,89 +35,89 @@ class MaletinFragment(private val listener: ICommunication) : Fragment(), Maleti
 
         replayGame()
 
-        info.setOnClickListener { showInstructions() }
-
-        maletinOne.setOnClickListener {
-            maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_money)
-            if (phase == 1) {
-                doPhaseOne("ONE")
-            } else if (phase == 2) {
-                maletinTwo.isClickable = false
-                if (maletinOne.tag == money) {
-                    maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_money)
-                } else {
-                    maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_opened)
-                }
-                retryButton.visibility = View.VISIBLE
-            }
-        }
-
-        maletinTwo.setOnClickListener {
-            if (phase == 1) {
-                doPhaseOne("TWO")
-
-            } else if (phase == 2) {
-                maletinOne.isClickable = false
-                if (maletinTwo.tag == money) {
-                    maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_money)
-                } else {
-                    maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_opened)
-                }
-                retryButton.visibility = View.VISIBLE
-            }
-        }
-
-        phaseTwoButton.setOnClickListener() { doPhaseTwo() }
-
-        retryButton.setOnClickListener { replayGame() }
+//        info.setOnClickListener { showInstructions() }
+//
+//        maletinOne.setOnClickListener {
+//            maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_money)
+//            if (phase == 1) {
+//                doPhaseOne("ONE")
+//            } else if (phase == 2) {
+//                maletinTwo.isClickable = false
+//                if (maletinOne.tag == money) {
+//                    maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_money)
+//                } else {
+//                    maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_opened)
+//                }
+//                retryButton.visibility = View.VISIBLE
+//            }
+//        }
+//
+//        maletinTwo.setOnClickListener {
+//            if (phase == 1) {
+//                doPhaseOne("TWO")
+//
+//            } else if (phase == 2) {
+//                maletinOne.isClickable = false
+//                if (maletinTwo.tag == money) {
+//                    maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_money)
+//                } else {
+//                    maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_opened)
+//                }
+//                retryButton.visibility = View.VISIBLE
+//            }
+//        }
+//
+//        phaseTwoButton.setOnClickListener() { doPhaseTwo() }
+//
+//        retryButton.setOnClickListener { replayGame() }
     }
 
     private fun doPhaseOne(maletin: String) {
         when (maletin) {
-            "ONE" -> {
-                maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_money)
-                maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_opened)
-
-                maletinOne.tag = money
-                maletinTwo.tag = empty
-
-            }
-            "TWO" -> {
-                maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_opened)
-                maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_money)
-
-                maletinOne.tag = empty
-                maletinTwo.tag = money
-            }
+//            "ONE" -> {
+//                maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_money)
+//                maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_opened)
+//
+//                maletinOne.tag = money
+//                maletinTwo.tag = empty
+//
+//            }
+//            "TWO" -> {
+//                maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_opened)
+//                maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_money)
+//
+//                maletinOne.tag = empty
+//                maletinTwo.tag = money
+//            }
         }
-        phaseTwoButton.visibility = View.VISIBLE
+//        phaseTwoButton.visibility = View.VISIBLE
     }
 
     private fun doPhaseTwo() {
         phase = 2
-
-        phaseTwoButton.visibility = View.GONE
-        phrase.text = mContext.getText(R.string.whereIsTheMoney)
-
-        maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_closed)
-        maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_closed)
+//
+//        phaseTwoButton.visibility = View.GONE
+//        phrase.text = mContext.getText(R.string.whereIsTheMoney)
+//
+//        maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_closed)
+//        maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_closed)
     }
 
     override fun replayGame() {
         phase = 1
 
-        phrase.text = mContext.getText(R.string.hideTheMoney)
-
-        phaseTwoButton.visibility = View.GONE
-        retryButton.visibility = View.GONE
-
-        maletinOne.tag = empty
-        maletinTwo.tag = empty
-        maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_opened)
-        maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_opened)
-
-        maletinOne.isClickable = true
-        maletinTwo.isClickable = true
+//        phrase.text = mContext.getText(R.string.hideTheMoney)
+//
+//        phaseTwoButton.visibility = View.GONE
+//        retryButton.visibility = View.GONE
+//
+//        maletinOne.tag = empty
+//        maletinTwo.tag = empty
+//        maletinOne.setBackgroundResource(R.drawable.ic_maletin_one_opened)
+//        maletinTwo.setBackgroundResource(R.drawable.ic_maletin_two_opened)
+//
+//        maletinOne.isClickable = true
+//        maletinTwo.isClickable = true
     }
 
     private fun showInstructions() {

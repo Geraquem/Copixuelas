@@ -2,7 +2,6 @@ package com.mmfsin.copixuelas.presentation.queprefieres
 
 import android.content.Context
 import android.os.Bundle
-import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,8 +9,6 @@ import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.data.local.getDilemmas
 import com.mmfsin.copixuelas.domain.interfaces.ICommunication
-import com.mmfsin.copixuelas.utils.removeLinksUnderline
-import kotlinx.android.synthetic.main.fragment_quepreferirias.*
 
 class QuePrefieresFragment(private val listener: ICommunication) : Fragment(),
     QuePrefieresView {
@@ -38,42 +35,42 @@ class QuePrefieresFragment(private val listener: ICommunication) : Fragment(),
         indexList = presenter.setUpArray()
         presenter.setUpText()
 
-        prevButton.setOnClickListener {
-            numDilemma--
-            presenter.setUpText()
-        }
-
-        nextButton.setOnClickListener {
-            numDilemma++
-            presenter.setUpText()
-            shouldShowAd()
-        }
-
-        otherApp.movementMethod = LinkMovementMethod.getInstance()
-        otherApp.removeLinksUnderline()
+//        prevButton.setOnClickListener {
+//            numDilemma--
+//            presenter.setUpText()
+//        }
+//
+//        nextButton.setOnClickListener {
+//            numDilemma++
+//            presenter.setUpText()
+//            shouldShowAd()
+//        }
+//
+//        otherApp.movementMethod = LinkMovementMethod.getInstance()
+//        otherApp.removeLinksUnderline()
     }
 
     override fun setUpText() {
         presenter.checkButtons(numDilemma, dilemmas.size)
         val dilemma = dilemmas[indexList[numDilemma]]
-        top.text = dilemma.split("%OR%")[0]
-        bottom.text = dilemma.split("%OR%")[1]
+//        top.text = dilemma.split("%OR%")[0]
+//        bottom.text = dilemma.split("%OR%")[1]
     }
 
     override fun prevButton(isVisible: Boolean) {
-        prevButton.visibility = if (isVisible) {
-            View.VISIBLE
-        } else {
-            View.GONE
-        }
+//        prevButton.visibility = if (isVisible) {
+//            View.VISIBLE
+//        } else {
+//            View.GONE
+//        }
     }
 
     override fun nextButton(isVisible: Boolean) {
-        nextButton.visibility = if (isVisible) {
-            View.VISIBLE
-        } else {
-            View.GONE
-        }
+//        nextButton.visibility = if (isVisible) {
+//            View.VISIBLE
+//        } else {
+//            View.GONE
+//        }
     }
 
     override fun onAttach(context: Context) {
