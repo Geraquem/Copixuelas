@@ -37,7 +37,7 @@ class MainActivity : AppCompatActivity(), MainView, ICommunication {
         adView.loadAd(adRequest)
         loadInterstitial(AdRequest.Builder().build())
 
-        getFCMToken()
+//        getFCMToken()
 
         openWarningFragment()
 

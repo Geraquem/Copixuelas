@@ -4,73 +4,101 @@
     android:id="@+id/screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DC5A5A5A"
+    android:background="#E95A5A5A"
     android:clickable="true"
+    android:clipChildren="false"
+    android:clipToPadding="false"
     android:focusable="true">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:elevation="5dp"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_left"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="25dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/gl_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:background="@drawable/bg_alert_dialog_bottom"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="6dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/gl_left"
+        app:layout_constraintRight_toRightOf="@id/gl_right"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:background="@drawable/bg_alert_dialog_top"
+            android:fontFamily="@font/atlantis"
             android:gravity="center"
-            android:orientation="horizontal"
-            android:paddingVertical="8dp">
+            android:paddingVertical="24dp"
+            android:text="@string/careful"
+            android:textColor="@color/black"
+            android:textSize="32sp" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="@string/contentDescription"
-                android:src="@drawable/ic_warning_signal" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="24dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="10dp"
-                android:fontFamily="@font/atlantis"
-                android:text="@string/careful"
-                android:textColor="@color/black"
-                android:textSize="25sp" />
+                android:layout_marginBottom="16dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/warning_text_one"
+                android:textSize="16sp" />
 
-            <ImageView
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="@string/contentDescription"
-                android:src="@drawable/ic_warning_signal" />
+                android:layout_marginBottom="16dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/warning_text_two"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                android:fontFamily="sans-serif-condensed"
+                android:text="@string/warning_text_three"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/understood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/bg_button_warning"
+                android:elevation="6dp"
+                android:fontFamily="sans-serif-condensed-medium"
+                android:gravity="center"
+                android:paddingVertical="16dp"
+                android:text="@string/understood"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
 
         </LinearLayout>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="15dp"
-            android:fontFamily="sans-serif-condensed"
-            android:text="@string/dialogText"
-            android:textSize="16sp" />
-
-        <Button
-            android:id="@+id/understood"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="15dp"
-            android:layout_marginBottom="10dp"
-            android:backgroundTint="@color/gray"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:paddingVertical="12dp"
-            android:text="@string/understood" />
 
     </LinearLayout>
 
