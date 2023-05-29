@@ -1,6 +1,6 @@
 package com.mmfsin.copixuelas.data.local
 
-fun getDilemmas(): List<String> {
+fun getQPrefieresData(): List<String> {
     return mutableListOf<String>().apply {
         add("No poder usar ningún medio de transporte nunca más %OR% perder una pierna")
         add("Quedarte sin familia %OR% quedarte sin amigos")
@@ -142,5 +142,5 @@ fun getDilemmas(): List<String> {
         add("No tener nunca hijos %OR% tener quintillizos de golpe")
         add("Que nadie se acuerde de tu cumpleaños %OR% que nadie te regale nada por navidad")
         add("Pagar 50 centimos cada vez que mires el móvil %OR% pagar 20 centimos cada vez que quieras escuchar una canción")
-    }
+    }.shuffled()
 }

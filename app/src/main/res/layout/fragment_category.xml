@@ -98,7 +98,7 @@
                         android:layout_gravity="center"
                         android:fontFamily="@font/boogaloo"
                         android:gravity="center"
-                        android:text="@string/averquepasa"
+                        android:text="@string/category_avqp"
                         android:textColor="@color/white"
                         android:textSize="24sp" />
 
@@ -122,7 +122,7 @@
                         android:layout_marginHorizontal="12dp"
                         android:fontFamily="@font/easy_print"
                         android:gravity="center"
-                        android:text="@string/moneda"
+                        android:text="@string/category_moneda"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
 
@@ -160,7 +160,7 @@
                         android:layout_marginHorizontal="12dp"
                         android:fontFamily="@font/texas"
                         android:gravity="center"
-                        android:text="@string/queprefieres"
+                        android:text="@string/category_queprefieres"
                         android:textColor="@color/green"
                         android:textSize="24sp" />
 
@@ -193,7 +193,7 @@
                         android:layout_marginHorizontal="12dp"
                         android:fontFamily="@font/easy_print"
                         android:gravity="center"
-                        android:text="@string/maletin"
+                        android:text="@string/category_maletin"
                         android:textColor="@color/black"
                         android:textSize="24sp" />
 
@@ -216,7 +216,7 @@
                         android:layout_marginHorizontal="12dp"
                         android:fontFamily="@font/atlantis"
                         android:gravity="center"
-                        android:text="@string/moreGames"
+                        android:text="@string/category_more_games"
                         android:textColor="@color/white"
                         android:textSize="24sp" />
 

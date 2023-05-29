@@ -121,5 +121,5 @@ fun getPreguntas(): List<String> {
         add("¿Quién es más propenso a poner los cuernos?")
         add("¿A quién crees que le mide más de 20cm?")
         add("¿Quién tiene cara de ser muy malo/a en la cama?")
-    }
+    }.shuffled()
 }

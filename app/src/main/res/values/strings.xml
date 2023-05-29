@@ -17,39 +17,40 @@
     <string name="warning_text_btn">ENTENDIDO</string>
 
     <!-- Category -->
-    <string name="averquepasa">A VER QUÉ PASA</string>
-    <string name="moneda">JUEGO DE LA MONEDA</string>
-    <string name="queprefieres">QUÉ PREFIERES</string>
-    <string name="maletin">JUEGO DEL MALETÍN</string>
-    <string name="moreGames">¿MÁS JUEGOS?</string>
+    <string name="category_avqp">A VER QUÉ PASA</string>
+    <string name="category_moneda">JUEGO DE LA MONEDA</string>
+    <string name="category_queprefieres">QUÉ PREFIERES</string>
+    <string name="category_maletin">JUEGO DEL MALETÍN</string>
+    <string name="category_more_games">¿MÁS JUEGOS?</string>
     <string name="mmfsinURL">https://play.google.com/store/apps/developer?id=mmfsin</string>
 
     <!-- INSTRUCCIONES -->
-    <string name="howToPlay">¿Cómo se juega?</string>
-    <string name="avqpInstructions">Fácil y sencillo\n\nCada vez le toca a una persona.\nPulsa la pantalla para pasar de prueba.\n\nLas <b>REGLAS</b> se mantienen durante todo el juego.\n\nLas <b>RONDAS</b> duran hasta que te vuelva a llegar el móvil.</string>
-    <string name="monedaInstructions">Solo una persona lee la pregunta en silencio\n\nLuego pulsa el botón <b>CONTINUAR</b> y le da el móvil a quien encaje con la pregunta\n\nEsa persona gira la moneda y\n\nSi sale <b><i>CARA</i></b> nunca se sabrá cuál era la pregunta\n\nSi sale <b><i>CRUZ</i></b> se revela la pregunta</string>
-    <string name="maletinInstructions">Una persona pone el dinero en un maletín <b>sin que nadie le vea.</b>\n\nDespués los cierra y le dice al resto dónde ha guardado el dinero <i>pudiendo mentir</i>.\n\nQuién acierte dónde está guardado el dinero, <b>gana</b>.</string>
+    <string name="ints_title">¿Cómo se juega?</string>
+    <string name="inst_avqp">Fácil y sencillo.\n\nCada vez le toca a una persona.\nPulsa la pantalla para pasar de prueba.\n\nLas <b>REGLAS</b> se mantienen durante todo el juego.\n\nLas <b>RONDAS</b> duran hasta que te vuelva a llegar el móvil.</string>
+    <string name="inst_moneda">Solo una persona lee la pregunta en silencio\n\nLuego pulsa el botón <b>CONTINUAR</b> y le da el móvil a quien encaje con la pregunta\n\nEsa persona gira la moneda y\n\nSi sale <b><i>CARA</i></b> nunca se sabrá cuál era la pregunta\n\nSi sale <b><i>CRUZ</i></b> se revela la pregunta</string>
+    <string name="inst_qprefieres">aaaaaaaaaaaaaaaaaa</string>
+    <string name="inst_maletin">Una persona pone el dinero en un maletín <b>sin que nadie le vea.</b>\n\nDespués los cierra y le dice al resto dónde ha guardado el dinero <i>pudiendo mentir</i>.\n\nQuién acierte dónde está guardado el dinero, <b>gana</b>.</string>
+    <string name="inst_btn">¡Vale!</string>
 
     <!-- AVQP -->
-    <string name="avqpStart">PULSA LA PANTALLA PARA COMENZAR</string>
-    <string name="rule">REGLA</string>
+    <string name="avqp_start">PULSA LA PANTALLA PARA <b>COMENZAR</b></string>
 
     <!-- MONEDA -->
-    <string name="explication">PULSA <b>CONTINUAR</b></string>
-    <string name="explication2">LUEGO DALE EL MÓVIL A ESA PERSONA</string>
-    <string name="continueButton"><b>CONTINUAR</b></string>
-    <string name="theQuestionWas">La pregunta era\n %1$s</string>
-    <string name="cara">CARA</string>
-    <string name="cruz">CRUZ</string>
+    <string name="moneda_info_1">PULSA <b>CONTINUAR</b></string>
+    <string name="moneda_info_2">LUEGO DALE EL MÓVIL A ESA PERSONA</string>
+    <string name="moneda_continue"><b>CONTINUAR</b></string>
+    <string name="moneda_question_was">La pregunta era\n %1$s</string>
+    <string name="moneda_cara">CARA</string>
+    <string name="moneda_cruz">CRUZ</string>
 
     <!-- QUE PREFERIRIAS -->
-    <string name="or">O</string>
-    <string name="queprefieresQuestion">¿QUÉ PREFIERES?</string>
-    <string name="otherApp"><a href="https://play.google.com/store/apps/details?id=com.mmfsin.quepreferirias&amp;hl=es&amp;gl=US">Pulsa aqui para una versión mejorada de\nQUÉ PREFIERES</a></string>
+    <string name="qp_or">O</string>
+    <string name="qp_title">¿QUÉ PREFIERES?</string>
+    <string name="qr_vivir_es_decidir"><a href="https://play.google.com/store/apps/details?id=com.mmfsin.quepreferirias&amp;hl=es&amp;gl=US">Pulsa aqui para una versión mejorada de\nQUÉ PREFIERES</a></string>
 
     <!-- MALETIN -->
-    <string name="hideTheMoney"><b>¿DÓNDE QUIERES GUARDAR EL DINERO?</b></string>
-    <string name="whereIsTheMoney"><b>¿DÓNDE ESTÁ EL DINERO?</b></string>
-    <string name="close">CERRAR MALETINES</string>
+    <string name="maletin_title_1"><b>¿DÓNDE QUIERES GUARDAR EL DINERO?</b></string>
+    <string name="maletin_title_2"><b>¿DÓNDE ESTÁ EL DINERO?</b></string>
+    <string name="maletion_close">CERRAR MALETINES</string>
 
 </resources>

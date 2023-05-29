@@ -7,7 +7,7 @@ fun getIntroPhrase(): String {
         add("La copa con tres hielos es jugar en modo fácil")
         add("No bebas para mañana lo que puedes beber hoy")
         add("El amor puede esperar\nLa cerveza no, que se calienta")
-    }
-    val rand = (0 until list.size).random()
+    }.shuffled()
+    val rand = (list.indices).random()
     return list[rand]
 }

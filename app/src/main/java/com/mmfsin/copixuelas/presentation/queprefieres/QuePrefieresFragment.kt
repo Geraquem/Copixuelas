@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.mmfsin.copixuelas.R
-import com.mmfsin.copixuelas.data.local.getDilemmas
+import com.mmfsin.copixuelas.data.local.getQPrefieresData
 import com.mmfsin.copixuelas.domain.interfaces.ICommunication
 
 class QuePrefieresFragment(private val listener: ICommunication) : Fragment(),
@@ -15,7 +15,7 @@ class QuePrefieresFragment(private val listener: ICommunication) : Fragment(),
 
     private val presenter by lazy { QuePrefieresPresenter(this) }
 
-    private val dilemmas = getDilemmas()
+    private val dilemmas = getQPrefieresData()
     private var indexList = ArrayList<Int>()
     private var numDilemma = 0
 

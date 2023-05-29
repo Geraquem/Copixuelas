@@ -1,111 +1,66 @@
 package com.mmfsin.copixuelas.presentation.averquepasa
 
 import android.content.Context
-import android.graphics.Typeface
-import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
-import com.mmfsin.copixuelas.data.local.getPruebas
+import com.mmfsin.copixuelas.data.local.getAVQPData
 import com.mmfsin.copixuelas.databinding.FragmentAvqpBinding
-import com.mmfsin.copixuelas.domain.interfaces.ICommunication
+import com.mmfsin.copixuelas.presentation.MainActivity
+import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 
-class AVQPFragment(private val listener: ICommunication) : BaseFragment<FragmentAvqpBinding>() {
+class AVQPFragment : BaseFragment<FragmentAvqpBinding>() {
 
-    override fun inflateView(
-        inflater: LayoutInflater, container: ViewGroup?
-    ) = FragmentAvqpBinding.inflate(inflater, container, false)
+    private var data = listOf<String>()
+    private var position = -1
+
+    private lateinit var mContext: Context
+
+    override fun inflateView(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentAvqpBinding.inflate(inflater, container, false)
 
     override fun setUI() {
-        binding.apply {
-
-        }
+        showInstructions()
+        setAdViewBackground()
+        data = getAVQPData()
+        binding.tvPhrase.text = getText(R.string.avqp_start)
     }
 
     override fun setListeners() {
         binding.apply {
-
+            btnInstructions.setOnClickListener { showInstructions() }
+            tvPhrase.setOnClickListener {
+                position++
+                if (position > data.size - 1) position = 0
+                tvPhrase.text = data[position]
+                checkIfRule()
+                shouldShowAd()
+            }
         }
     }
 
-
-//    : BaseFragment<ActivityMainBinding>() {
-//
-//        override fun inflateView(
-//            inflater: LayoutInflater, container: ViewGroup?
-//        ) = ActivityMainBinding.inflate(inflater, container, false)
-//
-//        override fun setUI() {
-//            binding.apply {
-//
-//            }
-//        }
-//
-//        override fun setListeners() {
-//            binding.apply {
-//
-//            }
-//        }
-
-
-    private val pruebas = getPruebas().shuffled()
-    private var numPhrase = -1
-
-    private lateinit var mContext: Context
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_avqp, container, false)
+    private fun checkIfRule() {
+        val font = if (data[position].contains("REGLA")) R.font.texas else R.font.boogaloo
+        binding.tvPhrase.typeface = ResourcesCompat.getFont(mContext, font)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        showInstructions()
-//
-//        textPhrase.text = getText(R.string.avqpStart)
-//
-//        info.setOnClickListener { showInstructions() }
-//        screen.setOnClickListener { showPhrase() }
+    private fun showInstructions() {
+        activity?.let { InstructionsDialog(R.string.inst_avqp).show(it.supportFragmentManager, "") }
     }
 
-    private fun showPhrase() {
-        numPhrase++
-        val phrase = pruebas[numPhrase]
-        checkIfIsRule(phrase)
-//        textPhrase.text = phrase
-        if (numPhrase == pruebas.size - 1) {
-            numPhrase = -1
-        }
-        shouldShowAd()
-    }
-
-    private fun checkIfIsRule(phrase: String) {
-        if (phrase.contains(getString(R.string.rule))) {
-            val typeFace: Typeface? = ResourcesCompat.getFont(mContext, R.font.emilys)
-//            textPhrase.typeface = typeFace
-        } else {
-            val typeFace: Typeface? = ResourcesCompat.getFont(mContext, R.font.boogaloo)
-//            textPhrase.typeface = typeFace
-        }
-    }
+    private fun setAdViewBackground() =
+        activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_avqp) }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
     }
 
-    private fun showInstructions() {
-        listener.showFragmentInstructions(listener, getString(R.string.averquepasa))
-    }
-
     private fun shouldShowAd() {
-        if (numPhrase != 0 && numPhrase % 20 == 0) {
-            listener.showAd()
+        if (position != 0 && position % 20 == 0) {
+            activity?.let { (it as MainActivity).showInterstitial() }
         }
     }
 }

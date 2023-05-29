@@ -22,7 +22,7 @@
                 android:layout_height="40dp"
                 android:layout_gravity="end"
                 android:layout_margin="15dp"
-                android:background="@drawable/ic_question_mark_black"
+                android:background="@drawable/ic_question"
                 android:contentDescription="@string/content_description" />
 
             <TextView
@@ -67,7 +67,7 @@
                 android:fontFamily="@font/easy_print"
                 android:gravity="center"
                 android:paddingVertical="15dp"
-                android:text="@string/close"
+                android:text="@string/maletion_close"
                 android:textColor="@color/black"
                 android:textSize="22sp" />
 

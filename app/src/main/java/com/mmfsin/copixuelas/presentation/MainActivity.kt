@@ -53,19 +53,9 @@ class MainActivity : AppCompatActivity() {
             })
     }
 
-    private fun showInterstitial() {
-        val rand = (0..6).random()
-        if (rand == 1) {
-            mInterstitialAd?.let { ad ->
-                ad.show(this)
-                loadInterstitial(AdRequest.Builder().build())
-            }
-        }
-    }
-
-    fun showAd() {
-        if (mInterstitialAd != null) {
-            mInterstitialAd!!.show(this)
+    fun showInterstitial() {
+        mInterstitialAd?.let {
+            it.show(this)
             loadInterstitial(AdRequest.Builder().build())
         }
     }

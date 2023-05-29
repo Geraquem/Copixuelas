@@ -60,7 +60,7 @@ class MonedaFragment(private val listener: ICommunication) : Fragment() {
     }
 
     private fun showInstructions() {
-        listener.showFragmentInstructions(listener, getString(R.string.moneda))
+        listener.showFragmentInstructions(listener, getString(R.string.category_moneda))
     }
 
 //    override fun showQuestion() {

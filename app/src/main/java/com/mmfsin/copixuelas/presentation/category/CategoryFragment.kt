@@ -23,7 +23,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
     ) = FragmentCategoryBinding.inflate(inflater, container, false)
 
     override fun setUI() {
-        showWarningDialog()
+//        showWarningDialog()
         setAdViewBackground()
         binding.apply {
             tvPhrase.text = getIntroPhrase()

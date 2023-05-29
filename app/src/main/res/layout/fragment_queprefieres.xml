@@ -31,7 +31,7 @@
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/boogaloo"
                 android:gravity="center"
-                android:text="@string/queprefieresQuestion"
+                android:text="@string/qp_title"
                 android:textColor="@color/black"
                 android:textSize="40sp" />
 
@@ -76,7 +76,7 @@
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center"
-                    android:text="@string/or"
+                    android:text="@string/qp_or"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
 
@@ -157,7 +157,7 @@
         android:paddingVertical="5dp"
         android:textColor="@color/black"
         android:textColorLink="@color/black"
-        android:text="@string/otherApp"
+        android:text="@string/qr_vivir_es_decidir"
         android:textSize="15sp"
         app:drawableEndCompat="@drawable/ic_quepref_ko"
         app:drawableStartCompat="@drawable/ic_quepref_ok" />

@@ -121,7 +121,7 @@ class MaletinFragment(private val listener: ICommunication) : Fragment(), Maleti
     }
 
     private fun showInstructions() {
-        listener.showFragmentInstructions(listener, getString(R.string.maletin))
+        listener.showFragmentInstructions(listener, getString(R.string.category_maletin))
     }
 
     override fun onAttach(context: Context) {

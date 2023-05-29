@@ -1,61 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B87979">
-
-    <!--    <ImageView-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="match_parent"-->
-    <!--        android:background="@drawable/bg_avqp"-->
-    <!--        android:contentDescription="@string/contentDescription" />-->
+    android:background="@color/bg_avqp">
 
     <ImageView
-        android:id="@+id/info"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="5dp"
-        android:background="@drawable/ic_question_mark_white"
-        android:contentDescription="@string/content_description" />
+        android:id="@+id/btn_instructions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/ic_question"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/avqp"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="200dp"
-        android:layout_below="@+id/info"
-        android:layout_centerHorizontal="true"
         android:contentDescription="@string/content_description"
-        android:src="@drawable/avqp_logo" />
+        android:src="@drawable/avqp_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_instructions" />
 
     <TextView
-        android:id="@+id/textPhrase"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/avqp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="40dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="64dp"
-        android:autoSizeMaxTextSize="22sp"
-        android:autoSizeMinTextSize="16sp"
-        android:autoSizeStepGranularity="2sp"
-        android:autoSizeTextType="uniform"
+        android:id="@+id/tv_phrase"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="24dp"
+        android:lineSpacingExtra="4dp"
         android:background="@drawable/bg_tv_avqp"
-        android:fontFamily="@font/boogaloo "
+        android:elevation="6dp"
+        android:fontFamily="@font/boogaloo"
         android:gravity="bottom|center|top"
-        android:elevation="5dp"
-        android:paddingHorizontal="15dp"
-        android:paddingVertical="8dp"
-        android:scrollY="@android:dimen/app_icon_size"
+        android:padding="24dp"
         android:textAllCaps="true"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/avqp"
+        tools:text="Texto de prueba " />
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

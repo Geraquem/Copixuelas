@@ -8,13 +8,14 @@
 
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="soft_white">#ADFFFFFF</color>
     <color name="red">#E60F0F</color>
     <color name="green">#93C379</color>
     <color name="gray">#949594</color>
 
     <color name="bg_category">#4DDD93</color>
-    <color name="bg_avqp"></color>
-    <color name="bg_moneda"></color>
-    <color name="bg_qprefieres"></color>
-    <color name="bg_maletin"></color>
+    <color name="bg_avqp">#B87979</color>
+    <color name="bg_moneda">#B87979</color>
+    <color name="bg_qprefieres">#B87979</color>
+    <color name="bg_maletin">#B87979</color>
 </resources>

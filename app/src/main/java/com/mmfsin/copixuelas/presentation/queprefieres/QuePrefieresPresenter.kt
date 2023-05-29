@@ -1,11 +1,11 @@
 package com.mmfsin.copixuelas.presentation.queprefieres
 
-import com.mmfsin.copixuelas.data.local.getDilemmas
+import com.mmfsin.copixuelas.data.local.getQPrefieresData
 
 class QuePrefieresPresenter(var quePrefieresView: QuePrefieresView) {
 
     fun setUpArray(): ArrayList<Int> {
-        val list = getDilemmas()
+        val list = getQPrefieresData()
         val indexList = ArrayList<Int>()
         for (i in list.indices) {
             indexList.add(i)
