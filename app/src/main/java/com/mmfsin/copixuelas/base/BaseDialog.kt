@@ -58,6 +58,7 @@ abstract class BaseDialog<VB : ViewBinding> : DialogFragment() {
 
     override fun onStart() {
         super.onStart()
+        isCancelable = true
         setUI()
         setListeners()
     }

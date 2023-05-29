@@ -17,7 +17,7 @@
         android:layout_marginEnd="15dp"
         android:layout_marginBottom="15dp"
         android:background="@drawable/ic_question_mark_black"
-        android:contentDescription="@string/contentDescription" />
+        android:contentDescription="@string/content_description" />
 
     <LinearLayout
         android:id="@+id/linearPregunta"
@@ -97,7 +97,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="20dp"
                     android:background="@drawable/ic_moneda_neutro"
-                    android:contentDescription="@string/contentDescription" />
+                    android:contentDescription="@string/content_description" />
 
                 <TextView
                     android:id="@+id/coinResult"
@@ -128,7 +128,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="40dp"
                 android:background="@drawable/ic_replay"
-                android:contentDescription="@string/contentDescription"
+                android:contentDescription="@string/content_description"
                 android:visibility="gone" />
 
         </LinearLayout>

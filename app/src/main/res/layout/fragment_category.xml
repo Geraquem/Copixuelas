@@ -1,104 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#4DDD93"
+    android:background="@color/bg_category"
+    android:clipChildren="false"
+    android:clipToPadding="false"
     tools:context=".presentation.MainActivity">
 
     <ScrollView
         android:id="@+id/scroll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:fillViewport="true"
         android:overScrollMode="never"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:elevation="3dp"
+            android:clipChildren="false"
+            android:clipToPadding="false"
             android:orientation="vertical">
 
-            <TextView
-                android:id="@+id/appName"
-                android:layout_width="match_parent"
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_left"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="45dp"
-                android:layout_marginBottom="15dp"
-                android:fontFamily="@font/emilys"
-                android:gravity="center"
-                android:text="@string/appNameBold"
-                android:textColor="@color/black"
-                android:textSize="40sp" />
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="15dp"
-                android:layout_marginTop="15dp"
-                android:orientation="vertical">
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:orientation="vertical"
+                android:paddingTop="24dp"
+                android:paddingBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@id/unicorn"
+                app:layout_constraintLeft_toLeftOf="@id/gl_left"
+                app:layout_constraintRight_toRightOf="@id/gl_right"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/introPhrase"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginHorizontal="30dp"
-                    android:layout_marginBottom="15dp"
+                    android:layout_marginBottom="24dp"
+                    android:fontFamily="@font/emilys"
+                    android:gravity="center"
+                    android:text="@string/app_name"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                    android:textSize="40sp" />
+
+                <TextView
+                    android:id="@+id/tv_phrase"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center"
                     android:textAllCaps="true"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    tools:text="Frasecita graciosita" />
 
                 <LinearLayout
-                    android:id="@+id/button_avqp"
+                    android:id="@+id/btn_avqp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/bg_intro_button_avqp"
-                    android:elevation="5dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_button_avqp"
+                    android:elevation="12dp"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="15dp"
-                    android:paddingVertical="13dp">
+                    android:padding="14dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginHorizontal="8dp"
                         android:fontFamily="@font/boogaloo"
                         android:gravity="center"
                         android:text="@string/averquepasa"
                         android:textColor="@color/white"
-                        android:textSize="25sp" />
-
-                    <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:layout_gravity="center"
-                        android:background="@drawable/ic_button_avqp"
-                        android:contentDescription="@string/contentDescription" />
+                        android:textSize="24sp" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/button_moneda"
+                    android:id="@+id/btn_moneda"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/bg_intro_button_moneda"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_button_moneda"
+                    android:elevation="12dp"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="15dp"
-                    android:paddingVertical="13dp">
+                    android:padding="14dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginHorizontal="10dp"
+                        android:layout_marginHorizontal="12dp"
                         android:fontFamily="@font/easy_print"
                         android:gravity="center"
                         android:text="@string/moneda"
@@ -106,92 +127,100 @@
                         android:textSize="24sp" />
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
                         android:layout_gravity="center"
                         android:background="@drawable/ic_button_moneda"
-                        android:contentDescription="@string/contentDescription" />
+                        android:contentDescription="@string/content_description" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/button_quepreferirias"
+                    android:id="@+id/btn_qprefieres"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/bg_intro_button_quepreferirias"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_button_queprefieres"
+                    android:elevation="12dp"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:paddingHorizontal="15dp"
-                    android:paddingVertical="13dp">
+                    android:padding="14dp">
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
                         android:layout_gravity="center"
                         android:background="@drawable/ic_button_quepreferirias"
-                        android:contentDescription="@string/contentDescription" />
+                        android:contentDescription="@string/content_description" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginHorizontal="6dp"
-                        android:fontFamily="@font/emilys"
+                        android:layout_marginHorizontal="12dp"
+                        android:fontFamily="@font/texas"
                         android:gravity="center"
                         android:text="@string/queprefieres"
                         android:textColor="@color/green"
-                        android:textSize="22sp" />
+                        android:textSize="24sp" />
 
                     <ImageView
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
                         android:layout_gravity="center"
                         android:background="@drawable/ic_button_quepreferirias"
-                        android:contentDescription="@string/contentDescription"
+                        android:contentDescription="@string/content_description"
                         android:scaleX="-1"
                         android:scaleY="-1" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/button_maletin"
+                    android:id="@+id/btn_maletin"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/bg_intro_button_maletin"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/bg_button_maletin"
+                    android:elevation="12dp"
                     android:gravity="center"
-                    android:orientation="vertical"
-                    android:paddingHorizontal="15dp"
-                    android:paddingVertical="20dp">
+                    android:orientation="horizontal"
+                    android:padding="18dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginEnd="4dp"
-                        android:layout_marginBottom="3dp"
-                        android:fontFamily="@font/atlantis"
+                        android:layout_marginHorizontal="12dp"
+                        android:fontFamily="@font/easy_print"
                         android:gravity="center"
                         android:text="@string/maletin"
                         android:textColor="@color/black"
-                        android:textSize="22sp" />
+                        android:textSize="24sp" />
 
                 </LinearLayout>
 
-                <TextView
-                    android:id="@+id/moreGames"
+                <LinearLayout
+                    android:id="@+id/btn_more_games"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/bg_intro_button_more_games"
-                    android:fontFamily="@font/atlantis"
+                    android:background="@drawable/bg_button_avqp"
+                    android:elevation="12dp"
                     android:gravity="center"
-                    android:paddingVertical="10dp"
-                    android:text="@string/moreGames"
-                    android:textColor="@color/black"
-                    android:textColorLink="@color/black"
-                    android:textSize="22sp" />
+                    android:orientation="horizontal"
+                    android:padding="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginHorizontal="12dp"
+                        android:fontFamily="@font/atlantis"
+                        android:gravity="center"
+                        android:text="@string/moreGames"
+                        android:textColor="@color/white"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
 
             </LinearLayout>
 
@@ -200,22 +229,13 @@
                 android:layout_width="220dp"
                 android:layout_height="220dp"
                 android:layout_gravity="end"
-                android:layout_marginEnd="5dp"
                 android:background="@drawable/unircorn"
-                android:contentDescription="@string/contentDescription" />
+                android:contentDescription="@string/content_description"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
 
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/instructionContainer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

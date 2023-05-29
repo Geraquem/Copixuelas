@@ -1,105 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/screen"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#E95A5A5A"
+    android:layout_height="wrap_content"
     android:clickable="true"
     android:clipChildren="false"
     android:clipToPadding="false"
-    android:focusable="true">
+    android:background="@drawable/bg_alert_dialog_bottom"
+    android:focusable="true"
+    android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_left"
-        android:layout_width="wrap_content"
+    <TextView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.05" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/gl_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95" />
+        android:layout_gravity="center"
+        android:background="@drawable/bg_alert_dialog_top"
+        android:fontFamily="@font/atlantis"
+        android:gravity="center"
+        android:paddingVertical="24dp"
+        android:text="@string/warning_text_title"
+        android:textColor="@color/black"
+        android:textSize="32sp" />
 
     <LinearLayout
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_alert_dialog_bottom"
         android:clipChildren="false"
         android:clipToPadding="false"
-        android:elevation="6dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@id/gl_left"
-        app:layout_constraintRight_toRightOf="@id/gl_right"
-        app:layout_constraintTop_toTopOf="parent">
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="24dp">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/warning_text_one"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/warning_text_two"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="@string/warning_text_three"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/btn_accept"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/bg_alert_dialog_top"
-            android:fontFamily="@font/atlantis"
+            android:background="@drawable/bg_button_warning"
+            android:elevation="6dp"
+            android:fontFamily="sans-serif-condensed-medium"
             android:gravity="center"
-            android:paddingVertical="24dp"
-            android:text="@string/careful"
+            android:paddingVertical="16dp"
+            android:text="@string/warning_text_btn"
+            android:textAllCaps="true"
             android:textColor="@color/black"
-            android:textSize="32sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:clipChildren="false"
-            android:clipToPadding="false"
-            android:orientation="vertical"
-            android:paddingHorizontal="16dp"
-            android:paddingVertical="24dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="sans-serif-condensed"
-                android:text="@string/warning_text_one"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:fontFamily="sans-serif-condensed"
-                android:text="@string/warning_text_two"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="sans-serif-condensed"
-                android:text="@string/warning_text_three"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/btn_accept"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/bg_button_warning"
-                android:elevation="6dp"
-                android:fontFamily="sans-serif-condensed-medium"
-                android:gravity="center"
-                android:paddingVertical="16dp"
-                android:text="@string/understood"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
-
-        </LinearLayout>
+            android:textSize="16sp" />
 
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

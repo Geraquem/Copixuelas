@@ -8,7 +8,9 @@ class WarningDialog : BaseDialog<DialogWarningBinding>() {
 
     override fun inflateView(inflater: LayoutInflater) = DialogWarningBinding.inflate(inflater)
 
-    override fun setUI() {}
+    override fun setUI() {
+        isCancelable = false
+    }
 
     override fun setListeners() {
         binding.btnAccept.setOnClickListener { dismiss() }

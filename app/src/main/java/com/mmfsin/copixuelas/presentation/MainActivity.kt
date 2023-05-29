@@ -3,7 +3,7 @@ package com.mmfsin.copixuelas.presentation
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
+import androidx.core.content.ContextCompat
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
@@ -12,19 +12,12 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.firebase.messaging.FirebaseMessaging
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.databinding.ActivityMainBinding
-import com.mmfsin.copixuelas.domain.interfaces.ICommunication
-import com.mmfsin.copixuelas.presentation.instructions.InstructionsFragment
-import com.mmfsin.copixuelas.presentation.main.MainPresenter
-import com.mmfsin.copixuelas.presentation.main.MainView
-import com.mmfsin.copixuelas.presentation.warning.WarningDialog
 
-class MainActivity : AppCompatActivity(), MainView, ICommunication {
+class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
     private var mInterstitialAd: InterstitialAd? = null
-
-    private val presenter by lazy { MainPresenter(this) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,48 +30,10 @@ class MainActivity : AppCompatActivity(), MainView, ICommunication {
         loadInterstitial(AdRequest.Builder().build())
 
 //        getFCMToken()
-
-        fun setAdViewBackGroundColor(color: Int){
-
-        }
-
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        openWarningFragment()
-
-        presenter.showIntroPhrase()
-
-//        button_avqp.setOnClickListener { openFragment(AVQPFragment(this)) }
-//        button_moneda.setOnClickListener { openFragment(MonedaFragment(this)) }
-//        button_quepreferirias.setOnClickListener { openFragment(QuePrefieresFragment(this)) }
-//        button_maletin.setOnClickListener { openFragment(MaletinFragment(this)) }
-//        moreGames.movementMethod = LinkMovementMethod.getInstance()
-//        moreGames.removeLinksUnderline()
     }
 
-    private fun openWarningFragment() {
-        val dialog = WarningDialog()
-//        activity?.let { WarningFragment().show(this.supportFragmentManager, "") }
-    }
-
-    private fun openFragment(fragment: Fragment) {
-        showInterstitial()
-        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, fragment)
-            .addToBackStack(null).commit()
-    }
-
-    override fun showIntroPhrase(phrase: String) {
-//        introPhrase.text = phrase
-    }
-
-    override fun closeFragment() {
-        supportFragmentManager.popBackStack()
-    }
-
-    override fun showFragmentInstructions(listener: ICommunication, id: String) {
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.instructionContainer, InstructionsFragment(listener, id))
-            .addToBackStack(null).commit()
+    fun setAdViewBackGroundColor(color: Int) {
+        binding.frameBanner.setBackgroundColor(ContextCompat.getColor(this, color))
     }
 
     private fun loadInterstitial(adRequest: AdRequest) {
@@ -108,7 +63,7 @@ class MainActivity : AppCompatActivity(), MainView, ICommunication {
         }
     }
 
-    override fun showAd() {
+    fun showAd() {
         if (mInterstitialAd != null) {
             mInterstitialAd!!.show(this)
             loadInterstitial(AdRequest.Builder().build())

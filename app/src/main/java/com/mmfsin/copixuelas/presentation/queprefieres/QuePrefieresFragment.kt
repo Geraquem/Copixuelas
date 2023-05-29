@@ -26,7 +26,7 @@ class QuePrefieresFragment(private val listener: ICommunication) : Fragment(),
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_quepreferirias, container, false)
+        return inflater.inflate(R.layout.fragment_queprefieres, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

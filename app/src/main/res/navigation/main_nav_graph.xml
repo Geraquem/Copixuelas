@@ -7,12 +7,25 @@
 
     <fragment
         android:id="@+id/categoryFragment"
-        android:name="com.mmfsin.copixuelas.presentation.main.CategoryFragment"
+        android:name="com.mmfsin.copixuelas.presentation.category.CategoryFragment"
         android:label="CategoryFragment"
         tools:layout="@layout/fragment_category">
+
         <action
             android:id="@+id/action_main_to_AVQP"
             app:destination="@id/avqpFragment" />
+
+        <action
+            android:id="@+id/action_main_to_Moneda"
+            app:destination="@id/monedaFragment" />
+
+        <action
+            android:id="@+id/action_main_to_QPrefieres"
+            app:destination="@id/qprefieresFragment" />
+
+        <action
+            android:id="@+id/action_main_to_Maletin"
+            app:destination="@id/maletinFragment" />
     </fragment>
 
     <fragment
@@ -20,5 +33,23 @@
         android:name="com.mmfsin.copixuelas.presentation.averquepasa.AVQPFragment"
         android:label="avqpFragment"
         tools:layout="@layout/fragment_avqp" />
+
+    <fragment
+        android:id="@+id/monedaFragment"
+        android:name="com.mmfsin.copixuelas.presentation.moneda.MonedaFragment"
+        android:label="monedaFragment"
+        tools:layout="@layout/fragment_moneda" />
+
+    <fragment
+        android:id="@+id/qprefieresFragment"
+        android:name="com.mmfsin.copixuelas.presentation.queprefieres.QuePrefieresFragment"
+        android:label="qprefieresFragment"
+        tools:layout="@layout/fragment_queprefieres" />
+
+    <fragment
+        android:id="@+id/maletinFragment"
+        android:name="com.mmfsin.copixuelas.presentation.maletin.MaletinFragment"
+        android:label="maletinFragment"
+        tools:layout="@layout/fragment_maletin" />
 
 </navigation>
