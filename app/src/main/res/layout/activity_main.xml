@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DDD93"
-    tools:context=".main.MainActivity">
+    tools:context=".presentation.main.MainActivity">
 
     <FrameLayout
         android:id="@+id/frameAd"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-4515698012373396/5500518392" />
+            ads:adUnitId="@string/ads_banner" />
 
     </FrameLayout>
 
@@ -29,12 +29,14 @@
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/frameAd">
+        android:layout_below="@id/frameAd"
+        android:overScrollMode="never"
+        android:scrollbars="none">
 
         <LinearLayout
-            android:elevation="3dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:elevation="3dp"
             android:orientation="vertical">
 
             <TextView

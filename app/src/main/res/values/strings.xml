@@ -8,11 +8,18 @@
     <string name="dialogText">CONSUMIR ALCOHOL ES PERJUDICIAL PARA LA SALUD.\n\nUTILIZANDO ESTA APLICACIÓN ASUME SER RESPONSABLE DE TODAS LAS REPERCUSIONES QUE EL USO DE COPIXULEAS PUDIESE GENERAR.\n\n<b>SI BEBES, NO CONDUZCAS.</b></string>
     <string name="understood">ENTENDIDO</string>
 
+    <!-- ADS -->
+    <string name="ads_banner">ca-app-pub-3940256099942544/6300978111</string>
+<!--    <string name="ads_banner">ca-app-pub-4515698012373396/5500518392</string>-->
+    <string name="ads_intersticial">ca-app-pub-3940256099942544/1033173712</string>
+<!--    <string name="ads_intersticial">ca-app-pub-4515698012373396/3619803975</string>-->
+
     <!-- MAIN -->
     <string name="averquepasa">A VER QUÉ PASA</string>
     <string name="moneda">EL JUEGO DE LA MONEDA</string>
     <string name="queprefieres">QUÉ PREFIERES</string>
     <string name="maletin">EL JUEGO DEL MALETÍN</string>
+
 <!--    <string name="moreGames">¿MÁS JUEGOS?</string>-->
     <string name="moreGames"><a href="https://play.google.com/store/apps/collection/cluster?clp=igM3ChkKEzU1MTgyMTMzMDU5Mjk0Mzk3NzAQCBgDEhgKEmNvbS5tbWZzaW4ueW9udW5jYRABGAMYAQ%3D%3D:S:ANO1ljIt5Vc&amp;gsr=CjqKAzcKGQoTNTUxODIxMzMwNTkyOTQzOTc3MBAIGAMSGAoSY29tLm1tZnNpbi55b251bmNhEAEYAxgB:S:ANO1ljJHODs">¿MÁS JUEGOS?</a></string>
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4DDD93"
-    tools:context=".main.MainActivity">
+    tools:context=".presentation.main.MainActivity">
 
     <FrameLayout
         android:id="@+id/frameAd"
@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             ads:adSize="BANNER"
-            ads:adUnitId="ca-app-pub-4515698012373396/5500518392" />
+            ads:adUnitId="@string/ads_banner" />
 
     </FrameLayout>
 
@@ -29,9 +29,10 @@
         android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/unicorn"
         android:layout_below="@+id/frameAd"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:overScrollMode="never"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -206,19 +207,19 @@
                 android:textColorLink="@color/black"
                 android:textSize="22sp" />
 
+            <ImageView
+                android:id="@+id/unicorn"
+                android:layout_width="220dp"
+                android:layout_height="220dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="5dp"
+                android:background="@drawable/unircorn"
+                android:contentDescription="@string/contentDescription" />
+
         </LinearLayout>
 
     </ScrollView>
-
-    <ImageView
-        android:id="@+id/unicorn"
-        android:layout_width="220dp"
-        android:layout_height="220dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="5dp"
-        android:background="@drawable/unircorn"
-        android:contentDescription="@string/contentDescription" />
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainer"
