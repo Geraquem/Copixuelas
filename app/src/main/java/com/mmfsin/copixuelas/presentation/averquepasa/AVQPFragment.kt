@@ -42,7 +42,7 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding>() {
     }
 
     private fun checkIfRule() {
-        val font = if (data[position].contains("REGLA")) R.font.texas else R.font.boogaloo
+        val font = if (data[position].contains("REGLA")) R.font.cabin else R.font.boogaloo
         binding.tvPhrase.typeface = ResourcesCompat.getFont(mContext, font)
     }
 

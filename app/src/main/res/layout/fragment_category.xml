@@ -91,7 +91,7 @@
                     android:elevation="12dp"
                     android:gravity="center"
                     android:orientation="horizontal"
-                    android:padding="14dp">
+                    android:padding="18dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -101,7 +101,7 @@
                         android:gravity="center"
                         android:text="@string/category_avqp"
                         android:textColor="@color/white"
-                        android:textSize="24sp" />
+                        android:textSize="26sp" />
 
                 </LinearLayout>
 
@@ -192,7 +192,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_marginHorizontal="12dp"
-                        android:fontFamily="@font/easy_print"
+                        android:fontFamily="@font/cabin"
                         android:gravity="center"
                         android:text="@string/category_maletin"
                         android:textColor="@color/black"
