@@ -73,12 +73,12 @@
                     android:id="@+id/tv_phrase"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/soft_black"
                     android:layout_gravity="center"
                     android:layout_marginBottom="16dp"
                     android:fontFamily="sans-serif-condensed-medium"
                     android:gravity="center"
                     android:textAllCaps="true"
+                    android:textColor="@color/soft_black"
                     android:textSize="16sp"
                     tools:text="Frasecita graciosita" />
 
@@ -97,11 +97,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
+                        android:layout_marginHorizontal="12dp"
                         android:fontFamily="@font/boogaloo"
                         android:gravity="center"
                         android:text="@string/category_avqp"
                         android:textColor="@color/white"
                         android:textSize="26sp" />
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_gravity="center"
+                        android:background="@drawable/ic_crown"
+                        android:contentDescription="@string/content_description" />
 
                 </LinearLayout>
 
