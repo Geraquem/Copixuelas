@@ -27,7 +27,7 @@
     <!-- INSTRUCCIONES -->
     <string name="ints_title">¿Cómo se juega?</string>
     <string name="inst_avqp">Fácil y sencillo.\n\nCada vez le toca a una persona.\nPulsa la pantalla para pasar de prueba.\n\nLas <b>REGLAS</b> se mantienen durante todo el juego.\n\nLas <b>RONDAS</b> duran hasta que te vuelva a llegar el móvil.</string>
-    <string name="inst_moneda">Solo una persona lee la pregunta en silencio\n\nLuego pulsa el botón <b>CONTINUAR</b> y le da el móvil a quien encaje con la pregunta\n\nEsa persona gira la moneda y\n\nSi sale <b><i>CARA</i></b> nunca se sabrá cuál era la pregunta\n\nSi sale <b><i>CRUZ</i></b> se revela la pregunta</string>
+    <string name="inst_moneda">Solo una persona lee la pregunta en silencio\n\nLuego pulsa el botón <b>CONTINUAR</b> y le da el móvil a quien encaje con la pregunta\n\nEsa persona gira la moneda y\n\nSi sale <b>CARA</b> nunca se sabrá cuál era la pregunta\n\nSi sale <b>CRUZ</b> se revela la pregunta</string>
     <string name="inst_qprefieres">aaaaaaaaaaaaaaaaaa</string>
     <string name="inst_maletin">Una persona pone el dinero en un maletín <b>sin que nadie le vea.</b>\n\nDespués los cierra y le dice al resto dónde ha guardado el dinero <i>pudiendo mentir</i>.\n\nQuién acierte dónde está guardado el dinero, <b>gana</b>.</string>
     <string name="inst_btn">¡Vale!</string>
@@ -36,10 +36,11 @@
     <string name="avqp_start">PULSA LA PANTALLA PARA <b>COMENZAR</b></string>
 
     <!-- MONEDA -->
-    <string name="moneda_info_1">PULSA <b>CONTINUAR</b></string>
+    <string name="moneda_info_1">PRIMERO PULSA <b>CONTINUAR</b></string>
     <string name="moneda_info_2">LUEGO DALE EL MÓVIL A ESA PERSONA</string>
     <string name="moneda_continue"><b>CONTINUAR</b></string>
-    <string name="moneda_question_was">La pregunta era\n %1$s</string>
+    <string name="moneda_spin">Gira la moneda</string>
+    <string name="moneda_question_was">La pregunta era</string>
     <string name="moneda_cara">CARA</string>
     <string name="moneda_cruz">CRUZ</string>
 

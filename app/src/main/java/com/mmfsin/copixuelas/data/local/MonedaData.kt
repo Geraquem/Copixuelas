@@ -1,6 +1,6 @@
 package com.mmfsin.copixuelas.data.local
 
-fun getPreguntas(): List<String> {
+fun getMonedaData(): List<String> {
     return mutableListOf<String>().apply {
         add("¿Con quién grabarías un vídeo p*rno?")
         add("¿Quién crees que es el que más tonterías dice cuando habla?")
