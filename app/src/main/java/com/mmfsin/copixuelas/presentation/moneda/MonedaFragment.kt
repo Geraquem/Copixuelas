@@ -3,14 +3,12 @@ package com.mmfsin.copixuelas.presentation.moneda
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.core.content.res.ResourcesCompat
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.data.local.getAVQPData
 import com.mmfsin.copixuelas.databinding.FragmentMonedaBinding
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
-import com.mmfsin.copixuelas.presentation.moneda.first.MonedaFirstFragment
 
 class MonedaFragment : BaseFragment<FragmentMonedaBinding>() {
 
@@ -25,25 +23,25 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding>() {
         showInstructions()
         setAdViewBackground()
         data = getAVQPData().shuffled()
-        binding.tvPhrase.text = getText(R.string.avqp_start)
+//        binding.tvPhrase.text = getText(R.string.avqp_start)
     }
 
     override fun setListeners() {
         binding.apply {
-            btnInstructions.setOnClickListener { showInstructions() }
-            tvPhrase.setOnClickListener {
-                position++
-                if (position > data.size - 1) position = 0
-                tvPhrase.text = data[position]
-                checkIfRule()
-                shouldShowAd()
-            }
+//            btnInstructions.setOnClickListener { showInstructions() }
+//            tvPhrase.setOnClickListener {
+//                position++
+//                if (position > data.size - 1) position = 0
+//                tvPhrase.text = data[position]
+//                checkIfRule()
+//                shouldShowAd()
+//            }
         }
     }
 
     private fun checkIfRule() {
-        val font = if (data[position].contains("REGLA")) R.font.texas else R.font.boogaloo
-        binding.tvPhrase.typeface = ResourcesCompat.getFont(mContext, font)
+//        val font = if (data[position].contains("REGLA")) R.font.texas else R.font.boogaloo
+//        binding.tvPhrase.typeface = ResourcesCompat.getFont(mContext, font)
     }
 
     private fun showInstructions() {
@@ -59,8 +57,8 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding>() {
     }
 
     private fun shouldShowAd() {
-        if (position != 0 && position % 20 == 0) {
-            activity?.let { (it as MainActivity).showInterstitial() }
-        }
+//        if (position != 0 && position % 20 == 0) {
+//            activity?.let { (it as MainActivity).showInterstitial() }
+//        }
     }
 }

@@ -13,6 +13,7 @@
     <color name="green">#93C379</color>
     <color name="gray">#949594</color>
 
+    <color name="bg_logo">#b7eeb3</color>
     <color name="bg_category">#4DDD93</color>
     <color name="bg_avqp">#B87979</color>
     <color name="bg_moneda">#C56F6F</color>
