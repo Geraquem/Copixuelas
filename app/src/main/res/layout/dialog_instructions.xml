@@ -5,7 +5,6 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_instrucciones"
     android:clipChildren="false"
-
     android:clipToPadding="false"
     android:gravity="center"
     android:orientation="vertical"
@@ -28,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
         android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/soft_black"
         android:textSize="20sp"
         tools:text="@string/inst_avqp" />
 

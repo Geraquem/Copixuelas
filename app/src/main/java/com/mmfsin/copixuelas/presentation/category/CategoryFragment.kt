@@ -23,11 +23,9 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
     ) = FragmentCategoryBinding.inflate(inflater, container, false)
 
     override fun setUI() {
-//        showWarningDialog()
+        showWarningDialog()
         setAdViewBackground()
-        binding.apply {
-            tvPhrase.text = getIntroPhrase()
-        }
+        binding.tvPhrase.text = getIntroPhrase()
     }
 
     override fun setListeners() {
@@ -45,6 +43,11 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
     private fun setAdViewBackground() =
         activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_category) }
 
-    private fun showWarningDialog() =
-        activity?.let { WarningDialog().show(it.supportFragmentManager, "") }
+    private fun showWarningDialog() {
+        activity?.let {
+            val main = (it as MainActivity)
+            if (main.showWarningDialog) WarningDialog().show(it.supportFragmentManager, "")
+            main.showWarningDialog = false
+        }
+    }
 }

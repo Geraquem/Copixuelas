@@ -34,6 +34,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/soft_black"
             android:layout_marginBottom="16dp"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/warning_text_one"
@@ -43,6 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
+            android:textColor="@color/soft_black"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/warning_text_two"
             android:textSize="16sp" />

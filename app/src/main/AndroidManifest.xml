@@ -16,8 +16,8 @@
         <activity
             android:name=".presentation.MainActivity"
             android:exported="true"
-            android:theme="@style/SplashScreenTheme"
             android:screenOrientation="portrait"
+            android:theme="@style/SplashScreenTheme"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,13 +30,13 @@
             android:name=".data.notifications.NotificationHandler"
             android:exported="false">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
 
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@drawable/ic_button_moneda"/>
+            android:resource="@drawable/ic_notification" />
 
         <!--        <meta-data-->
         <!--            android:name="com.google.firebase.messaging.default_notification_color"-->

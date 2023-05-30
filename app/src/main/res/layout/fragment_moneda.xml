@@ -75,6 +75,7 @@
                 android:layout_marginBottom="2dp"
                 android:fontFamily="sans-serif-condensed"
                 android:text="@string/moneda_info_1"
+                android:textColor="@color/white"
                 android:textSize="18sp" />
 
             <TextView
@@ -83,6 +84,7 @@
                 android:layout_marginBottom="12dp"
                 android:fontFamily="sans-serif-condensed"
                 android:text="@string/moneda_info_2"
+                android:textColor="@color/white"
                 android:textSize="18sp" />
 
             <TextView
@@ -150,6 +152,7 @@
                 android:layout_marginBottom="12dp"
                 android:fontFamily="@font/boogaloo"
                 android:textAllCaps="true"
+                android:textColor="@color/white"
                 android:textSize="26sp"
                 tools:text="CARA" />
 
@@ -171,6 +174,7 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/boogaloo"
                 android:text="@string/moneda_question_was"
+                android:textColor="@color/white"
                 android:textAllCaps="true"
                 android:textSize="18sp" />
 

@@ -73,6 +73,7 @@
                     android:id="@+id/tv_phrase"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textColor="@color/soft_black"
                     android:layout_gravity="center"
                     android:layout_marginBottom="16dp"
                     android:fontFamily="sans-serif-condensed-medium"
