@@ -152,7 +152,7 @@
                 android:layout_marginBottom="12dp"
                 android:fontFamily="@font/boogaloo"
                 android:textAllCaps="true"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="26sp"
                 tools:text="CARA" />
 
@@ -174,8 +174,8 @@
                 android:layout_marginBottom="8dp"
                 android:fontFamily="@font/boogaloo"
                 android:text="@string/moneda_question_was"
-                android:textColor="@color/white"
                 android:textAllCaps="true"
+                android:textColor="@color/black"
                 android:textSize="18sp" />
 
             <TextView
