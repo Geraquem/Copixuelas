@@ -4,10 +4,10 @@
     <string name="content_description">image</string>
 
     <!-- ADS -->
-    <string name="ads_banner">ca-app-pub-3940256099942544/6300978111</string>
-    <!--    <string name="ads_banner">ca-app-pub-4515698012373396/5500518392</string>-->
-    <string name="ads_intersticial">ca-app-pub-3940256099942544/1033173712</string>
-    <!--    <string name="ads_intersticial">ca-app-pub-4515698012373396/3619803975</string>-->
+<!--    <string name="ads_banner">ca-app-pub-3940256099942544/6300978111</string>-->
+        <string name="ads_banner">ca-app-pub-4515698012373396/5500518392</string>
+<!--    <string name="ads_intersticial">ca-app-pub-3940256099942544/1033173712</string>-->
+        <string name="ads_intersticial">ca-app-pub-4515698012373396/3619803975</string>
 
     <!-- Warning Dialog -->
     <string name="warning_text_title">CUIDADO</string>
