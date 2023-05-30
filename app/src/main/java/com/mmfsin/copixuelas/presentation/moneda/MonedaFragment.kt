@@ -1,112 +1,66 @@
 package com.mmfsin.copixuelas.presentation.moneda
 
 import android.content.Context
-import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
+import androidx.core.content.res.ResourcesCompat
 import com.mmfsin.copixuelas.R
-import com.mmfsin.copixuelas.data.local.getPreguntas
-import com.mmfsin.copixuelas.domain.interfaces.ICommunication
+import com.mmfsin.copixuelas.base.BaseFragment
+import com.mmfsin.copixuelas.data.local.getAVQPData
+import com.mmfsin.copixuelas.databinding.FragmentMonedaBinding
+import com.mmfsin.copixuelas.presentation.MainActivity
+import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
+import com.mmfsin.copixuelas.presentation.moneda.first.MonedaFirstFragment
 
-class MonedaFragment(private val listener: ICommunication) : Fragment() {
+class MonedaFragment : BaseFragment<FragmentMonedaBinding>() {
 
-//    private val presenter by lazy { MonedaPresenter(this) }
+    private var data = listOf<String>()
 
-    private val preguntas = getPreguntas()
-    private var indexList = ArrayList<Int>()
-    private var numQuestion = 0
+    private lateinit var mContext: Context
 
-    lateinit var mContext: Context
+    override fun inflateView(inflater: LayoutInflater, container: ViewGroup?) =
+        FragmentMonedaBinding.inflate(inflater, container, false)
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_moneda_first, container, false)
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
+    override fun setUI() {
         showInstructions()
-//
-//        indexList = presenter.setUpArray()
-//
-//        showQuestion()
-//        presenter.showQuestion()
-
-//        info.setOnClickListener { showInstructions() }
-//
-//        continueButton.setOnClickListener {
-//            presenter.resetCoin()
-//            presenter.showCoin()
-//        }
-//
-//        coin.setOnClickListener { presenter.coinPressed() }
-//
-//        againButton.setOnClickListener {
-//            againButton.visibility = View.GONE
-//            showQuestion()
-//            shouldShowAd()
-//        }
+        setAdViewBackground()
+        data = getAVQPData().shuffled()
+        binding.tvPhrase.text = getText(R.string.avqp_start)
     }
+
+    override fun setListeners() {
+        binding.apply {
+            btnInstructions.setOnClickListener { showInstructions() }
+            tvPhrase.setOnClickListener {
+                position++
+                if (position > data.size - 1) position = 0
+                tvPhrase.text = data[position]
+                checkIfRule()
+                shouldShowAd()
+            }
+        }
+    }
+
+    private fun checkIfRule() {
+        val font = if (data[position].contains("REGLA")) R.font.texas else R.font.boogaloo
+        binding.tvPhrase.typeface = ResourcesCompat.getFont(mContext, font)
+    }
+
+    private fun showInstructions() {
+        activity?.let { InstructionsDialog(R.string.inst_avqp).show(it.supportFragmentManager, "") }
+    }
+
+    private fun setAdViewBackground() =
+        activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_avqp) }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
     }
 
-    private fun showInstructions() {
-        listener.showFragmentInstructions(listener, getString(R.string.category_moneda))
+    private fun shouldShowAd() {
+        if (position != 0 && position % 20 == 0) {
+            activity?.let { (it as MainActivity).showInterstitial() }
+        }
     }
-
-//    override fun showQuestion() {
-//        numQuestion++
-//        pregunta.text = preguntas[indexList[numQuestion]]
-//        if (numQuestion == preguntas.size - 1) {
-//            numQuestion = -1
-//        }
-//        linearPregunta.visibility = View.VISIBLE
-//        linearMoneda.visibility = View.GONE
-//    }
-//
-//    override fun showCoin() {
-//        linearPregunta.visibility = View.GONE
-//        linearMoneda.visibility = View.VISIBLE
-//    }
-//
-//    override fun resetCoin() {
-//        coin.isClickable = true
-//        coin.setImageResource(R.drawable.ic_moneda_neutro)
-//        coinResult.text = ""
-//        theQuestionWas.text = ""
-//    }
-//
-//    override fun flipCoin(imageId: Int, result: String) {
-//        coin.animate().apply {
-//            duration = 1000
-//            rotationYBy(1800f)
-//            coin.isClickable = false
-//        }.withEndAction {
-//            againButton.visibility = View.VISIBLE
-//            coin.setImageResource(imageId)
-//            coinResult.text = result
-//            setQuestionIfTails(result)
-//        }.start()
-//    }
-//
-//    private fun setQuestionIfTails(result: String) {
-//        if (result == "CRUZ") {
-//            theQuestionWas.text = mContext.getString(R.string.theQuestionWas, pregunta.text)
-//        }
-//    }
-
-//    private fun shouldShowAd() {
-//        if (numQuestion % 20 == 0) {
-//            listener.showAd()
-//        }
-//    }
 }

@@ -38,12 +38,12 @@
         android:id="@+id/monedaFirstFragment"
         android:name="com.mmfsin.copixuelas.presentation.moneda.MonedaFragment"
         android:label="monedaFirstFragment"
-        tools:layout="@layout/fragment_moneda_first" />
+        tools:layout="@layout/fragment_moneda" />
     <fragment
         android:id="@+id/monedaSecondFragment"
         android:name="com.mmfsin.copixuelas.presentation.moneda.MonedaFragment"
         android:label="monedaFragment"
-        tools:layout="@layout/fragment_moneda_first" />
+        tools:layout="@layout/fragment_moneda" />
 
     <fragment
         android:id="@+id/qprefieresFragment"
