@@ -54,5 +54,6 @@
     <string name="maletin_title_1"><b>¿DÓNDE QUIERES GUARDAR EL DINERO?</b></string>
     <string name="maletin_title_2"><b>¿DÓNDE ESTÁ EL DINERO?</b></string>
     <string name="maletion_close">CERRAR MALETINES</string>
+    <string name="maletin_again">EMPEZAR OTRA VEZ</string>
 
 </resources>

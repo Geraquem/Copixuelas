@@ -1,85 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_maletin"
-    android:clickable="true"
-    android:focusable="true">
+    android:background="@color/bg_maletin">
 
     <ScrollView
-        android:id="@+id/scroll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:clipChildren="false"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:paddingVertical="24dp">
 
-            <ImageView
-                android:id="@+id/info"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_gravity="end"
-                android:layout_margin="15dp"
-                android:background="@drawable/ic_question"
-                android:contentDescription="@string/content_description" />
-
-            <TextView
-                android:id="@+id/phrase"
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_left"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.05" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/gl_right"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.95" />
+
+            <ImageView
+                android:id="@+id/btn_instructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/ic_question"
+                app:layout_constraintRight_toRightOf="@id/gl_right"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginHorizontal="20dp"
-                android:layout_marginBottom="15dp"
+                android:layout_marginVertical="24dp"
+                android:layout_marginBottom="24dp"
                 android:fontFamily="@font/boogaloo"
                 android:gravity="center"
                 android:textColor="@color/black"
-                android:textSize="25sp" />
+                android:textSize="24sp"
+                app:layout_constraintLeft_toLeftOf="@id/gl_left"
+                app:layout_constraintRight_toRightOf="@id/gl_right"
+                app:layout_constraintTop_toBottomOf="@id/btn_instructions"
+                tools:text="@string/maletin_title_1" />
 
-            <ImageView
-                android:id="@+id/maletinOne"
-                android:layout_width="220dp"
-                android:layout_height="220dp"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:layout_marginHorizontal="30dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/ic_maletin_one_opened"
-                android:contentDescription="@string/content_description" />
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="24dp"
+                android:gravity="top"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/btn_continue"
+                app:layout_constraintLeft_toLeftOf="@id/gl_left"
+                app:layout_constraintRight_toRightOf="@id/gl_right"
+                app:layout_constraintTop_toBottomOf="@id/tv_title">
 
-            <ImageView
-                android:id="@+id/maletinTwo"
-                android:layout_width="220dp"
-                android:layout_height="220dp"
-                android:layout_gravity="center"
-                android:layout_marginBottom="20dp"
-                android:background="@drawable/ic_maletin_two_opened"
-                android:contentDescription="@string/content_description" />
+                <ImageView
+                    android:id="@+id/maletin_top"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="24dp"
+                    android:contentDescription="@string/content_description"
+                    android:src="@drawable/ic_maletin_one_opened" />
+
+                <ImageView
+                    android:id="@+id/maletin_bottom"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:contentDescription="@string/content_description"
+                    android:src="@drawable/ic_maletin_two_opened" />
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/phaseTwoButton"
-                android:layout_width="match_parent"
+                android:id="@+id/btn_continue"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="30dp"
                 android:background="@drawable/bg_maletin_phase_two"
                 android:elevation="5dp"
                 android:fontFamily="@font/easy_print"
                 android:gravity="center"
-                android:paddingVertical="15dp"
+                android:paddingVertical="16dp"
                 android:text="@string/maletion_close"
                 android:textColor="@color/black"
-                android:textSize="22sp" />
+                android:textSize="22sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="@id/gl_left"
+                app:layout_constraintRight_toRightOf="@id/gl_right" />
 
-            <ImageView
-                android:id="@+id/retryButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@drawable/ic_replay"
-                android:contentDescription="@string/content_description" />
-        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
