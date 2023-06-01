@@ -66,8 +66,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun getFCMToken() {
         FirebaseMessaging.getInstance().token.addOnCompleteListener {
-            if (it.isSuccessful) Log.i("FCM", it.result)
-            else Log.i("FCM", "no token")
+            if (it.isSuccessful) Log.i("FCM token: ", it.result)
+            else Log.i("FCM token: ", "no token")
         }
     }
 }
