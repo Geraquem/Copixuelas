@@ -15,7 +15,9 @@ import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Co
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMoneda
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToQPrefieres
 import com.mmfsin.copixuelas.presentation.warning.WarningDialog
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
 
     override fun inflateView(
@@ -28,20 +30,33 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
         binding.tvPhrase.text = getIntroPhrase()
     }
 
+    private fun setAdViewBackground() =
+        (activity as MainActivity).setAdViewBackGroundColor(R.color.bg_category)
+
     override fun setListeners() {
         binding.apply {
-            btnAvqp.setOnClickListener { findNavController().navigate(actionMainToAVQP()) }
-            btnMoneda.setOnClickListener { findNavController().navigate(actionMainToMoneda()) }
-            btnQprefieres.setOnClickListener { findNavController().navigate(actionMainToQPrefieres()) }
-            btnMaletin.setOnClickListener { findNavController().navigate(actionMainToMaletin()) }
-            btnMoreGames.setOnClickListener {
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.mmfsinURL))))
-            }
+//            btnAvqp.setOnClickListener { findNavController().navigate(actionMainToAVQP()) }
+//            btnMoneda.setOnClickListener { findNavController().navigate(actionMainToMoneda()) }
+//            btnQprefieres.setOnClickListener { findNavController().navigate(actionMainToQPrefieres()) }
+//            btnMaletin.setOnClickListener { findNavController().navigate(actionMainToMaletin()) }
+//            btnMoreGames.setOnClickListener {
+//                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.mmfsinURL))))
+//            }
         }
     }
 
-    private fun setAdViewBackground() =
-        activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_category) }
+    /*
+
+    private fun setUpCards(cards: List<Card>) {
+        binding.rvCards.apply {
+            (this.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+            layoutManager = StaggeredGridLayoutManager(2, VERTICAL)
+            cardsAdapter = CardsAdapter(cards, this@CardsFragment)
+            adapter = cardsAdapter
+        }
+        activity?.showFragmentDialog(WaitSelectDialog { actionOnCard(selectedCardId) })
+    }
+     */
 
     private fun showWarningDialog() {
         activity?.let {

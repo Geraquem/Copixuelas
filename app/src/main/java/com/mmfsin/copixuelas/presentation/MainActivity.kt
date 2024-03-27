@@ -12,7 +12,9 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
 import com.google.firebase.messaging.FirebaseMessaging
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.databinding.ActivityMainBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
