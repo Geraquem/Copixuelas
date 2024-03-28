@@ -22,7 +22,7 @@ fun getAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                second = "Tápate los ojos\n\nEl resto elige a alguien. Si no le reconoces tocándole la cara, bebes",
+                second = "Tápate los ojos\n\nEl resto elige a alguien.\nSi no le reconoces tocándole la cara, bebes",
             )
         )
         add(
@@ -212,7 +212,7 @@ fun getAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Cada vez que alguien grite ¡CUIDADO! todo el mundo se tiene que tirar al suelo\n\nel último bebe",
+                second = "Cada vez que alguien grite\n¡CUIDADO!\ntodo el mundo se tiene que tirar al suelo\n\nEl último bebe",
             )
         )
         add(
@@ -517,7 +517,7 @@ fun getAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                second = "Cómele la boca salvajemente a la segunda persona de tu izquierda\n\nSi alguno de los dos no quiere bebe",
+                second = "Cómele la boca salvajemente a la segunda persona de tu izquierda\n\nSi alguno de los dos no quiere, bebe",
             )
         )
         add(
@@ -561,7 +561,7 @@ fun getAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                second = "Coge el móvil de la persona de tu izquierda y métete en los archivos compartidos de la conversación que tú quieras\n\nSi no te da el móvil se toma 2 chupitos",
+                second = "Coge el móvil de la persona de tu izquierda y métete en la galería\n\nSi no te da el móvil se toma 2 chupitos",
                 third = "En busca de los nudes perdidos"
             )
         )
@@ -593,7 +593,7 @@ fun getAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Puedes decirle 'Te quiero' a alguien Cada vez que lo hagas esa persona bebe",
+                second = "Puedes decirle\n'Te quiero'\na alguien\n\nCada vez que lo hagas esa persona bebe",
                 third = "<3"
             )
         )
