@@ -84,7 +84,7 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
                 if (position > data.size - 1) position = 0
 
                 llRule.animateY(1000f, 200)
-                countDown(500) {
+                countDown(300) {
                     llRule.animateY(0f, 200)
                     setTexts()
                 }
@@ -97,7 +97,7 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
         viewModel.event.observe(this) { event ->
             when (event) {
                 is AVQPEvent.GetData -> {
-                    data = event.data.take(3)
+                    data = event.data.shuffled()
                     binding.loading.root.visibility = View.GONE
                 }
 

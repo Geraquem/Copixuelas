@@ -11,5 +11,5 @@ class GetAvqpDataUseCase @Inject constructor(
     @ApplicationContext val context: Context,
 ) : BaseUseCaseNoParams<List<AvqpData>>() {
 
-    override suspend fun execute(): List<AvqpData> = getAVQPData()//.shuffled()
+    override suspend fun execute(): List<AvqpData> = getAVQPData().shuffled()
 }

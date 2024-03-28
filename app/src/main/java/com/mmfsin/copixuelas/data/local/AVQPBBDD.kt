@@ -224,7 +224,8 @@ fun getAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Cada vez que alguien diga un taco o insulte, bebe\n\nVamos a llevarnos bien ¿vale?",
+                second = "Cada vez que alguien diga un taco o insulte, bebe",
+                third = "Vamos a llevarnos bien ¿vale?"
             )
         )
         add(
@@ -243,7 +244,7 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "Quien pida un hielo en vez de cogerlo por cuenta propia bebe",
-                third = "por vago"
+                third = "Por vago"
             )
         )
         add(
@@ -260,7 +261,7 @@ fun getAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 second = "Muérdele la lengua al primer chico que tengas a tu derecha\n\nSi alguno de los dos se raja, un chupito cada uno",
-                third = "Grrrrrr"
+                third = "GRRR"
             )
         )
         add(

@@ -61,28 +61,32 @@
             android:gravity="center"
             android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="24sp"
+            android:textSize="26sp"
             tools:text="Hora de ahogar las penas" />
 
         <TextView
             android:id="@+id/tv_text_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:lineSpacingExtra="4dp"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="24sp"
+            android:textStyle="bold"
             tools:text="Dale un trago a la copa de todo el mundo" />
 
         <TextView
             android:id="@+id/tv_text_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="32dp"
             android:alpha="0.65"
+            android:fontFamily="sans-serif-condensed"
             android:gravity="center"
+            android:textAllCaps="true"
             android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textSize="16sp"
             tools:text="A ver si pegas el estirón" />
 
     </LinearLayout>
