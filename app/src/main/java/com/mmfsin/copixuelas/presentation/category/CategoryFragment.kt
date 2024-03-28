@@ -1,24 +1,20 @@
 package com.mmfsin.copixuelas.presentation.category
 
-import android.content.Intent
-import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
+import androidx.fragment.app.viewModels
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.data.local.getIntroPhrase
 import com.mmfsin.copixuelas.databinding.FragmentCategoryBinding
 import com.mmfsin.copixuelas.presentation.MainActivity
-import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToAVQP
-import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMaletin
-import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMoneda
-import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToQPrefieres
 import com.mmfsin.copixuelas.presentation.warning.WarningDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
+class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel>() {
+
+    override val viewModel: CategoryViewModel by viewModels()
 
     override fun inflateView(
         inflater: LayoutInflater, container: ViewGroup?
@@ -42,6 +38,17 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding>() {
 //            btnMoreGames.setOnClickListener {
 //                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.mmfsinURL))))
 //            }
+        }
+    }
+
+    override fun observe() {
+        viewModel.event.observe(this) { event ->
+            when (event) {
+                is CategoryEvent.GetCategories -> {
+                }
+
+                is CategoryEvent.SWW -> {}
+            }
         }
     }
 
