@@ -6,14 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
-import androidx.core.content.res.ResourcesCompat
-import androidx.core.content.res.ResourcesCompat.getColor
 import androidx.core.content.res.ResourcesCompat.getFont
+import androidx.core.view.isVisible
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragmentNoVM
 import com.mmfsin.copixuelas.data.local.getAVQPData
 import com.mmfsin.copixuelas.databinding.FragmentAvqpBinding
-import com.mmfsin.copixuelas.domain.models.CategoryType.*
+import com.mmfsin.copixuelas.domain.models.CategoryType.AVQP
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 
@@ -54,16 +53,44 @@ class AVQPFragment : BaseFragmentNoVM<FragmentAvqpBinding>() {
         }
     }
 
+    private fun showInstructions() =
+        activity?.let { InstructionsDialog(AVQP).show(it.supportFragmentManager, "") }
+
+    private fun setAdViewBackground() =
+        activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_avqp) }
+
     override fun setListeners() {
         binding.apply {
-//            btnInstructions.setOnClickListener { showInstructions() }
-//            tvPhrase.setOnClickListener {
-//                position++
-//                if (position > data.size - 1) position = 0
-//                tvPhrase.text = data[position]
+            llRule.setOnClickListener {
+                hideTexts()
+                position++
+                if (position > data.size - 1) position = 0
+                llRule.animate().apply {
+                    duration = 200
+                    rotationYBy(180f)
+                }.withEndAction {
+                    setTexts()
+                    tvTextOne.text = data[position]
+
+//                    tvTextOne.visibility = View.VISIBLE
+                }.start()
+                tvTextOne.scaleX = if (position % 2 == 0) -1f else 1f
 //                checkIfRule()
 //                shouldShowAd()
-//            }
+            }
+        }
+    }
+
+    private fun hideTexts() {
+        binding.apply {
+            tvTextOne.isVisible = false
+            tvTextTwo.isVisible = false
+            tvTextThree.isVisible = false
+        }
+    }
+
+    private fun setTexts() {
+        binding.apply {
         }
     }
 
@@ -72,12 +99,6 @@ class AVQPFragment : BaseFragmentNoVM<FragmentAvqpBinding>() {
             if (data[position].contains("REGLA")) R.font.qprefieres_font else R.font.avqp_font
 //        binding.tvPhrase.typeface = ResourcesCompat.getFont(mContext, font)
     }
-
-    private fun showInstructions() =
-        activity?.let { InstructionsDialog(AVQP).show(it.supportFragmentManager, "") }
-
-    private fun setAdViewBackground() =
-        activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_avqp) }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
