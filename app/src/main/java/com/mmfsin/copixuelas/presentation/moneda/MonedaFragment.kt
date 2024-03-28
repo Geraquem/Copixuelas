@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
@@ -36,17 +38,27 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
     }
 
     override fun setUI() {
+        setUpToolbar()
 //        showInstructions()
         setAdViewBackground()
-        data = getMonedaData().shuffled()
         setInitialData()
+    }
+
+    private fun setUpToolbar() {
+        binding.toolbar.apply {
+            toolbar.setBackgroundColor(ContextCompat.getColor(mContext, R.color.bg_moneda_dark))
+            ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
+            tvTitle.text = getString(R.string.category_moneda)
+            tvTitle.typeface = ResourcesCompat.getFont(mContext, R.font.moneda_font)
+            ivInstructions.setOnClickListener { showInstructions() }
+        }
     }
 
     private fun setInitialData() {
         position++
         binding.apply {
-            tvQuestion.text = data[position]
-            tvQuestionResult.text = data[position]
+//            tvQuestion.text = data[position]
+//            tvQuestionResult.text = data[position]
             tvSpin.visibility = View.VISIBLE
             ivCoin.isClickable = true
             ivCoin.setImageResource(R.drawable.ic_moneda_neutro)
@@ -60,8 +72,6 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
 
     override fun setListeners() {
         binding.apply {
-            btnInstructions.setOnClickListener { showInstructions() }
-
             btnContinue.setOnClickListener {
                 clPhaseOne.visibility = View.GONE
                 clPhaseTwo.visibility = View.VISIBLE

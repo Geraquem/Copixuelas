@@ -56,7 +56,7 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
 
     private fun setUpToolbar() {
         binding.toolbar.apply {
-            toolbar.setBackgroundColor(ContextCompat.getColor(mContext, R.color.bg_avqp_dark))
+            toolbar.setBackgroundColor(ContextCompat.getColor(mContext, R.color.bg_avqp))
             ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
             tvTitle.text = getString(R.string.category_avqp)
             tvTitle.typeface = getFont(mContext, R.font.avqp_font)
@@ -70,7 +70,7 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
     }
 
     private fun setAdViewBackground() =
-        activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_avqp) }
+        activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_avqp_dark) }
 
     override fun setListeners() {
         binding.apply {

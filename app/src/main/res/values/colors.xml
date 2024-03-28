@@ -21,10 +21,11 @@
     <color name="bg_logo">#b7eeb3</color>
     <color name="bg_category">#4DDD93</color>
 
-    <color name="bg_avqp">#A16B6B</color>
-    <color name="bg_avqp_dark">#B87979</color>B87979
+    <color name="bg_avqp">#B87979</color>
+    <color name="bg_avqp_dark">#A16B6B</color>
 
-    <color name="bg_moneda">#CD7979</color>
+    <color name="bg_moneda">#85B1DF</color>
+    <color name="bg_moneda_dark">#698CB1</color>
 
     <color name="bg_qprefieres">#B1C3B4</color>
 
