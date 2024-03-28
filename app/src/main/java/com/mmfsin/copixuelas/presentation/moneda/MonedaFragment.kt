@@ -1,22 +1,26 @@
 package com.mmfsin.copixuelas.presentation.moneda
 
 import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
-import com.mmfsin.copixuelas.base.BaseFragmentNoVM
 import com.mmfsin.copixuelas.data.local.getMonedaData
 import com.mmfsin.copixuelas.databinding.FragmentMonedaBinding
-import com.mmfsin.copixuelas.domain.models.CategoryType
-import com.mmfsin.copixuelas.domain.models.CategoryType.*
+import com.mmfsin.copixuelas.domain.models.CategoryType.MONEDA
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 import com.mmfsin.copixuelas.presentation.moneda.CoinResult.CARA
 import com.mmfsin.copixuelas.presentation.moneda.CoinResult.CRUZ
+import dagger.hilt.android.AndroidEntryPoint
 
-class MonedaFragment : BaseFragmentNoVM<FragmentMonedaBinding>() {
+@AndroidEntryPoint
+class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
+
+    override val viewModel: MonedaViewModel by viewModels()
 
     private var data = listOf<String>()
     private var position = -1
@@ -26,8 +30,13 @@ class MonedaFragment : BaseFragmentNoVM<FragmentMonedaBinding>() {
     override fun inflateView(inflater: LayoutInflater, container: ViewGroup?) =
         FragmentMonedaBinding.inflate(inflater, container, false)
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.getMonedaData()
+    }
+
     override fun setUI() {
-        showInstructions()
+//        showInstructions()
         setAdViewBackground()
         data = getMonedaData().shuffled()
         setInitialData()
@@ -84,6 +93,7 @@ class MonedaFragment : BaseFragmentNoVM<FragmentMonedaBinding>() {
                         ivCoin.setImageResource(R.drawable.ic_moneda_cara)
                         tvCoinResult.text = getString(R.string.moneda_cara)
                     }
+
                     CRUZ -> {
                         ivCoin.setImageResource(R.drawable.ic_moneda_cruz)
                         tvCoinResult.text = getString(R.string.moneda_cruz)
