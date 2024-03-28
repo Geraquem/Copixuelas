@@ -13,7 +13,7 @@ class AVQPViewModel @Inject constructor(
     fun getAvqpData() {
         executeUseCase(
             { getAvqpDataUseCase.execute() },
-            { result -> _event.value = AVQPEvent.SWW },
+            { result -> _event.value = AVQPEvent.GetData(result) },
             { _event.value = AVQPEvent.SWW }
         )
     }

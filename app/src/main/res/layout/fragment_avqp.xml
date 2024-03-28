@@ -68,20 +68,21 @@
             android:id="@+id/tv_text_two"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
             android:gravity="center"
             android:lineSpacingExtra="4dp"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="20sp"
             tools:text="Dale un trago a la copa de todo el mundo" />
 
         <TextView
             android:id="@+id/tv_text_three"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:alpha="0.65"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="14sp"
             tools:text="A ver si pegas el estirón" />
 
     </LinearLayout>
@@ -95,6 +96,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
-        tools:visibility="" />
+        tools:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

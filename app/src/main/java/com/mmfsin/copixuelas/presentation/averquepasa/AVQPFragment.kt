@@ -74,14 +74,14 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
             llRule.setOnClickListener {
                 hideTexts()
                 position++
-                if (position > data.size - 1) position = 0
+                if (position > data.size - 1) position = 1
                 llRule.animate().apply {
                     duration = 200
                     rotationYBy(180f)
                 }.withEndAction {
                     setTexts()
                 }.start()
-                tvTextOne.scaleX = if (position % 2 == 0) -1f else 1f
+                scaleTexts()
                 shouldShowAd()
             }
         }
@@ -91,7 +91,7 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
         viewModel.event.observe(this) { event ->
             when (event) {
                 is AVQPEvent.GetData -> {
-                    data = event.data
+                    data = event.data.take(3)
                     binding.loading.root.visibility = View.GONE
                 }
 
@@ -108,10 +108,38 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
         }
     }
 
+    private fun scaleTexts() {
+        binding.apply {
+            tvTextOne.scaleX = if (position % 2 == 0) -1f else 1f
+            tvTextTwo.scaleX = if (position % 2 == 0) -1f else 1f
+            tvTextThree.scaleX = if (position % 2 == 0) -1f else 1f
+        }
+    }
+
     private fun setTexts() {
         binding.apply {
             try {
                 val actualData = data[position]
+
+                /** first */
+                actualData.first?.let { firstText ->
+                    tvTextOne.text = firstText
+                    tvTextOne.visibility = View.VISIBLE
+                } ?: run {
+                    tvTextOne.visibility = View.GONE
+                }
+
+                /** second */
+                tvTextTwo.text = actualData.second
+                tvTextTwo.visibility = View.VISIBLE
+
+                /** third */
+                actualData.third?.let { thirdText ->
+                    tvTextThree.text = thirdText
+                    tvTextThree.visibility = View.VISIBLE
+                } ?: run {
+                    tvTextThree.visibility = View.GONE
+                }
             } catch (e: Exception) {
                 error()
             }
