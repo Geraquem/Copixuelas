@@ -74,7 +74,7 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
             llRule.setOnClickListener {
                 hideTexts()
                 position++
-                if (position > data.size - 1) position = 1
+                if (position > data.size - 1) position = 0
                 llRule.animate().apply {
                     duration = 200
                     rotationYBy(180f)
@@ -91,7 +91,7 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
         viewModel.event.observe(this) { event ->
             when (event) {
                 is AVQPEvent.GetData -> {
-                    data = event.data.take(4)
+                    data = event.data.take(3)
                     binding.loading.root.visibility = View.GONE
                 }
 
