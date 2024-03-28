@@ -91,7 +91,7 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
         viewModel.event.observe(this) { event ->
             when (event) {
                 is AVQPEvent.GetData -> {
-                    data = event.data.take(3)
+                    data = event.data.take(4)
                     binding.loading.root.visibility = View.GONE
                 }
 
