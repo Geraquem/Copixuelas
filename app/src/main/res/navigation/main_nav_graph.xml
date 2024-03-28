@@ -30,7 +30,7 @@
 
     <fragment
         android:id="@+id/avqpFragment"
-        android:name="com.mmfsin.copixuelas.presentation.averquepasa.AVQPFragment"
+        android:name="com.mmfsin.copixuelas.presentation.avqp.AVQPFragment"
         android:label="avqpFragment"
         tools:layout="@layout/fragment_avqp" />
 

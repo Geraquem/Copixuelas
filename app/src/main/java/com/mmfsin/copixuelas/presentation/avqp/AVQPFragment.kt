@@ -1,15 +1,11 @@
-package com.mmfsin.copixuelas.presentation.averquepasa
+package com.mmfsin.copixuelas.presentation.avqp
 
-import android.animation.Animator
-import android.animation.Animator.AnimatorListener
-import android.animation.ObjectAnimator
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.view.animation.DecelerateInterpolator
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat.getFont
 import androidx.core.view.isVisible
@@ -21,7 +17,6 @@ import com.mmfsin.copixuelas.domain.models.AvqpData
 import com.mmfsin.copixuelas.domain.models.CategoryType.AVQP
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
-import com.mmfsin.copixuelas.utils.animateX
 import com.mmfsin.copixuelas.utils.animateY
 import com.mmfsin.copixuelas.utils.countDown
 import com.mmfsin.copixuelas.utils.showErrorDialog

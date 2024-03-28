@@ -82,10 +82,11 @@
                     tools:text="Frasecita graciosita" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_gravity="center_horizontal"
                     android:id="@+id/rv_categories"
+                    style="@style/scroll_no_effects"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
                     tools:itemCount="3"
                     tools:listitem="@layout/item_category" />
 

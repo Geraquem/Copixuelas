@@ -1,4 +1,4 @@
-package com.mmfsin.copixuelas.presentation.averquepasa
+package com.mmfsin.copixuelas.presentation.avqp
 
 import com.mmfsin.copixuelas.domain.models.AvqpData
 
