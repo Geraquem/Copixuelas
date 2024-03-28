@@ -45,7 +45,7 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
 
     override fun setUI() {
         setUpToolbar()
-//        showInstructions()
+        showInstructions()
         setAdViewBackground()
         binding.loading.root.visibility = View.VISIBLE
     }
