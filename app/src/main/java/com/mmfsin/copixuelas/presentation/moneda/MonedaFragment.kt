@@ -28,7 +28,7 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
     private var instructions: InstructionsDialog? = null
 
     private var data = listOf<String>()
-    private var position = -1
+    private var position = 0
     private var question: String? = null
 
     override fun inflateView(inflater: LayoutInflater, container: ViewGroup?) =
@@ -57,7 +57,6 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
     }
 
     private fun setInitialData() {
-        position++
         binding.apply {
             try {
                 val actualQuestion = data[position]
@@ -89,6 +88,8 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
 
             btnReplay.setOnClickListener {
                 shouldShowAd()
+                position++
+                if (position > data.size - 1) position = 0
                 setInitialData()
             }
         }
@@ -98,7 +99,7 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
         viewModel.event.observe(this) { event ->
             when (event) {
                 is MonedaEvent.GetData -> {
-                    data = event.data.shuffled()
+                    data = event.data.shuffled().take(2)
                     setInitialData()
                     binding.loading.root.visibility = View.GONE
                 }
