@@ -2,6 +2,7 @@ package com.mmfsin.copixuelas.presentation
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.gms.ads.AdRequest
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setAdViewBackGroundColor(color: Int) {
+        binding.adView.visibility = View.GONE
         binding.frameBanner.setBackgroundColor(ContextCompat.getColor(this, color))
     }
 

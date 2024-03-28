@@ -10,6 +10,8 @@ import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.base.BaseFragmentNoVM
 import com.mmfsin.copixuelas.data.local.getQPrefieresData
 import com.mmfsin.copixuelas.databinding.FragmentQueprefieresBinding
+import com.mmfsin.copixuelas.domain.models.CategoryType
+import com.mmfsin.copixuelas.domain.models.CategoryType.*
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 
@@ -49,7 +51,7 @@ class QuePrefieresFragment : BaseFragmentNoVM<FragmentQueprefieresBinding>() {
             }
             btnPrev.setOnClickListener {
                 position--
-                if(position < 0) position = 0
+                if (position < 0) position = 0
                 setData()
                 shouldShowAd()
             }
@@ -63,11 +65,9 @@ class QuePrefieresFragment : BaseFragmentNoVM<FragmentQueprefieresBinding>() {
         }
     }
 
-    private fun showInstructions() {
-        activity?.let {
-            InstructionsDialog(R.string.inst_qprefieres).show(it.supportFragmentManager, "")
-        }
-    }
+
+    private fun showInstructions() =
+        activity?.let { InstructionsDialog(QPREFIERES).show(it.supportFragmentManager, "") }
 
     private fun setAdViewBackground() =
         activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_qprefieres) }

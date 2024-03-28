@@ -9,6 +9,8 @@ import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.base.BaseFragmentNoVM
 import com.mmfsin.copixuelas.data.local.getMonedaData
 import com.mmfsin.copixuelas.databinding.FragmentMonedaBinding
+import com.mmfsin.copixuelas.domain.models.CategoryType
+import com.mmfsin.copixuelas.domain.models.CategoryType.*
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 import com.mmfsin.copixuelas.presentation.moneda.CoinResult.CARA
@@ -94,11 +96,9 @@ class MonedaFragment : BaseFragmentNoVM<FragmentMonedaBinding>() {
         }
     }
 
-    private fun showInstructions() {
-        activity?.let {
-            InstructionsDialog(R.string.inst_moneda).show(it.supportFragmentManager, "")
-        }
-    }
+
+    private fun showInstructions() =
+        activity?.let { InstructionsDialog(MONEDA).show(it.supportFragmentManager, "") }
 
     private fun setAdViewBackground() =
         activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_moneda) }

@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@drawable/bg_alert_dialog_top"
-        android:fontFamily="@font/atlantis"
+        android:fontFamily="@font/pixel_font"
         android:gravity="center"
         android:paddingVertical="24dp"
         android:text="@string/warning_text_title"

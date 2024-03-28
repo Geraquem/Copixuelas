@@ -8,6 +8,8 @@ import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.base.BaseFragmentNoVM
 import com.mmfsin.copixuelas.databinding.FragmentMaletinBinding
+import com.mmfsin.copixuelas.domain.models.CategoryType
+import com.mmfsin.copixuelas.domain.models.CategoryType.*
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 import com.mmfsin.copixuelas.presentation.maletin.MaletinPhase.CLOSE
@@ -116,11 +118,9 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
         }
     }
 
-    private fun showInstructions() {
-        activity?.let {
-            InstructionsDialog(R.string.inst_maletin).show(it.supportFragmentManager, "")
-        }
-    }
+
+    private fun showInstructions() =
+        activity?.let { InstructionsDialog(MALETIN).show(it.supportFragmentManager, "") }
 
     private fun setAdViewBackground() =
         activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_maletin) }
