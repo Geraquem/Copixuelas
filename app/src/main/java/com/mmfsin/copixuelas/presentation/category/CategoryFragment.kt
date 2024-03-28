@@ -1,7 +1,11 @@
 package com.mmfsin.copixuelas.presentation.category
 
+import android.content.Context
+import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
@@ -15,10 +19,16 @@ import dagger.hilt.android.AndroidEntryPoint
 class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel>() {
 
     override val viewModel: CategoryViewModel by viewModels()
+    private lateinit var mContext: Context
 
     override fun inflateView(
         inflater: LayoutInflater, container: ViewGroup?
     ) = FragmentCategoryBinding.inflate(inflater, container, false)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.getCategories()
+    }
 
     override fun setUI() {
         showWarningDialog()
@@ -45,6 +55,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         viewModel.event.observe(this) { event ->
             when (event) {
                 is CategoryEvent.GetCategories -> {
+                    Toast.makeText(mContext, "yes", Toast.LENGTH_SHORT).show()
                 }
 
                 is CategoryEvent.SWW -> {}
@@ -71,5 +82,10 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
             if (main.showWarningDialog) WarningDialog().show(it.supportFragmentManager, "")
             main.showWarningDialog = false
         }
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mContext = context
     }
 }

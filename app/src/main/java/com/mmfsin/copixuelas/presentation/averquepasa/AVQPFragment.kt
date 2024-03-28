@@ -6,12 +6,13 @@ import android.view.ViewGroup
 import androidx.core.content.res.ResourcesCompat
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
+import com.mmfsin.copixuelas.base.BaseFragmentNoVM
 import com.mmfsin.copixuelas.data.local.getAVQPData
 import com.mmfsin.copixuelas.databinding.FragmentAvqpBinding
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 
-class AVQPFragment : BaseFragment<FragmentAvqpBinding>() {
+class AVQPFragment : BaseFragmentNoVM<FragmentAvqpBinding>() {
 
     private var data = listOf<String>()
     private var position = -1

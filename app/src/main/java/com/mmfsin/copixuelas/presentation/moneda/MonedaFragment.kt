@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
+import com.mmfsin.copixuelas.base.BaseFragmentNoVM
 import com.mmfsin.copixuelas.data.local.getMonedaData
 import com.mmfsin.copixuelas.databinding.FragmentMonedaBinding
 import com.mmfsin.copixuelas.presentation.MainActivity
@@ -13,7 +14,7 @@ import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 import com.mmfsin.copixuelas.presentation.moneda.CoinResult.CARA
 import com.mmfsin.copixuelas.presentation.moneda.CoinResult.CRUZ
 
-class MonedaFragment : BaseFragment<FragmentMonedaBinding>() {
+class MonedaFragment : BaseFragmentNoVM<FragmentMonedaBinding>() {
 
     private var data = listOf<String>()
     private var position = -1

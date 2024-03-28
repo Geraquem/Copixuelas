@@ -7,12 +7,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
+import com.mmfsin.copixuelas.base.BaseFragmentNoVM
 import com.mmfsin.copixuelas.data.local.getQPrefieresData
 import com.mmfsin.copixuelas.databinding.FragmentQueprefieresBinding
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 
-class QuePrefieresFragment : BaseFragment<FragmentQueprefieresBinding>() {
+class QuePrefieresFragment : BaseFragmentNoVM<FragmentQueprefieresBinding>() {
 
     private var data = listOf<String>()
     private var position = 0

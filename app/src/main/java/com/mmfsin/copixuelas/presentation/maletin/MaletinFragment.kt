@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
+import com.mmfsin.copixuelas.base.BaseFragmentNoVM
 import com.mmfsin.copixuelas.databinding.FragmentMaletinBinding
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
@@ -16,7 +17,7 @@ import com.mmfsin.copixuelas.presentation.maletin.MaletinType.OPENED
 import com.mmfsin.copixuelas.presentation.maletin.MoneyPlace.BOTTOM
 import com.mmfsin.copixuelas.presentation.maletin.MoneyPlace.TOP
 
-class MaletinFragment : BaseFragment<FragmentMaletinBinding>() {
+class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
 
     private lateinit var mContext: Context
 
