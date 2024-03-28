@@ -49,6 +49,7 @@
     <string name="moneda_info_1">PRIMERO PULSA <b>CONTINUAR</b></string>
     <string name="moneda_info_2">Después dale el móvil a esa persona</string>
     <string name="moneda_continue"><b>CONTINUAR</b></string>
+    <string name="moneda_another_question"><b>OTRA PREGUNTA</b></string>
     <string name="moneda_spin">Gira la moneda</string>
     <string name="moneda_question_was">La pregunta era</string>
     <string name="moneda_cara">CARA</string>

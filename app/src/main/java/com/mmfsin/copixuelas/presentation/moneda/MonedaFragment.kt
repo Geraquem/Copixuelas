@@ -57,24 +57,6 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
         }
     }
 
-    private fun setInitialData() {
-        binding.apply {
-            try {
-                val actualQuestion = data[position]
-                tvQuestion.text = actualQuestion
-                question = actualQuestion
-                ivCoin.isClickable = true
-                ivCoin.setImageResource(R.drawable.ic_moneda_neutro)
-                tvSpin.text = getString(R.string.moneda_spin)
-                btnReplay.visibility = View.INVISIBLE
-                clPhaseOne.visibility = View.VISIBLE
-                clPhaseTwo.visibility = View.GONE
-            } catch (e: Exception) {
-                error()
-            }
-        }
-    }
-
     override fun setListeners() {
         binding.apply {
             btnContinue.setOnClickListener {
@@ -111,6 +93,24 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
         }
     }
 
+    private fun setInitialData() {
+        binding.apply {
+            try {
+                val actualQuestion = data[position]
+                tvQuestion.text = actualQuestion
+                question = actualQuestion
+                ivCoin.isClickable = true
+                ivCoin.setImageResource(R.drawable.ic_moneda_neutro)
+                tvSpin.text = getString(R.string.moneda_spin)
+                btnReplay.visibility = View.INVISIBLE
+                clPhaseOne.visibility = View.VISIBLE
+                clPhaseTwo.visibility = View.GONE
+            } catch (e: Exception) {
+                error()
+            }
+        }
+    }
+
     private fun flipCoin(result: CoinResult) {
         binding.apply {
             tvSpin.visibility = View.INVISIBLE
@@ -130,11 +130,17 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
                     }
                 }
                 tvSpin.visibility = View.VISIBLE
-                btnReplay.visibility = View.VISIBLE
+                checkIfShowDialog(result)
             }.start()
         }
     }
 
+    private fun checkIfShowDialog(result: CoinResult) {
+        when (result) {
+            CARA -> {}
+            CRUZ -> binding.btnReplay.visibility = View.VISIBLE
+        }
+    }
 
     private fun showInstructions() {
         instructions = InstructionsDialog(MONEDA)
