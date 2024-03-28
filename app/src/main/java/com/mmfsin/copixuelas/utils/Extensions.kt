@@ -7,7 +7,9 @@ import android.text.style.URLSpan
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
+import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.dialog.ErrorDialog
+import com.mmfsin.copixuelas.domain.models.CoinResult
 
 fun TextView.removeLinksUnderline() {
     val spannable = SpannableString(text)
@@ -41,3 +43,12 @@ fun View.animateY(pos: Float, duration: Long) =
 
 fun View.animateX(pos: Float, duration: Long) =
     this.animate().translationX(pos).setDuration(duration)
+
+fun View.flip(action: () -> Unit) {
+    this.animate().apply {
+        duration = 1000
+        rotationYBy(1800f)
+    }.withEndAction {
+        action()
+    }.start()
+}

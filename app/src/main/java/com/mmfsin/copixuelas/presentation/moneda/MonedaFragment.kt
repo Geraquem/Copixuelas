@@ -19,6 +19,7 @@ import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 import com.mmfsin.copixuelas.presentation.moneda.dialogs.MonedaResultDialog
 import com.mmfsin.copixuelas.utils.countDown
+import com.mmfsin.copixuelas.utils.flip
 import com.mmfsin.copixuelas.utils.showErrorDialog
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -118,10 +119,8 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
     private fun flipCoin(result: CoinResult) {
         binding.apply {
             tvSpin.visibility = View.INVISIBLE
-            ivCoin.animate().apply {
-                duration = 1000
-                rotationYBy(1800f)
-            }.withEndAction {
+            shadow.flip { /** do nothing */ }
+            ivCoin.flip {
                 when (result) {
                     CARA -> {
                         ivCoin.setImageResource(R.drawable.ic_moneda_cara)
@@ -135,7 +134,7 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
                 }
                 tvSpin.visibility = View.VISIBLE
                 checkIfShowDialog(result)
-            }.start()
+            }
         }
     }
 
