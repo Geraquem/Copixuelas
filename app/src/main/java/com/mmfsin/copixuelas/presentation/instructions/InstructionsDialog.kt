@@ -1,5 +1,6 @@
 package com.mmfsin.copixuelas.presentation.instructions
 
+import android.app.Dialog
 import android.view.LayoutInflater
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseDialog
@@ -13,6 +14,8 @@ import com.mmfsin.copixuelas.domain.models.CategoryType.QPREFIERES
 class InstructionsDialog(private val type: CategoryType) : BaseDialog<DialogInstructionsBinding>() {
 
     override fun inflateView(inflater: LayoutInflater) = DialogInstructionsBinding.inflate(inflater)
+
+    override fun setCustomViewDialog(dialog: Dialog) = centerViewDialog(dialog)
 
     override fun setUI() {
         val text = when (type) {
