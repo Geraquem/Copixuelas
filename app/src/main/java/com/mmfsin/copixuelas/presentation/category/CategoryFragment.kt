@@ -40,6 +40,9 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getCategories()
+
+        /** delete */
+//        findNavController().navigate(CategoryFragmentDirections.actionMainToAVQP())
     }
 
     override fun setUI() {
@@ -59,7 +62,6 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         viewModel.event.observe(this) { event ->
             when (event) {
                 is CategoryEvent.GetCategories -> setUpCategories(event.categories)
-
                 is CategoryEvent.SWW -> {}
             }
         }

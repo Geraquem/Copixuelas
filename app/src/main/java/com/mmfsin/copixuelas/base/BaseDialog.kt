@@ -5,15 +5,13 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.util.Log
+import android.view.Gravity
 import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.view.ViewGroup.LayoutParams
 import androidx.fragment.app.DialogFragment
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.viewbinding.ViewBinding
-import java.lang.Exception
+import com.mmfsin.copixuelas.R
 
 abstract class BaseDialog<VB : ViewBinding> : DialogFragment() {
 
@@ -34,11 +32,32 @@ abstract class BaseDialog<VB : ViewBinding> : DialogFragment() {
     }
 
     protected abstract fun inflateView(inflater: LayoutInflater): VB
+    open fun setCustomViewDialog(dialog: Dialog) {}
 
-    private fun setCustomViewDialog(dialog: Dialog) {
+    fun centerViewDialog(dialog: Dialog) {
         dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
         val width = resources.displayMetrics.widthPixels * 0.9
         dialog.window?.setLayout(width.toInt(), LayoutParams.WRAP_CONTENT)
+    }
+
+    fun centerCustomViewDialog(dialog: Dialog) {
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window?.setLayout(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
+    }
+
+    fun bottomViewDialog(dialog: Dialog) {
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        dialog.window?.setLayout(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT)
+        dialog.window?.attributes?.gravity = Gravity.BOTTOM
+        dialog.window?.attributes?.windowAnimations = R.style.slide_up_down_dialog
+    }
+
+    fun bottomCustomViewDialog(dialog: Dialog, percent: Double) {
+        dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        val height = resources.displayMetrics.heightPixels * percent
+        dialog.window?.setLayout(LayoutParams.MATCH_PARENT, height.toInt())
+        dialog.window?.attributes?.gravity = Gravity.BOTTOM
+        dialog.window?.attributes?.windowAnimations = R.style.slide_up_down_dialog
     }
 
     override fun show(manager: FragmentManager, tag: String?) {

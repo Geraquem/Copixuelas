@@ -4,6 +4,8 @@ import android.text.SpannableString
 import android.text.TextPaint
 import android.text.style.URLSpan
 import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
+import com.mmfsin.copixuelas.base.dialog.ErrorDialog
 
 fun TextView.removeLinksUnderline() {
     val spannable = SpannableString(text)
@@ -16,4 +18,9 @@ fun TextView.removeLinksUnderline() {
         }, spannable.getSpanStart(u), spannable.getSpanEnd(u), 0)
     }
     text = spannable
+}
+
+fun FragmentActivity.showErrorDialog(action: () -> Unit) {
+    val dialog = ErrorDialog(action)
+    this.let { dialog.show(it.supportFragmentManager, "") }
 }
