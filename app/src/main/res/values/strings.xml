@@ -45,8 +45,9 @@
     <string name="avqp_start">PULSA LA PANTALLA PARA <b>COMENZAR</b></string>
 
     <!-- MONEDA -->
+    <string name="moneda_the_question_is">La pregunta es:</string>
     <string name="moneda_info_1">PRIMERO PULSA <b>CONTINUAR</b></string>
-    <string name="moneda_info_2">LUEGO DALE EL MÓVIL A ESA PERSONA</string>
+    <string name="moneda_info_2">Después dale el móvil a esa persona</string>
     <string name="moneda_continue"><b>CONTINUAR</b></string>
     <string name="moneda_spin">Gira la moneda</string>
     <string name="moneda_question_was">La pregunta era</string>

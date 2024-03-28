@@ -42,7 +42,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         viewModel.getCategories()
 
         /** delete */
-//        findNavController().navigate(CategoryFragmentDirections.actionMainToMoneda())
+        findNavController().navigate(CategoryFragmentDirections.actionMainToMoneda())
     }
 
     override fun setUI() {

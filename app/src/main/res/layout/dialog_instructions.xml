@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/bg_white_box"
-    android:clipChildren="false"
-    android:scrollbars="none">
+    android:clipChildren="false">
 
     <RelativeLayout
         android:id="@+id/rl_top"
