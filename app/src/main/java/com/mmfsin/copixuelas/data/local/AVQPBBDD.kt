@@ -18,6 +18,7 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "Solo tú puedes ponerte disimuladamente un dedo en la nariz\n\nEl resto te tiene que copiar, el último en hacerlo bebe",
+                isRule = true
             )
         )
         add(
@@ -29,7 +30,8 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "Cada vez que alguien pida un cigarro se toma un chupito",
-                third = "A ver si te crees que el tabaco lo regalan"
+                third = "A ver si te crees que el tabaco lo regalan",
+                isRule = true
             )
         )
         add(
@@ -41,6 +43,7 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "Nadie puede señalar a nada ni a nadie\n\nQuien señale, bebe",
+                isRule = true
             )
         )
         add(
@@ -202,6 +205,7 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "A partir de ahora cada vez que alguien vaya al baño, todos os tomáis un chupito",
+                isRule = true
             )
         )
         add(
@@ -213,19 +217,22 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "Cada vez que alguien grite\n¡CUIDADO!\ntodo el mundo se tiene que tirar al suelo\n\nEl último bebe",
+                isRule = true
             )
         )
         add(
             AvqpData(
                 first = "REGLA",
                 second = "No os podéis llamar ni por el nombre ni por apodos\n\nQuien lo haga, bebe",
+                isRule = true
             )
         )
         add(
             AvqpData(
                 first = "REGLA",
                 second = "Cada vez que alguien diga un taco o insulte, bebe",
-                third = "Vamos a llevarnos bien ¿vale?"
+                third = "Vamos a llevarnos bien ¿vale?",
+                isRule = true
             )
         )
         add(
@@ -244,7 +251,8 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "Quien pida un hielo en vez de cogerlo por cuenta propia bebe",
-                third = "Por vago"
+                third = "Por vago",
+                isRule = true
             )
         )
         add(
@@ -356,7 +364,6 @@ fun getAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 second = "Chupa el dedo de la persona de tu izquierda de manera sensual\n\nEl resto decide si resulta sexy o no\n\nSi sale que no o no quieres hacerlo, bebes",
-                third = "Disgusting"
             )
         )
         add(
@@ -414,6 +421,7 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "A partir de ahora, solamente tú tienes que acabar todas las frases con 'bro'\n\nSi se te olvida bebes",
+                isRule = true
             )
         )
         add(
@@ -546,6 +554,7 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "Cada vez que alguien mire el móvil, todo el mundo bebe",
+                isRule = true
             )
         )
         add(
@@ -556,7 +565,8 @@ fun getAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Antes de beber tenéis que decir 'Tengo el culo del revés'\n\nSi a alguien se le olvida, vuelve a beber",
+                second = "Antes de beber tenéis que decir\n'Tengo el culo del revés'\n\nSi a alguien se le olvida, vuelve a beber",
+                isRule = true
             )
         )
         add(
@@ -594,7 +604,8 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "Puedes decirle\n'Te quiero'\na alguien\n\nCada vez que lo hagas esa persona bebe",
-                third = "<3"
+                third = "<3",
+                isRule = true
             )
         )
         add(
@@ -621,6 +632,7 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "Cuando el reloj marque en punto, y cuarto, y media o menos cuarto, el primer jugador que grite 'BESADME EL CULO' se libra de beber\n\nEl resto bebe",
+                isRule = true
             )
         )
         add(
@@ -649,6 +661,7 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "A partir de ahora hay que decir Afirmativo y Negativo en vez de Sí y No\n\nQuien no lo haga bebe",
+                isRule = true
             )
         )
         add(
@@ -687,6 +700,7 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "Todo el mundo tiene que beber con el meñique levantado\n\nQuien no lo haga bebe otra vez",
+                isRule = true
             )
         )
         add(
@@ -728,6 +742,7 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "Cada ve que tú te acabes la copa, todo el mundo se toma un chupito",
+                isRule = true
             )
         )
         add(
@@ -784,6 +799,7 @@ fun getAVQPData(): List<AvqpData> {
             AvqpData(
                 first = "REGLA",
                 second = "Cada vez que alguien diga la palabra VASO, bebe",
+                isRule = true
             )
         )
         add(

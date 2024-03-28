@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.view.animation.DecelerateInterpolator
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat.getFont
@@ -138,9 +139,17 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
                 } ?: run {
                     tvTextThree.visibility = View.GONE
                 }
+                checkIfRule(actualData.isRule)
             } catch (e: Exception) {
                 error()
             }
+        }
+    }
+
+    private fun checkIfRule(isRule: Boolean) {
+        if (isRule) {
+            binding.tvTextOne.animation =
+                AnimationUtils.loadAnimation(mContext, R.anim.shake_animation)
         }
     }
 
