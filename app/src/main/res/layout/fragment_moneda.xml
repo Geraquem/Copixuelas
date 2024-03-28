@@ -34,6 +34,7 @@
         android:layout_height="0dp"
         android:clipChildren="false"
         android:clipToPadding="false"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/gl_left"
         app:layout_constraintRight_toRightOf="@id/gl_right"
@@ -124,28 +125,27 @@
         android:id="@+id/cl_phase_two"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:paddingVertical="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/gl_left"
         app:layout_constraintRight_toRightOf="@id/gl_right"
-        app:layout_constraintTop_toBottomOf="@id/btn_instructions">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <LinearLayout
-            android:id="@+id/ll_coin"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginBottom="24dp"
-            android:gravity="center|top"
+            android:gravity="center"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@id/ll_result"
+            app:layout_constraintBottom_toTopOf="@id/btn_replay"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tv_spin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="@font/avqp_font"
+                android:layout_marginBottom="42dp"
+                android:fontFamily="@font/moneda_font"
                 android:text="@string/moneda_spin"
                 android:textAllCaps="true"
                 android:textColor="@color/black"
@@ -160,63 +160,29 @@
                 android:background="@drawable/ic_moneda_neutro"
                 android:contentDescription="@string/content_description" />
 
-            <TextView
-                android:id="@+id/tv_coin_result"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
-                android:fontFamily="@font/avqp_font"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="26sp"
-                tools:text="CARA" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_result"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@id/btn_replay"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/avqp_font"
-                android:text="@string/moneda_question_was"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="18sp" />
-
-            <TextView
-                android:id="@+id/tv_question_result"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:fontFamily="@font/avqp_font"
-                android:gravity="center"
-                android:text="@string/moneda_spin"
-                android:textAllCaps="true"
-                android:textColor="@color/black"
-                android:textSize="22sp"
-                tools:text="Quién tiene cara de ser un parguela bien tocho" />
-
         </LinearLayout>
 
         <ImageView
             android:id="@+id/btn_replay"
             android:layout_width="54dp"
             android:layout_height="54dp"
+            android:layout_marginBottom="24dp"
             android:src="@drawable/ic_replay"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <include
+        android:id="@+id/loading"
+        layout="@layout/include_loading"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

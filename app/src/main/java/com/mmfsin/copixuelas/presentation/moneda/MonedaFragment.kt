@@ -14,20 +14,23 @@ import com.mmfsin.copixuelas.data.local.getMonedaData
 import com.mmfsin.copixuelas.databinding.FragmentMonedaBinding
 import com.mmfsin.copixuelas.domain.models.CategoryType.MONEDA
 import com.mmfsin.copixuelas.presentation.MainActivity
+import com.mmfsin.copixuelas.presentation.avqp.AVQPEvent
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 import com.mmfsin.copixuelas.presentation.moneda.CoinResult.CARA
 import com.mmfsin.copixuelas.presentation.moneda.CoinResult.CRUZ
+import com.mmfsin.copixuelas.utils.showErrorDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
 
     override val viewModel: MonedaViewModel by viewModels()
+    private lateinit var mContext: Context
+
+    private var instructions: InstructionsDialog? = null
 
     private var data = listOf<String>()
     private var position = -1
-
-    private lateinit var mContext: Context
 
     override fun inflateView(inflater: LayoutInflater, container: ViewGroup?) =
         FragmentMonedaBinding.inflate(inflater, container, false)
@@ -42,6 +45,7 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
 //        showInstructions()
         setAdViewBackground()
         setInitialData()
+        binding.loading.root.visibility = View.VISIBLE
     }
 
     private fun setUpToolbar() {
@@ -59,11 +63,9 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
         binding.apply {
 //            tvQuestion.text = data[position]
 //            tvQuestionResult.text = data[position]
-            tvSpin.visibility = View.VISIBLE
             ivCoin.isClickable = true
             ivCoin.setImageResource(R.drawable.ic_moneda_neutro)
-            tvCoinResult.visibility = View.INVISIBLE
-            llResult.visibility = View.INVISIBLE
+            tvSpin.text = getString(R.string.moneda_spin)
             btnReplay.visibility = View.INVISIBLE
             clPhaseOne.visibility = View.VISIBLE
             clPhaseTwo.visibility = View.GONE
@@ -75,12 +77,9 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
             btnContinue.setOnClickListener {
                 clPhaseOne.visibility = View.GONE
                 clPhaseTwo.visibility = View.VISIBLE
-                tvCoinResult.visibility = View.INVISIBLE
-                llResult.visibility = View.INVISIBLE
             }
 
             ivCoin.setOnClickListener {
-                tvSpin.visibility = View.INVISIBLE
                 ivCoin.isClickable = false
                 flipCoin(getCoinResult())
             }
@@ -92,8 +91,22 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
         }
     }
 
+    override fun observe() {
+        viewModel.event.observe(this) { event ->
+            when (event) {
+                is MonedaEvent.GetData -> {
+                    data = event.data.shuffled()
+                    binding.loading.root.visibility = View.GONE
+                }
+
+                is MonedaEvent.SWW -> error()
+            }
+        }
+    }
+
     private fun flipCoin(result: CoinResult) {
         binding.apply {
+            tvSpin.visibility = View.INVISIBLE
             ivCoin.animate().apply {
                 duration = 1000
                 rotationYBy(1800f)
@@ -101,27 +114,33 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
                 when (result) {
                     CARA -> {
                         ivCoin.setImageResource(R.drawable.ic_moneda_cara)
-                        tvCoinResult.text = getString(R.string.moneda_cara)
+                        tvSpin.text = getString(R.string.moneda_cara)
                     }
 
                     CRUZ -> {
                         ivCoin.setImageResource(R.drawable.ic_moneda_cruz)
-                        tvCoinResult.text = getString(R.string.moneda_cruz)
-                        llResult.visibility = View.VISIBLE
+                        tvSpin.text = getString(R.string.moneda_cruz)
                     }
                 }
-                tvCoinResult.visibility = View.VISIBLE
+                tvSpin.visibility = View.VISIBLE
                 btnReplay.visibility = View.VISIBLE
             }.start()
         }
     }
 
 
-    private fun showInstructions() =
-        activity?.let { InstructionsDialog(MONEDA).show(it.supportFragmentManager, "") }
+    private fun showInstructions() {
+        instructions = InstructionsDialog(MONEDA)
+        activity?.let { instructions?.show(it.supportFragmentManager, "") }
+    }
 
     private fun setAdViewBackground() =
         activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_moneda) }
+
+    private fun error() {
+        instructions?.dismiss()
+        activity?.showErrorDialog { activity?.onBackPressedDispatcher?.onBackPressed() }
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

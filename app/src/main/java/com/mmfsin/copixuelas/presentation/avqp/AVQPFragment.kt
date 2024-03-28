@@ -26,13 +26,12 @@ import dagger.hilt.android.AndroidEntryPoint
 class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
 
     override val viewModel: AVQPViewModel by viewModels()
+    private lateinit var mContext: Context
 
     private var instructions: InstructionsDialog? = null
 
     private var data = listOf<AvqpData>()
     private var position = -1
-
-    private lateinit var mContext: Context
 
     override fun inflateView(inflater: LayoutInflater, container: ViewGroup?) =
         FragmentAvqpBinding.inflate(inflater, container, false)
