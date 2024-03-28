@@ -2,13 +2,14 @@ package com.mmfsin.copixuelas.domain.usecases
 
 import com.mmfsin.copixuelas.base.BaseUseCaseNoParams
 import com.mmfsin.copixuelas.domain.models.CoinResult
+import com.mmfsin.copixuelas.domain.models.CoinResult.*
 import javax.inject.Inject
 
 class FlipCoinUseCase @Inject constructor(
 ) : BaseUseCaseNoParams<CoinResult>() {
 
     override suspend fun execute(): CoinResult {
-        return CoinResult.CRUZ
+        return CARA
     }
 }
 

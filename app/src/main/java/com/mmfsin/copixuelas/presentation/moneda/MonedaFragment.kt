@@ -17,6 +17,8 @@ import com.mmfsin.copixuelas.domain.models.CoinResult.CARA
 import com.mmfsin.copixuelas.domain.models.CoinResult.CRUZ
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
+import com.mmfsin.copixuelas.presentation.moneda.dialogs.MonedaResultDialog
+import com.mmfsin.copixuelas.utils.countDown
 import com.mmfsin.copixuelas.utils.showErrorDialog
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -69,13 +71,15 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
                 viewModel.flipCoin()
             }
 
-            btnReplay.setOnClickListener {
-                shouldShowAd()
-                position++
-                if (position > data.size - 1) position = 0
-                setInitialData()
-            }
+            btnReplay.setOnClickListener { nextQuestion() }
         }
+    }
+
+    private fun nextQuestion() {
+        shouldShowAd()
+        position++
+        if (position > data.size - 1) position = 0
+        setInitialData()
     }
 
     override fun observe() {
@@ -137,7 +141,15 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
 
     private fun checkIfShowDialog(result: CoinResult) {
         when (result) {
-            CARA -> {}
+            CARA -> {
+                question?.let { question ->
+                    countDown(300) {
+                        val dialog = MonedaResultDialog(question) { nextQuestion() }
+                        activity?.let { dialog.show(it.supportFragmentManager, "") }
+                    }
+                } ?: run { error() }
+            }
+
             CRUZ -> binding.btnReplay.visibility = View.VISIBLE
         }
     }
