@@ -827,5 +827,11 @@ fun getAVQPData(): List<AvqpData> {
                 second = "Durante una ronda solo puedes hablar con los verbos en imperativo\n\nSi no lo hacer, beber",
             )
         )
+        add(
+            AvqpData(
+                first = "NOTICIÓN",
+                second = "A partir de ahora debes fingir que la persona de tu izquierda y tú sois pareja",
+            )
+        )
     }
 }
