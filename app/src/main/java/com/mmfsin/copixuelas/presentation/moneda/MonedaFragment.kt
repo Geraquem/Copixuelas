@@ -12,10 +12,11 @@ import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.databinding.FragmentMonedaBinding
 import com.mmfsin.copixuelas.domain.models.CategoryType.MONEDA
+import com.mmfsin.copixuelas.domain.models.CoinResult
+import com.mmfsin.copixuelas.domain.models.CoinResult.CARA
+import com.mmfsin.copixuelas.domain.models.CoinResult.CRUZ
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
-import com.mmfsin.copixuelas.presentation.moneda.CoinResult.CARA
-import com.mmfsin.copixuelas.presentation.moneda.CoinResult.CRUZ
 import com.mmfsin.copixuelas.utils.showErrorDialog
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -83,7 +84,7 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
 
             ivCoin.setOnClickListener {
                 ivCoin.isClickable = false
-                flipCoin(getCoinResult())
+                viewModel.flipCoin()
             }
 
             btnReplay.setOnClickListener {
@@ -99,11 +100,12 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
         viewModel.event.observe(this) { event ->
             when (event) {
                 is MonedaEvent.GetData -> {
-                    data = event.data.shuffled().take(2)
+                    data = event.data.shuffled()
                     setInitialData()
                     binding.loading.root.visibility = View.GONE
                 }
 
+                is MonedaEvent.FlipCoin -> flipCoin(event.result)
                 is MonedaEvent.SWW -> error()
             }
         }
