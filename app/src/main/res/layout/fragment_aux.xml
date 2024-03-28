@@ -170,7 +170,7 @@
                         android:layout_marginHorizontal="12dp"
                         android:fontFamily="@font/cabin"
                         android:gravity="center"
-                        android:text="@string/category_queprefieres"
+                        android:text="@string/category_qprefieres"
                         android:textColor="@color/green"
                         android:textSize="24sp" />
 

@@ -5,18 +5,25 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import android.widget.LinearLayout.VERTICAL
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.SimpleItemAnimator
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.data.local.getIntroPhrase
 import com.mmfsin.copixuelas.databinding.FragmentCategoryBinding
+import com.mmfsin.copixuelas.domain.models.Category
+import com.mmfsin.copixuelas.domain.models.CategoryType
 import com.mmfsin.copixuelas.presentation.MainActivity
+import com.mmfsin.copixuelas.presentation.category.adapter.CategoryAdapter
+import com.mmfsin.copixuelas.presentation.category.interfaces.ICategoryListener
 import com.mmfsin.copixuelas.presentation.warning.WarningDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel>() {
+class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel>(),
+    ICategoryListener {
 
     override val viewModel: CategoryViewModel by viewModels()
     private lateinit var mContext: Context
@@ -31,7 +38,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     }
 
     override fun setUI() {
-        showWarningDialog()
+//        showWarningDialog()
         setAdViewBackground()
         binding.tvPhrase.text = getIntroPhrase()
     }
@@ -40,41 +47,34 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         (activity as MainActivity).setAdViewBackGroundColor(R.color.bg_category)
 
     override fun setListeners() {
-        binding.apply {
-//            btnAvqp.setOnClickListener { findNavController().navigate(actionMainToAVQP()) }
-//            btnMoneda.setOnClickListener { findNavController().navigate(actionMainToMoneda()) }
-//            btnQprefieres.setOnClickListener { findNavController().navigate(actionMainToQPrefieres()) }
-//            btnMaletin.setOnClickListener { findNavController().navigate(actionMainToMaletin()) }
-//            btnMoreGames.setOnClickListener {
-//                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.mmfsinURL))))
-//            }
-        }
+        binding.apply {}
     }
 
     override fun observe() {
         viewModel.event.observe(this) { event ->
             when (event) {
-                is CategoryEvent.GetCategories -> {
-                    Toast.makeText(mContext, "yes", Toast.LENGTH_SHORT).show()
-                }
+                is CategoryEvent.GetCategories -> setUpCategories(event.categories)
 
                 is CategoryEvent.SWW -> {}
             }
         }
     }
 
-    /*
-
-    private fun setUpCards(cards: List<Card>) {
-        binding.rvCards.apply {
+    private fun setUpCategories(categories: List<Category>) {
+        binding.rvCategories.apply {
             (this.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
             layoutManager = StaggeredGridLayoutManager(2, VERTICAL)
-            cardsAdapter = CardsAdapter(cards, this@CardsFragment)
-            adapter = cardsAdapter
+            adapter = CategoryAdapter(categories, this@CategoryFragment)
         }
-        activity?.showFragmentDialog(WaitSelectDialog { actionOnCard(selectedCardId) })
     }
-     */
+
+    override fun onCategoryClick(category: CategoryType) {
+
+    }
+
+    override fun onCategoryLongClick(category: CategoryType) {
+
+    }
 
     private fun showWarningDialog() {
         activity?.let {
