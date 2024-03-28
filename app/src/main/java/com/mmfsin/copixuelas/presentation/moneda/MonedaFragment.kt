@@ -10,11 +10,9 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
-import com.mmfsin.copixuelas.data.local.getMonedaData
 import com.mmfsin.copixuelas.databinding.FragmentMonedaBinding
 import com.mmfsin.copixuelas.domain.models.CategoryType.MONEDA
 import com.mmfsin.copixuelas.presentation.MainActivity
-import com.mmfsin.copixuelas.presentation.avqp.AVQPEvent
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 import com.mmfsin.copixuelas.presentation.moneda.CoinResult.CARA
 import com.mmfsin.copixuelas.presentation.moneda.CoinResult.CRUZ
@@ -31,6 +29,7 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
 
     private var data = listOf<String>()
     private var position = -1
+    private var question: String? = null
 
     override fun inflateView(inflater: LayoutInflater, container: ViewGroup?) =
         FragmentMonedaBinding.inflate(inflater, container, false)
@@ -44,7 +43,6 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
         setUpToolbar()
 //        showInstructions()
         setAdViewBackground()
-        setInitialData()
         binding.loading.root.visibility = View.VISIBLE
     }
 
@@ -61,14 +59,19 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
     private fun setInitialData() {
         position++
         binding.apply {
-//            tvQuestion.text = data[position]
-//            tvQuestionResult.text = data[position]
-            ivCoin.isClickable = true
-            ivCoin.setImageResource(R.drawable.ic_moneda_neutro)
-            tvSpin.text = getString(R.string.moneda_spin)
-            btnReplay.visibility = View.INVISIBLE
-            clPhaseOne.visibility = View.VISIBLE
-            clPhaseTwo.visibility = View.GONE
+            try {
+                val actualQuestion = data[position]
+                tvQuestion.text = actualQuestion
+                question = actualQuestion
+                ivCoin.isClickable = true
+                ivCoin.setImageResource(R.drawable.ic_moneda_neutro)
+                tvSpin.text = getString(R.string.moneda_spin)
+                btnReplay.visibility = View.INVISIBLE
+                clPhaseOne.visibility = View.VISIBLE
+                clPhaseTwo.visibility = View.GONE
+            } catch (e: Exception) {
+                error()
+            }
         }
     }
 
@@ -96,6 +99,7 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
             when (event) {
                 is MonedaEvent.GetData -> {
                     data = event.data.shuffled()
+                    setInitialData()
                     binding.loading.root.visibility = View.GONE
                 }
 

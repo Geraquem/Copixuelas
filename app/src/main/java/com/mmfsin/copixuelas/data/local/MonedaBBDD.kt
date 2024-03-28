@@ -1,6 +1,6 @@
 package com.mmfsin.copixuelas.data.local
 
-fun getMonedaData(): List<String> {
+fun getBbbddMonedaData(): List<String> {
     return mutableListOf<String>().apply {
         add("¿Con quién grabarías un vídeo p*rno?")
         add("¿Quién crees que es el que más tonterías dice cuando habla?")
@@ -48,7 +48,7 @@ fun getMonedaData(): List<String> {
         add("¿Con quién no tendrías s*xo en tu vida?")
         add("¿Quién es la persona que está más salida?")
         add("¿Quién crees que se lía con la gente más fea?")
-        add("Si tuvieses que pelear con alguien hasta que alguno de los dos muera, ¿con quién sería?")
+        add("Si tuvieses que pelear con alguien hasta que alguno de los dos muera\n\n¿con quién sería?")
         add("¿A quién dejarías que te metiese un dedo por el c*lo?")
         add("¿Quién crees que es muy romántico/a cuando está en pareja?")
         add("¿Quién crees que es la persona que más cambia de personalidad?")

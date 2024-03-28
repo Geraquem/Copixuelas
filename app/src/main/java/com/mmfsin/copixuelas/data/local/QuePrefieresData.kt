@@ -1,6 +1,6 @@
 package com.mmfsin.copixuelas.data.local
 
-fun getQPrefieresData(): List<String> {
+fun getBbddQPrefieresData(): List<String> {
     return mutableListOf<String>().apply {
         add("No poder usar ningún medio de transporte nunca más %OR% perder una pierna")
         add("Quedarte sin familia %OR% quedarte sin amigos")

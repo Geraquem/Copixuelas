@@ -2,7 +2,7 @@ package com.mmfsin.copixuelas.data.local
 
 import com.mmfsin.copixuelas.domain.models.AvqpData
 
-fun getAVQPData(): List<AvqpData> {
+fun getBbddAVQPData(): List<AvqpData> {
     return mutableListOf<AvqpData>().apply {
         add(
             AvqpData(
