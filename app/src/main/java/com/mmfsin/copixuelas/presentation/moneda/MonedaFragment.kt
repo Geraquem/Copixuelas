@@ -141,16 +141,16 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
 
     private fun checkIfShowDialog(result: CoinResult) {
         when (result) {
-            CARA -> {
+            CRUZ -> {
                 question?.let { question ->
-                    countDown(300) {
+                    countDown(200) {
                         val dialog = MonedaResultDialog(question) { nextQuestion() }
                         activity?.let { dialog.show(it.supportFragmentManager, "") }
                     }
                 } ?: run { error() }
             }
 
-            CRUZ -> binding.btnReplay.visibility = View.VISIBLE
+            CARA -> binding.btnReplay.visibility = View.VISIBLE
         }
     }
 

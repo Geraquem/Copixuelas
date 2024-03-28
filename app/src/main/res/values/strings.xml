@@ -36,7 +36,7 @@
     <!-- INSTRUCCIONES -->
     <string name="ints_title">¿Cómo se juega?</string>
     <string name="inst_avqp">Esto es muy fácil\n\n<b>Cada vez le toca a una persona.</b>\n\nPulsa la pantalla y haz lo que dice el móvil.\n\nLas <b>REGLAS</b> se mantienen durante todo el juego.\n\nLas <b>RONDAS</b> duran hasta que te vuelva a tocar.</string>
-    <string name="inst_moneda">Solo una persona lee la pregunta en silencio\n\nLuego pulsa el botón <b>CONTINUAR</b> y le da el móvil a quien encaje con la pregunta\n\nEsa persona gira la moneda y\n\nSi sale <b>CARA</b> nunca se sabrá cuál era la pregunta\n\nSi sale <b>CRUZ</b> se revela la pregunta</string>
+    <string name="inst_moneda">Una persona lee la pregunta en silencio\n\nDespués pulsa el botón <b>CONTINUAR</b> y le da el móvil a quien encaje con la pregunta\n\nEsa persona gira la moneda y\nSi sale <b>CARA</b> nunca se sabrá cuál era la pregunta\n\nSi sale <b>CRUZ</b> se revela la pregunta</string>
     <string name="inst_qprefieres">Muy fácil.\n\n<b>Debate</b> con el grupo e intenta convencer de tu elección al resto\n\nDespués de la votación <b>la minoría tiene castigo</b></string>
     <string name="inst_maletin">Una persona pone el dinero en un maletín <b>sin que nadie le vea.</b>\n\nDespués los cierra y le dice al resto dónde ha guardado el dinero <b><u>pudiendo mentir</u></b>.\n\nSi se acierta dónde está guardado el dinero, <b>ganáis</b>.\n\nSi se falla, hay castigo.</string>
     <string name="inst_btn">¡Vale!</string>
