@@ -671,7 +671,7 @@ fun getAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                second = "Mándale un WhatsApp a la última persona con la que hablaste (que no esté presente) diciendo 'hola cielito mío qué tal ese culito'\n\nSi no quieres bebe 3 tragos",
+                second = "Mándale un mensaje a la última persona con la que hablaste (que no esté presente) diciendo\n'hola cielito mío qué tal ese culito'\n\nSi no quieres bebe 3 tragos",
             )
         )
         add(
@@ -741,7 +741,7 @@ fun getAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Cada ve que tú te acabes la copa, todo el mundo se toma un chupito",
+                second = "Cada vez que tú te acabes la copa, todo el mundo se toma un chupito",
                 isRule = true
             )
         )
@@ -753,13 +753,13 @@ fun getAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "TRABA LA LENGUAS",
-                second = "Di 'Con este puñal dorado te descorazonaré' dos veces seguidas\n\nSi te equivocas bebes",
+                second = "Di dos veces seguidas\n'Con este puñal dorado te descorazonaré'\n\nSi te equivocas bebes",
             )
         )
         add(
             AvqpData(
                 first = "TRABA LA LENGUAS",
-                second = "Di 'Velcro acoplable' dos veces seguidas\n\nSi te equivocas bebes",
+                second = "Di dos veces seguidas\n'Velcro acoplable'\n\nSi te equivocas bebes",
             )
         )
         add(

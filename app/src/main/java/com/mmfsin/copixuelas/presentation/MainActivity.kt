@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun setAdViewBackGroundColor(color: Int) {
-        binding.adView.visibility = View.GONE
+//        binding.adView.visibility = View.GONE
         binding.frameBanner.setBackgroundColor(ContextCompat.getColor(this, color))
     }
 
