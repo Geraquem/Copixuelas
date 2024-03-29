@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Copixuelas</string>
 
     <string name="content_description">image</string>
@@ -30,6 +30,8 @@
     <string name="category_qprefieres_description">Qué prefieres</string>
     <string name="category_maletin">El maletín</string>
     <string name="category_maletin_description">El maletín</string>
+    <string name="category_botella">La botella</string>
+    <string name="category_botella_description" tools:ignore="Typos">Rueda rueda besa besa</string>
     <string name="category_more_games">¿Más juegos?</string>
     <string name="mmfsinURL">https://play.google.com/store/apps/developer?id=mmfsin</string>
 
@@ -39,7 +41,7 @@
     <string name="inst_moneda">Alguien lee la pregunta <b>en silencio</b>.\n\nDespués pulsa el botón <b>continuar</b> y le da el móvil a quien encaje con la pregunta.\nEsa persona gira la moneda:\n\nSi sale <b>CARA</b> nunca se sabrá cuál era la pregunta\n\nSi sale <b>CRUZ</b> se revela la pregunta</string>
     <string name="inst_qprefieres"><b>Debate</b> con el grupo e intenta convencer de tu elección al resto.\n\nA la de tres, <b>votáis</b>.\n\nLa minoría tiene castigo.</string>
     <string name="inst_maletin">Una persona pone el dinero en un maletín <b>sin que nadie le vea</b>.\n\nDespués los cierra y le dice al resto dónde ha guardado el dinero <b><u>pudiendo mentir</u></b>.\n\nSi se acierta dónde está guardado el dinero, <b>ganáis</b>.\n\nSi se falla, hay castigo.</string>
-    <string name="inst_btn">¡Vale!</string>
+    <string name="inst_btn">Entendido</string>
 
     <!-- AVQP -->
     <string name="avqp_start">PULSA LA PANTALLA PARA <b>COMENZAR</b></string>
