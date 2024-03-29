@@ -145,5 +145,7 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
         add("Que nadie se acuerde de tu cumpleaños %OR% que nadie te regale nada por navidad")
         add("Pagar 50 centimos cada vez que mires el móvil %OR% pagar 20 centimos cada vez que quieras escuchar una canción")
     }.shuffled()
-    return listOf<QPrefieresData>().apply { QPrefieresData(top = "Topppp", bottom = "Bottommmmm") }
+    val aaa = mutableListOf<QPrefieresData>()
+    aaa.add(QPrefieresData(top = "Topppp", bottom = "Bottommmmm"))
+    return aaa
 }

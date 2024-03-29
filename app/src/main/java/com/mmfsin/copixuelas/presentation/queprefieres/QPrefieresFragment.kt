@@ -64,12 +64,13 @@ class QPrefieresFragment : BaseFragment<FragmentQueprefieresBinding, QPrefieresV
             btnNext.setOnClickListener {
                 position++
                 if (position > data.size - 1) position = 0
-                shouldShowAd() //esto al setData
+                setData()
             }
 
             btnPrev.setOnClickListener {
                 position--
                 if (position < 0) position = 0
+                setData()
             }
 
             tvVivirEsDecidir.setOnClickListener {
@@ -84,10 +85,24 @@ class QPrefieresFragment : BaseFragment<FragmentQueprefieresBinding, QPrefieresV
             when (event) {
                 is QPrefieresEvent.GetData -> {
                     data = event.data.shuffled()
+                    setData()
                     binding.loading.root.visibility = View.GONE
                 }
 
                 is QPrefieresEvent.SWW -> error()
+            }
+        }
+    }
+
+    private fun setData() {
+        binding.apply {
+            try {
+                shouldShowAd()
+                val actualData = data[position]
+                tvTop.text = actualData.top
+                tvBottom.text = actualData.bottom
+            } catch (e: Exception) {
+                error()
             }
         }
     }
