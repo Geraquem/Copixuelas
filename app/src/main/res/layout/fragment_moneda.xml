@@ -159,14 +159,14 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
                 android:contentDescription="@string/content_description"
-                android:src="@drawable/bg_shadow" />
+                android:src="@drawable/ic_moneda_neutro" />
 
             <ImageView
+                android:id="@+id/shadow"
                 android:layout_width="100dp"
                 android:layout_height="10dp"
                 android:layout_gravity="center"
                 android:alpha="0.3"
-                android:id="@+id/shadow"
                 android:background="@drawable/bg_shadow"
                 android:contentDescription="@string/content_description" />
 

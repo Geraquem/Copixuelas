@@ -8,6 +8,10 @@
     android:clipChildren="false"
     android:clipToPadding="false">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/include_toolbar" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/gl_left"
         android:layout_width="wrap_content"
@@ -30,13 +34,12 @@
         android:clipToPadding="false"
         android:fillViewport="true"
         android:overScrollMode="never"
-        android:paddingTop="24dp"
-        android:paddingBottom="32dp"
+        android:paddingVertical="32dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@id/ll_buttons"
         app:layout_constraintLeft_toLeftOf="@id/gl_left"
         app:layout_constraintRight_toRightOf="@id/gl_right"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -56,33 +59,13 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <ImageView
-                    android:id="@+id/btn_instructions"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginBottom="16dp"
-                    android:contentDescription="@string/content_description"
-                    android:src="@drawable/ic_question" />
-
-                <TextView
-                    android:id="@+id/phrase"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="32dp"
-                    android:fontFamily="@font/avqp_font"
-                    android:gravity="center"
-                    android:text="@string/qp_title"
-                    android:textColor="@color/black"
-                    android:textSize="40sp" />
-
                 <TextView
                     android:id="@+id/tv_top"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/bg_queprefieres"
+                    android:background="@drawable/bg_white_box"
+                    android:backgroundTint="@color/bg_qprefieres_button"
                     android:elevation="6dp"
                     android:fontFamily="sans-serif-condensed"
                     android:gravity="center"
@@ -132,7 +115,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:background="@drawable/bg_queprefieres"
+                    android:background="@drawable/bg_white_box"
+                    android:backgroundTint="@color/bg_qprefieres_button"
                     android:elevation="6dp"
                     android:fontFamily="sans-serif-condensed"
                     android:gravity="center"
@@ -196,5 +180,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/gl_left"
         app:layout_constraintRight_toRightOf="@id/gl_right" />
+
+    <include
+        android:id="@+id/loading"
+        layout="@layout/include_loading"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

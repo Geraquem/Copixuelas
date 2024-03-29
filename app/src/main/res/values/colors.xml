@@ -28,6 +28,8 @@
     <color name="bg_moneda_dark">#698CB1</color>
 
     <color name="bg_qprefieres">#B1C3B4</color>
+    <color name="bg_qprefieres_button">#C7EABA</color>
+    <color name="bg_qprefieres_dark">#869388</color>
 
     <color name="bg_maletin">#FFEECD</color>
 </resources>

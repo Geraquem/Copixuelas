@@ -21,8 +21,8 @@ class InstructionsDialog(private val type: CategoryType) : BaseDialog<DialogInst
         val text = when (type) {
             AVQP -> R.string.inst_avqp
             MONEDA -> R.string.inst_moneda
-            QPREFIERES -> R.string.inst_maletin
-            MALETIN -> R.string.inst_qprefieres
+            QPREFIERES -> R.string.inst_qprefieres
+            MALETIN -> R.string.inst_maletin
         }
         binding.tvInstructions.text = getText(text)
     }

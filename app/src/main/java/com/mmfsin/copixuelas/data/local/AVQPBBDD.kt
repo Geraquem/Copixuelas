@@ -291,7 +291,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 second = "Mándale un whatsapp a tu ex diciendo que echas de menos su olor\n\nSi te rajas, chupito",
-                third = "Luégo sécate las lágrimas y a seguir jugando"
+                third = "Luego sécate las lágrimas y a seguir jugando"
             )
         )
         add(

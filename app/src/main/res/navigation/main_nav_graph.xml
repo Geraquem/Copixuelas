@@ -42,7 +42,7 @@
 
     <fragment
         android:id="@+id/qprefieresFragment"
-        android:name="com.mmfsin.copixuelas.presentation.queprefieres.QuePrefieresFragment"
+        android:name="com.mmfsin.copixuelas.presentation.queprefieres.QPrefieresFragment"
         android:label="qprefieresFragment"
         tools:layout="@layout/fragment_queprefieres" />
 
