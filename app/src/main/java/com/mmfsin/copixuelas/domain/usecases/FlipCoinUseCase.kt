@@ -13,7 +13,7 @@ class FlipCoinUseCase @Inject constructor(
         return try {
             val time = System.currentTimeMillis().toString()
             val last = time.last().digitToInt()
-            if (last in 0..6) CRUZ else CARA
+            if (last in 0..4) CRUZ else CARA
 
         } catch (e: Exception) {
             val rand = (1..12).random()

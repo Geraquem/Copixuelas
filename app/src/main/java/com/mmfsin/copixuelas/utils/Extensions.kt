@@ -1,15 +1,20 @@
 package com.mmfsin.copixuelas.utils
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.os.CountDownTimer
 import android.text.SpannableString
 import android.text.TextPaint
 import android.text.style.URLSpan
 import android.view.View
+import android.view.ViewGroup
+import android.view.animation.AccelerateInterpolator
+import android.view.animation.DecelerateInterpolator
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
-import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.dialog.ErrorDialog
-import com.mmfsin.copixuelas.domain.models.CoinResult
 
 fun TextView.removeLinksUnderline() {
     val spannable = SpannableString(text)
@@ -46,9 +51,15 @@ fun View.animateX(pos: Float, duration: Long) =
 
 fun View.flip(action: () -> Unit) {
     this.animate().apply {
-        duration = 1000
-        rotationYBy(1800f)
+        duration = 1500
+        rotationYBy(5040f)
     }.withEndAction {
         action()
     }.start()
+}
+
+fun View.spinTheBottle(times: Int, duration: Long) {
+    val rotationAnimator = ObjectAnimator.ofFloat(this, View.ROTATION, 0f, 360f * times)
+    rotationAnimator.duration = duration
+    rotationAnimator.start()
 }

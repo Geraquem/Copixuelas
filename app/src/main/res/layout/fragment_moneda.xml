@@ -159,7 +159,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
                 android:contentDescription="@string/content_description"
-                android:src="@drawable/ic_moneda_neutro" />
+                android:src="@drawable/bg_shadow" />
 
             <ImageView
                 android:layout_width="100dp"
