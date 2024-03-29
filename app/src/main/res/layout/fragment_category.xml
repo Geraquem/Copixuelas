@@ -103,12 +103,18 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginBottom="@dimen/category_separator"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
                     android:gravity="center"
                     android:orientation="horizontal">
 
                     <include
                         android:id="@+id/btn_avqp"
-                        layout="@layout/item_category" />
+                        layout="@layout/item_category"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clipChildren="false"
+                        android:clipToPadding="false" />
 
                     <Space
                         android:layout_width="@dimen/category_separator"

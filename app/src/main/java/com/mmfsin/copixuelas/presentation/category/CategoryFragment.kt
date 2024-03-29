@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.data.local.getIntroPhrase
 import com.mmfsin.copixuelas.databinding.FragmentCategoryBinding
@@ -47,6 +48,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
             llTop.visibility = View.GONE
             llButtons.visibility = View.GONE
         }
+        setCategoriesData()
 //        showWarningDialog()
         setBannerInvisible()
         setInitialAnimations()
@@ -55,6 +57,14 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
 
     private fun setBannerInvisible() =
         (activity as MainActivity).bannerVisible(isVisible = false)
+
+    private fun setCategoriesData() {
+        binding.apply {
+            btnMoneda.apply {
+                image.setImageResource(R.drawable.bg_moneda)
+            }
+        }
+    }
 
     private fun setInitialAnimations() {
         binding.apply {
@@ -78,8 +88,8 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
 
     override fun setListeners() {
         binding.apply {
-            btnAvqp.root.setOnClickListener { onCategoryClick(AVQP) }
-            btnMoneda.root.setOnClickListener { onCategoryClick(MONEDA) }
+            btnAvqp.container.setOnClickListener { onCategoryClick(AVQP) }
+            btnMoneda.container.setOnClickListener { onCategoryClick(MONEDA) }
             btnQprefieres.root.setOnClickListener { onCategoryClick(QPREFIERES) }
             btnBotella.root.setOnClickListener { }
             btnMaletin.root.setOnClickListener { onCategoryClick(MALETIN) }
