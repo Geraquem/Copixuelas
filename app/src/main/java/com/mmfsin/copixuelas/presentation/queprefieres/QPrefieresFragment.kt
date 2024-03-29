@@ -7,18 +7,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.databinding.FragmentQueprefieresBinding
-import com.mmfsin.copixuelas.domain.models.CategoryType.*
+import com.mmfsin.copixuelas.domain.models.CategoryType.QPREFIERES
 import com.mmfsin.copixuelas.domain.models.QPrefieresData
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
-import com.mmfsin.copixuelas.presentation.moneda.MonedaEvent
 import com.mmfsin.copixuelas.utils.showErrorDialog
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -52,12 +50,12 @@ class QPrefieresFragment : BaseFragment<FragmentQueprefieresBinding, QPrefieresV
         binding.toolbar.apply {
             toolbar.setBackgroundColor(getColor(mContext, R.color.bg_qprefieres_button))
             ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
-            ivBack.setColorFilter(ContextCompat.getColor(mContext, R.color.black))
+            ivBack.setColorFilter(getColor(mContext, R.color.black))
             tvTitle.text = getString(R.string.category_qprefieres)
-            tvTitle.setTextColor(ContextCompat.getColor(mContext, R.color.black))
+            tvTitle.setTextColor(getColor(mContext, R.color.black))
             tvTitle.typeface = ResourcesCompat.getFont(mContext, R.font.qprefieres_font)
             ivInstructions.setOnClickListener { showInstructions() }
-            ivInstructions.setColorFilter(ContextCompat.getColor(mContext, R.color.black))
+            ivInstructions.setColorFilter(getColor(mContext, R.color.black))
         }
     }
 

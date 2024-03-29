@@ -42,7 +42,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         viewModel.getCategories()
 
         /** delete */
-//        findNavController().navigate(CategoryFragmentDirections.actionMainToQPrefieres())
+        findNavController().navigate(CategoryFragmentDirections.actionMainToQPrefieres())
     }
 
     override fun setUI() {

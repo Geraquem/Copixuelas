@@ -148,23 +148,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:background="@drawable/ic_quepref_next"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:contentDescription="@string/content_description"
-            android:scaleX="-1" />
+            android:scaleX="-1"
+            android:src="@drawable/ic_quepref_next" />
 
         <ImageView
             android:id="@+id/btn_next"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:background="@drawable/ic_quepref_next"
-            android:contentDescription="@string/content_description" />
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/content_description"
+            android:src="@drawable/ic_quepref_next" />
 
     </RelativeLayout>
 
     <TextView
         android:id="@+id/tv_vivir_es_decidir"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
         android:background="@drawable/bg_quepref_another_app"
