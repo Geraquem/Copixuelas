@@ -68,8 +68,12 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
         activity?.let { instructions?.show(it.supportFragmentManager, "") }
     }
 
-    private fun setAdViewBackground() =
-        activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_avqp_dark) }
+    private fun setAdViewBackground() {
+        (activity as MainActivity).apply {
+            setAdViewBackGroundColor(R.color.bg_avqp_dark)
+            bannerVisible()
+        }
+    }
 
     override fun setListeners() {
         binding.apply {

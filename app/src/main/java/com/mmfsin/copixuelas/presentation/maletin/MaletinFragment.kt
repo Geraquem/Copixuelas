@@ -65,6 +65,7 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
                         maletinBottom.setImageResource(R.drawable.ic_maletin_two_opened)
                         btnContinue.visibility = View.VISIBLE
                     }
+
                     CLOSED -> {
                         maletinTop.isEnabled = false
                         maletinBottom.isEnabled = false
@@ -85,6 +86,7 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
                         maletinBottom.setImageResource(R.drawable.ic_maletin_two_money)
                         btnContinue.visibility = View.VISIBLE
                     }
+
                     CLOSED -> {
                         maletinTop.isEnabled = false
                         maletinBottom.isEnabled = false
@@ -122,8 +124,12 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
     private fun showInstructions() =
         activity?.let { InstructionsDialog(MALETIN).show(it.supportFragmentManager, "") }
 
-    private fun setAdViewBackground() =
-        activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_maletin) }
+    private fun setAdViewBackground() {
+        (activity as MainActivity).apply {
+            setAdViewBackGroundColor(R.color.bg_maletin)
+            bannerVisible()
+        }
+    }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)

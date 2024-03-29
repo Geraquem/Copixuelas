@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
 import com.google.android.gms.ads.MobileAds
@@ -34,14 +35,15 @@ class MainActivity : AppCompatActivity() {
         val adRequest = AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
         loadInterstitial(AdRequest.Builder().build())
-
-//        getFCMToken()
     }
 
-    fun setAdViewBackGroundColor(color: Int) {
-//        binding.adView.visibility = View.GONE
+    fun bannerVisible(isVisible: Boolean = true) {
+        binding.adView.isVisible = isVisible
+        binding.frameBanner.isVisible = isVisible
+    }
+
+    fun setAdViewBackGroundColor(color: Int) =
         binding.frameBanner.setBackgroundColor(ContextCompat.getColor(this, color))
-    }
 
     private fun loadInterstitial(adRequest: AdRequest) {
         InterstitialAd.load(
@@ -64,13 +66,6 @@ class MainActivity : AppCompatActivity() {
         mInterstitialAd?.let {
             it.show(this)
             loadInterstitial(AdRequest.Builder().build())
-        }
-    }
-
-    private fun getFCMToken() {
-        FirebaseMessaging.getInstance().token.addOnCompleteListener {
-            if (it.isSuccessful) Log.i("FCM token: ", it.result)
-            else Log.i("FCM token: ", "no token")
         }
     }
 }

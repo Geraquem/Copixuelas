@@ -5,23 +5,17 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout.VERTICAL
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import androidx.recyclerview.widget.SimpleItemAnimator
-import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.data.local.getIntroPhrase
 import com.mmfsin.copixuelas.databinding.FragmentCategoryBinding
-import com.mmfsin.copixuelas.domain.models.Category
 import com.mmfsin.copixuelas.domain.models.CategoryType
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToAVQP
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMaletin
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMoneda
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToQPrefieres
-import com.mmfsin.copixuelas.presentation.category.adapter.CategoryAdapter
 import com.mmfsin.copixuelas.presentation.category.interfaces.ICategoryListener
 import com.mmfsin.copixuelas.presentation.warning.WarningDialog
 import dagger.hilt.android.AndroidEntryPoint
@@ -47,12 +41,12 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
 
     override fun setUI() {
 //        showWarningDialog()
-        setAdViewBackground()
+        setBannerInvisible()
         binding.tvPhrase.text = getIntroPhrase()
     }
 
-    private fun setAdViewBackground() =
-        (activity as MainActivity).setAdViewBackGroundColor(R.color.bg_category)
+    private fun setBannerInvisible() =
+        (activity as MainActivity).bannerVisible(isVisible = false)
 
     override fun setListeners() {
         binding.apply {}
@@ -61,17 +55,9 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     override fun observe() {
         viewModel.event.observe(this) { event ->
             when (event) {
-                is CategoryEvent.GetCategories -> setUpCategories(event.categories)
+                is CategoryEvent.GetCategories -> {}
                 is CategoryEvent.SWW -> {}
             }
-        }
-    }
-
-    private fun setUpCategories(categories: List<Category>) {
-        binding.rvCategories.apply {
-            (this.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
-            layoutManager = StaggeredGridLayoutManager(2, VERTICAL)
-            adapter = CategoryAdapter(categories, this@CategoryFragment)
         }
     }
 

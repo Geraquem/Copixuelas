@@ -116,8 +116,12 @@ class QPrefieresFragment : BaseFragment<FragmentQueprefieresBinding, QPrefieresV
         activity?.let { instructions?.show(it.supportFragmentManager, "") }
     }
 
-    private fun setAdViewBackground() =
-        activity?.let { (it as MainActivity).setAdViewBackGroundColor(R.color.bg_qprefieres) }
+    private fun setAdViewBackground() {
+        (activity as MainActivity).apply {
+            setAdViewBackGroundColor(R.color.bg_qprefieres)
+            bannerVisible()
+        }
+    }
 
     private fun error() {
         instructions?.dismiss()

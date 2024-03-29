@@ -20,7 +20,8 @@
     <color name="instructions">#CCCCCC</color>
 
     <color name="bg_logo">#b7eeb3</color>
-    <color name="bg_category">#4DDD93</color>
+    <color name="bg_category">#5FECA3</color>
+    <color name="bg_category_dark">#4AB17C</color>
 
     <color name="bg_avqp">#B87979</color>
     <color name="bg_avqp_dark">#A16B6B</color>
