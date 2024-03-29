@@ -87,6 +87,7 @@
                 app:layout_constraintGuide_percent="0.95" />
 
             <LinearLayout
+                android:id="@+id/ll_buttons"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:clipChildren="false"
@@ -106,15 +107,16 @@
                     android:orientation="horizontal">
 
                     <include
-                        layout="@layout/item_category"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:id="@+id/btn_avqp"
+                        layout="@layout/item_category" />
 
                     <Space
                         android:layout_width="@dimen/category_separator"
                         android:layout_height="match_parent" />
 
-                    <include layout="@layout/item_category" />
+                    <include
+                        android:id="@+id/btn_moneda"
+                        layout="@layout/item_category" />
 
                 </LinearLayout>
 
@@ -127,15 +129,16 @@
                     android:orientation="horizontal">
 
                     <include
-                        layout="@layout/item_category"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:id="@+id/btn_qprefieres"
+                        layout="@layout/item_category" />
 
                     <Space
                         android:layout_width="@dimen/category_separator"
                         android:layout_height="match_parent" />
 
-                    <include layout="@layout/item_category" />
+                    <include
+                        android:id="@+id/btn_botella"
+                        layout="@layout/item_category" />
 
                 </LinearLayout>
 
@@ -148,15 +151,16 @@
                     android:orientation="horizontal">
 
                     <include
-                        layout="@layout/item_category"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                        android:id="@+id/btn_maletin"
+                        layout="@layout/item_category" />
 
                     <Space
                         android:layout_width="@dimen/category_separator"
                         android:layout_height="match_parent" />
 
-                    <include layout="@layout/item_category" />
+                    <include
+                        android:id="@+id/btn_more_games"
+                        layout="@layout/item_category" />
 
                 </LinearLayout>
 
