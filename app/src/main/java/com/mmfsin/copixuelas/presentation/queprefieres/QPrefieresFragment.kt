@@ -99,6 +99,10 @@ class QPrefieresFragment : BaseFragment<FragmentQueprefieresBinding, QPrefieresV
             try {
                 shouldShowAd()
                 val actualData = data[position]
+                actualData.title?.let { title ->
+                    tvTopTitle.text = title
+                    tvTopTitle.visibility = View.VISIBLE
+                } ?: run { tvTopTitle.visibility = View.GONE }
                 tvTop.text = actualData.top
                 tvBottom.text = actualData.bottom
             } catch (e: Exception) {

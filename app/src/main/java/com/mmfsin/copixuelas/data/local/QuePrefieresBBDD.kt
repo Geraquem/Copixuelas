@@ -10,7 +10,12 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
                 bottom = "perder una pierna"
             )
         )
-        add(QPrefieresData(top = "Quedarte sin familia", bottom = "quedarte sin amigos"))
+        add(
+            QPrefieresData(
+                top = "Quedarte sin familia",
+                bottom = "quedarte sin amigos"
+            )
+        )
         add(
             QPrefieresData(
                 top = "Hacerte rico y famoso por grabar un video p*rno",
@@ -41,7 +46,12 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
                 bottom = "no matar a nadie"
             )
         )
-        add(QPrefieresData(top = "Siempre durar 5 minutos f*lland*", bottom = "durar 5 horas"))
+        add(
+            QPrefieresData(
+                top = "Siempre durar 5 minutos f*lland*",
+                bottom = "durar 5 horas"
+            )
+        )
         add(
             QPrefieresData(
                 top = "Conocer la fecha de tu muerte y vivir hasta ese día",
@@ -72,15 +82,30 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
                 bottom = "no poder volver a usar internet"
             )
         )
-        add(QPrefieresData(top = "No tener pulgares", bottom = "no tener dedos índice"))
-        add(QPrefieresData(top = "Quedarte sin dientes", bottom = "quedarte sin lengua"))
+        add(
+            QPrefieresData(
+                top = "No tener pulgares",
+                bottom = "no tener dedos índice"
+            )
+        )
+        add(
+            QPrefieresData(
+                top = "Quedarte sin dientes",
+                bottom = "quedarte sin lengua"
+            )
+        )
         add(
             QPrefieresData(
                 top = "Estar enamorado/a de tu pareja pero teniendo s*xo una vez al año",
                 bottom = "estar en una relación tóxica con un s*xo increíble"
             )
         )
-        add(QPrefieresData(top = "Vivir eternamente", bottom = "morir a los 50"))
+        add(
+            QPrefieresData(
+                top = "Vivir eternamente",
+                bottom = "morir a los 50"
+            )
+        )
         add(
             QPrefieresData(
                 top = "Sacrificarte para salvar a tu pareja",
@@ -93,15 +118,30 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
                 bottom = "no hacerlo y extinguir a los seres humanos"
             )
         )
-        add(QPrefieresData(top = "Padres eternos", bottom = "mascotas eternas"))
-        add(QPrefieresData(top = "Poner los cuernos", bottom = "que te los pongan"))
+        add(
+            QPrefieresData(
+                top = "Padres eternos",
+                bottom = "mascotas eternas"
+            )
+        )
+        add(
+            QPrefieresData(
+                top = "Poner los cuernos",
+                bottom = "que te los pongan"
+            )
+        )
         add(
             QPrefieresData(
                 top = "Ser horriblemente feo/a pero muy bueno en la cama",
                 bottom = "increíblemente guapo/a y malísimo/a en el s*xo"
             )
         )
-        add(QPrefieresData(top = "Perder un ojo", bottom = "perder una mano"))
+        add(
+            QPrefieresData(
+                top = "Perder un ojo",
+                bottom = "perder una mano"
+            )
+        )
         add(
             QPrefieresData(
                 top = "No poder volver a ver una película",
@@ -144,10 +184,16 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
                 bottom = "seguir siendo un ignorante de la vida"
             )
         )
-        add(QPrefieresData(top = "Tener una mansión", bottom = "tener un yate"))
         add(
             QPrefieresData(
-                top = "¿A quién salvarías antes de la muerte? A un niño de 10 años rico y mimado",
+                top = "Tener una mansión",
+                bottom = "tener un yate"
+            )
+        )
+        add(
+            QPrefieresData(
+                title = "¿A quién salvarías antes de la muerte?",
+                top = " A un niño de 10 años rico y mimado",
                 bottom = "a un cachorrito abandonado"
             )
         )
@@ -158,14 +204,24 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
                 bottom = "no volver a conducir un coche"
             )
         )
-        add(QPrefieresData(top = "Matar cien cachorritos", bottom = "matar a un bebé"))
+        add(
+            QPrefieresData(
+                top = "Matar cien cachorritos",
+                bottom = "matar a un bebé"
+            )
+        )
         add(
             QPrefieresData(
                 top = "No tener calefacción en inviarno",
                 bottom = "no tener ventilador/aire acondicionado en verano"
             )
         )
-        add(QPrefieresData(top = "Hablar muchos idiomas", bottom = "hablar con los animales"))
+        add(
+            QPrefieresData(
+                top = "Hablar muchos idiomas",
+                bottom = "hablar con los animales"
+            )
+        )
         add(
             QPrefieresData(
                 top = "No poder saborear la comida nunca más",
@@ -198,14 +254,16 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
         )
         add(
             QPrefieresData(
-                top = "Hablar con tu 'yo' del pasado",
-                bottom = "hablar con tu 'yo' del futuro"
+                title = "Hablar con tu 'yo' del",
+                top = "Pasado",
+                bottom = "Futuro"
             )
         )
         add(
             QPrefieresData(
-                top = "Vivir en una ciudad submarina",
-                bottom = "vivir en una ciudad en las nubes"
+                title = "Vivir en una ciudad...",
+                top = "submarina",
+                bottom = "en las nubes"
             )
         )
         add(
@@ -287,7 +345,7 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
         add(
             QPrefieresData(
                 top = "Llevar siempre los calcetines mojados",
-                bottom = "tener siempre toda la ropa un poco humeda"
+                bottom = "tener siempre toda la ropa un poco húmeda"
             )
         )
         add(
@@ -353,8 +411,8 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
         )
         add(
             QPrefieresData(
-                top = "No poder volver a m*sturb*rte",
-                bottom = "durar como máximo 10 minutos en la cama"
+                top = "No poder volver a m*sturbarte",
+                bottom = "durar como máximo 5 minutos en la cama"
             )
         )
         add(
@@ -371,8 +429,9 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
         )
         add(
             QPrefieresData(
-                top = "Que tu pareja mastique siempre con la boca abierta",
-                bottom = "que tu pareja ronque mucho"
+                title = "Que tu pareja...",
+                top = "Mastique siempre con la boca abierta",
+                bottom = "Ronque muy alto"
             )
         )
         add(
@@ -454,7 +513,12 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
                 bottom = "tener mucha imaginación y no saber dibujar"
             )
         )
-        add(QPrefieresData(top = "Llevar siempre la ropa ajustada", bottom = "la ropa ancha"))
+        add(
+            QPrefieresData(
+                title = "Siempre llevar la ropa",
+                top = "Ajustada", bottom = "Ancha"
+            )
+        )
         add(
             QPrefieresData(
                 top = "Poder escuchar música siempre que quieras sin necesidad de tecnología",
@@ -473,7 +537,7 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
                 bottom = "50% de descuento cada vez que vayas a un restaurante"
             )
         )
-        add(QPrefieresData(top = "Invasión alienígena", bottom = "tercera guerra mundial"))
+        add(QPrefieresData(top = "Invasión alienígena", bottom = "tu país entra en guerra"))
         add(
             QPrefieresData(
                 top = "70% de la población muere",
@@ -507,8 +571,9 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
         add(QPrefieresData(top = "Conocer tu futuro", bottom = "poder cambiar algo de tu pasado"))
         add(
             QPrefieresData(
-                top = "Llegar siempre 1 hora tarde",
-                bottom = "llegar siempre 1 hora antes"
+                title = "Llegar siempre...",
+                top = "1 hora tarde",
+                bottom = "1 hora antes"
             )
         )
         add(
@@ -526,7 +591,7 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
         add(
             QPrefieresData(
                 top = "Ducharte siempre con agua muy fría",
-                bottom = "siempre tener que ducharte en menos de 30 segundos"
+                bottom = "Una ducha al día y de 30 segundos"
             )
         )
         add(
@@ -616,8 +681,9 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
         )
         add(
             QPrefieresData(
+                title = "Sin poder compartir",
                 top = "100 mil euros para ti",
-                bottom = "1 millón para tú mejor amigo. (Sin poder compartir dinero))"
+                bottom = "1 millón para tu mejor amigo"
             )
         )
         add(
@@ -679,5 +745,5 @@ fun getBbddQPrefieresData(): List<QPrefieresData> {
                 bottom = "pagar 20 centimos cada vez que quieras escuchar una canción"
             )
         )
-    }.shuffled()
+    }
 }
