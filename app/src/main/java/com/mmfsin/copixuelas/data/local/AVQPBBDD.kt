@@ -764,12 +764,6 @@ fun getBbddAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                first = "TRABA LA LENGUAS",
-                second = "Uno por uno tenéis que decir la frase 'Compro pocos cocos porque como pocos cocos'\n\nCuando alguien se equivoque bebe todo el mundo",
-            )
-        )
-        add(
-            AvqpData(
                 second = "Todo el mundo pasa el vaso a su izquierda y bebe del que le pasen\n\nAsí hasta que vuelva a tener cada uno su copa",
             )
         )
