@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.mmfsin.copixuelas.R
@@ -13,13 +12,15 @@ import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.data.local.getIntroPhrase
 import com.mmfsin.copixuelas.databinding.FragmentCategoryBinding
 import com.mmfsin.copixuelas.domain.models.CategoryType
-import com.mmfsin.copixuelas.domain.models.CategoryType.*
+import com.mmfsin.copixuelas.domain.models.CategoryType.AVQP
+import com.mmfsin.copixuelas.domain.models.CategoryType.MALETIN
+import com.mmfsin.copixuelas.domain.models.CategoryType.MONEDA
+import com.mmfsin.copixuelas.domain.models.CategoryType.QPREFIERES
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToAVQP
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMaletin
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMoneda
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToQPrefieres
-import com.mmfsin.copixuelas.presentation.category.interfaces.ICategoryListener
 import com.mmfsin.copixuelas.presentation.warning.WarningDialog
 import com.mmfsin.copixuelas.utils.animateY
 import com.mmfsin.copixuelas.utils.countDown
@@ -61,7 +62,13 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     private fun setCategoriesData() {
         binding.apply {
             btnMoneda.apply {
-                image.setImageResource(R.drawable.bg_moneda)
+                image.setImageResource(R.drawable.category_moneda)
+            }
+            btnQprefieres.apply {
+                image.setImageResource(R.drawable.category_qprefieres)
+            }
+            btnMaletin.apply {
+                image.setImageResource(R.drawable.category_maletin)
             }
         }
     }
@@ -90,10 +97,10 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         binding.apply {
             btnAvqp.container.setOnClickListener { onCategoryClick(AVQP) }
             btnMoneda.container.setOnClickListener { onCategoryClick(MONEDA) }
-            btnQprefieres.root.setOnClickListener { onCategoryClick(QPREFIERES) }
-            btnBotella.root.setOnClickListener { }
-            btnMaletin.root.setOnClickListener { onCategoryClick(MALETIN) }
-            btnMoreGames.root.setOnClickListener { }
+            btnQprefieres.container.setOnClickListener { onCategoryClick(QPREFIERES) }
+            btnBotella.container.setOnClickListener { }
+            btnMaletin.container.setOnClickListener { onCategoryClick(MALETIN) }
+            btnMoreGames.container.setOnClickListener { }
         }
     }
 
