@@ -1,39 +1,22 @@
 package com.mmfsin.copixuelas.presentation.botella
 
 import android.content.Context
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
-import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
-import androidx.navigation.fragment.findNavController
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
-import com.mmfsin.copixuelas.data.local.getIntroPhrase
 import com.mmfsin.copixuelas.databinding.FragmentBotellaBinding
-import com.mmfsin.copixuelas.databinding.FragmentCategoryBinding
-import com.mmfsin.copixuelas.domain.models.AvqpData
-import com.mmfsin.copixuelas.domain.models.CategoryType
-import com.mmfsin.copixuelas.domain.models.CategoryType.AVQP
+import com.mmfsin.copixuelas.domain.models.BotellaSpins
 import com.mmfsin.copixuelas.domain.models.CategoryType.BOTELLA
-import com.mmfsin.copixuelas.domain.models.CategoryType.MALETIN
-import com.mmfsin.copixuelas.domain.models.CategoryType.MONEDA
-import com.mmfsin.copixuelas.domain.models.CategoryType.QPREFIERES
 import com.mmfsin.copixuelas.presentation.MainActivity
-import com.mmfsin.copixuelas.presentation.avqp.AVQPEvent
-import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToAVQP
-import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMaletin
-import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMoneda
-import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToQPrefieres
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
-import com.mmfsin.copixuelas.presentation.warning.WarningDialog
-import com.mmfsin.copixuelas.utils.animateY
 import com.mmfsin.copixuelas.utils.countDown
 import com.mmfsin.copixuelas.utils.showErrorDialog
+import com.mmfsin.copixuelas.utils.spinTheBottle
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -44,6 +27,7 @@ class BotellaFragment : BaseFragment<FragmentBotellaBinding, BotellaViewModel>()
 
     private var instructions: InstructionsDialog? = null
     private var clicks = 0
+    private var lastRotation = 0f
 
     override fun inflateView(
         inflater: LayoutInflater, container: ViewGroup?
@@ -74,7 +58,7 @@ class BotellaFragment : BaseFragment<FragmentBotellaBinding, BotellaViewModel>()
     private fun setAdViewBackground() {
         (activity as MainActivity).apply {
             setAdViewBackGroundColor(R.color.bg_botella)
-            bannerVisible()
+            bannerVisible(false)
         }
     }
 
@@ -91,12 +75,18 @@ class BotellaFragment : BaseFragment<FragmentBotellaBinding, BotellaViewModel>()
     override fun observe() {
         viewModel.event.observe(this) { event ->
             when (event) {
-                is BotellaEvent.GetSpins -> {
-                    //spin
-//                    shouldShowAd() cuando acabe de girar la botella
-                }
-
+                is BotellaEvent.GetSpins -> spinTheBottle(event.data)
                 is BotellaEvent.SWW -> error()
+            }
+        }
+    }
+
+    private fun spinTheBottle(data: BotellaSpins) {
+        binding.apply {
+            ivBottle.spinTheBottle(data.spins, data.duration, lastRotation) {
+                countDown(300) { btnSpin.visibility = View.VISIBLE }
+                shouldShowAd()
+                lastRotation = data.spins
             }
         }
     }

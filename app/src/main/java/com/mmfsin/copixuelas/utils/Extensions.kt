@@ -1,20 +1,21 @@
 package com.mmfsin.copixuelas.utils
 
 import android.animation.Animator
+import android.animation.Animator.AnimatorListener
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
-import android.animation.ValueAnimator
 import android.os.CountDownTimer
 import android.text.SpannableString
 import android.text.TextPaint
 import android.text.style.URLSpan
 import android.view.View
-import android.view.ViewGroup
-import android.view.animation.AccelerateInterpolator
-import android.view.animation.DecelerateInterpolator
+import android.view.animation.Animation
+import android.view.animation.Animation.AnimationListener
+import android.view.animation.RotateAnimation
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import com.mmfsin.copixuelas.base.dialog.ErrorDialog
+import kotlin.random.Random
 
 fun TextView.removeLinksUnderline() {
     val spannable = SpannableString(text)
@@ -58,8 +59,14 @@ fun View.flip(action: () -> Unit) {
     }.start()
 }
 
-fun View.spinTheBottle(times: Int, duration: Long) {
-    val rotationAnimator = ObjectAnimator.ofFloat(this, View.ROTATION, 0f, 360f * times)
+fun View.spinTheBottle(spins: Float, duration: Long, lastRotation: Float, onEnd: () -> Unit) {
+    val rotationAnimator = ObjectAnimator.ofFloat(this, View.ROTATION, lastRotation, spins)
     rotationAnimator.duration = duration
+    rotationAnimator.addListener(object : AnimatorListenerAdapter() {
+        override fun onAnimationEnd(animation: Animator?) {
+            super.onAnimationEnd(animation)
+            onEnd()
+        }
+    })
     rotationAnimator.start()
 }
