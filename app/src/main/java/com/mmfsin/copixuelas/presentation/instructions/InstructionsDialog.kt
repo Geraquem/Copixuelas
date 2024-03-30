@@ -23,7 +23,7 @@ class InstructionsDialog(private val type: CategoryType) : BaseDialog<DialogInst
             AVQP -> R.string.inst_avqp
             MONEDA -> R.string.inst_moneda
             QPREFIERES -> R.string.inst_qprefieres
-            BOTELLA -> R.string.app_name
+            BOTELLA -> R.string.inst_botella
             MALETIN -> R.string.inst_maletin
         }
         binding.tvInstructions.text = getText(text)
