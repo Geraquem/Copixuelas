@@ -1,6 +1,8 @@
 package com.mmfsin.copixuelas.presentation.category
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,14 +15,17 @@ import com.mmfsin.copixuelas.data.local.getIntroPhrase
 import com.mmfsin.copixuelas.databinding.FragmentCategoryBinding
 import com.mmfsin.copixuelas.domain.models.CategoryType
 import com.mmfsin.copixuelas.domain.models.CategoryType.AVQP
+import com.mmfsin.copixuelas.domain.models.CategoryType.BOTELLA
 import com.mmfsin.copixuelas.domain.models.CategoryType.MALETIN
 import com.mmfsin.copixuelas.domain.models.CategoryType.MONEDA
 import com.mmfsin.copixuelas.domain.models.CategoryType.QPREFIERES
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToAVQP
+import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToBotella
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMaletin
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMoneda
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToQPrefieres
+import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 import com.mmfsin.copixuelas.presentation.warning.WarningDialog
 import com.mmfsin.copixuelas.utils.animateY
 import com.mmfsin.copixuelas.utils.countDown
@@ -41,7 +46,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         viewModel.getCategories()
 
         /** delete */
-//        findNavController().navigate(CategoryFragmentDirections.actionMainToQPrefieres())
+        findNavController().navigate(CategoryFragmentDirections.actionMainToBotella())
     }
 
     override fun setUI() {
@@ -98,9 +103,38 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
             btnAvqp.container.setOnClickListener { onCategoryClick(AVQP) }
             btnMoneda.container.setOnClickListener { onCategoryClick(MONEDA) }
             btnQprefieres.container.setOnClickListener { onCategoryClick(QPREFIERES) }
-            btnBotella.container.setOnClickListener { }
+            btnBotella.container.setOnClickListener { onCategoryClick(BOTELLA) }
             btnMaletin.container.setOnClickListener { onCategoryClick(MALETIN) }
-            btnMoreGames.container.setOnClickListener { }
+            btnMoreGames.container.setOnClickListener {
+                val url = getString(R.string.mmfsinURL)
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+            }
+        }
+        setLongListeners()
+    }
+
+    private fun setLongListeners() {
+        binding.apply {
+            btnAvqp.container.setOnLongClickListener {
+                onCategoryLongClick(AVQP)
+                true
+            }
+            btnMoneda.container.setOnLongClickListener {
+                onCategoryLongClick(MONEDA)
+                true
+            }
+            btnQprefieres.container.setOnLongClickListener {
+                onCategoryLongClick(QPREFIERES)
+                true
+            }
+            btnBotella.container.setOnLongClickListener {
+                onCategoryLongClick(BOTELLA)
+                true
+            }
+            btnMaletin.container.setOnLongClickListener {
+                onCategoryLongClick(MALETIN)
+                true
+            }
         }
     }
 
@@ -118,18 +152,20 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
             AVQP -> actionMainToAVQP()
             MONEDA -> actionMainToMoneda()
             QPREFIERES -> actionMainToQPrefieres()
+            BOTELLA -> actionMainToBotella()
             MALETIN -> actionMainToMaletin()
         }
         findNavController().navigate(action)
     }
 
     private fun onCategoryLongClick(type: CategoryType) {
-
+        val dialog = InstructionsDialog(type)
+        activity?.let { dialog.show(it.supportFragmentManager, "") }
     }
 
     private fun showWarningDialog() {
         activity?.let {
-            val main = (it as MainActivity)
+            val main = (activity as MainActivity)
             if (main.showWarningDialog) WarningDialog().show(it.supportFragmentManager, "")
             main.showWarningDialog = false
         }

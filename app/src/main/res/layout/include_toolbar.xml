@@ -23,7 +23,7 @@
             android:elevation="6dp"
             android:paddingVertical="20dp"
             app:layout_scrollFlags="scroll|enterAlways"
-            tools:backgroundTint="@color/bg_qprefieres_dark">
+            tools:backgroundTint="@color/bg_botella_dark">
 
             <RelativeLayout
                 android:layout_width="match_parent"

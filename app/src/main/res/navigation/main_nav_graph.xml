@@ -24,6 +24,10 @@
             app:destination="@id/qprefieresFragment" />
 
         <action
+            android:id="@+id/action_main_to_Botella"
+            app:destination="@id/botellaFragment" />
+
+        <action
             android:id="@+id/action_main_to_Maletin"
             app:destination="@id/maletinFragment" />
     </fragment>
@@ -45,6 +49,12 @@
         android:name="com.mmfsin.copixuelas.presentation.queprefieres.QPrefieresFragment"
         android:label="qprefieresFragment"
         tools:layout="@layout/fragment_queprefieres" />
+
+    <fragment
+        android:id="@+id/botellaFragment"
+        android:name="com.mmfsin.copixuelas.presentation.botella.BotellaFragment"
+        android:label="botellaFragment"
+        tools:layout="@layout/fragment_botella" />
 
     <fragment
         android:id="@+id/maletinFragment"
