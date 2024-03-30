@@ -67,9 +67,11 @@
     <string name="botella_spin">Girar</string>
 
     <!-- MALETIN -->
-    <string name="maletin_title_1"><b>¿DÓNDE QUIERES GUARDAR EL DINERO?</b></string>
-    <string name="maletin_title_2"><b>¿DÓNDE ESTÁ EL DINERO?</b></string>
-    <string name="maletion_close">CERRAR MALETINES</string>
-    <string name="maletin_again">EMPEZAR OTRA VEZ</string>
+    <string name="maletin_title_1">¿En qué maletín quieres guardar el dinero?</string>
+    <string name="maletin_title_2">¿Dónde está guardado el dinero?</string>
+    <string name="maletin_close">Cerrar maletines</string>
+    <string name="maletin_again">Empezar de nuevo</string>
+    <string name="maletin_finish_win">¡Habéis ganado!</string>
+    <string name="maletin_finish_loose">Habéis perdido\nHay castigo</string>
 
 </resources>

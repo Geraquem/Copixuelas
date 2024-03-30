@@ -37,4 +37,5 @@
     <color name="bg_botella_dark">#AD7AA6</color>
 
     <color name="bg_maletin">#FFEECD</color>
+    <color name="bg_maletin_dark">#C5AD80</color>
 </resources>

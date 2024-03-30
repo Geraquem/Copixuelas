@@ -46,7 +46,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         viewModel.getCategories()
 
         /** delete */
-        findNavController().navigate(CategoryFragmentDirections.actionMainToBotella())
+        findNavController().navigate(CategoryFragmentDirections.actionMainToMaletin())
     }
 
     override fun setUI() {

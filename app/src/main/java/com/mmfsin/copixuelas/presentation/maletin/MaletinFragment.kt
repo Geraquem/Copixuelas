@@ -4,28 +4,33 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import com.mmfsin.copixuelas.R
-import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.base.BaseFragmentNoVM
 import com.mmfsin.copixuelas.databinding.FragmentMaletinBinding
-import com.mmfsin.copixuelas.domain.models.CategoryType
-import com.mmfsin.copixuelas.domain.models.CategoryType.*
+import com.mmfsin.copixuelas.domain.models.CategoryType.MALETIN
+import com.mmfsin.copixuelas.domain.models.MaletinPhase
+import com.mmfsin.copixuelas.domain.models.MaletinPhase.CLOSE_MALETINS
+import com.mmfsin.copixuelas.domain.models.MaletinPhase.START_AGAIN
+import com.mmfsin.copixuelas.domain.models.MaletinState
+import com.mmfsin.copixuelas.domain.models.MaletinState.CLOSED
+import com.mmfsin.copixuelas.domain.models.MaletinState.OPENED
+import com.mmfsin.copixuelas.domain.models.MoneyPlace
+import com.mmfsin.copixuelas.domain.models.MoneyPlace.BOTTOM
+import com.mmfsin.copixuelas.domain.models.MoneyPlace.TOP
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
-import com.mmfsin.copixuelas.presentation.maletin.MaletinPhase.CLOSE
-import com.mmfsin.copixuelas.presentation.maletin.MaletinPhase.REPLAY
-import com.mmfsin.copixuelas.presentation.maletin.MaletinType.CLOSED
-import com.mmfsin.copixuelas.presentation.maletin.MaletinType.OPENED
-import com.mmfsin.copixuelas.presentation.maletin.MoneyPlace.BOTTOM
-import com.mmfsin.copixuelas.presentation.maletin.MoneyPlace.TOP
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
 
     private lateinit var mContext: Context
 
-    private var mode: MaletinPhase = CLOSE
-    private var maletinTopType: MaletinType = OPENED
-    private var maletinBottomType: MaletinType = OPENED
+    private var mode: MaletinPhase = CLOSE_MALETINS
+    private var maletinTopType: MaletinState = OPENED
+    private var maletinBottomType: MaletinState = OPENED
     private var moneyPlace: MoneyPlace = TOP
     private var times = 0
 
@@ -33,30 +38,39 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
         FragmentMaletinBinding.inflate(inflater, container, false)
 
     override fun setUI() {
+        setUpToolbar()
         showInstructions()
         setAdViewBackground()
         setInitialConfig()
     }
 
+    private fun setUpToolbar() {
+        binding.toolbar.apply {
+            toolbar.setBackgroundColor(ContextCompat.getColor(mContext, R.color.bg_maletin_dark))
+            ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
+            tvTitle.text = getString(R.string.category_maletin)
+            tvTitle.typeface = ResourcesCompat.getFont(mContext, R.font.maletin_font)
+            ivInstructions.setOnClickListener { showInstructions() }
+        }
+    }
+
     private fun setInitialConfig() {
         binding.apply {
-            mode = CLOSE
+            mode = CLOSE_MALETINS
             maletinTopType = OPENED
             maletinBottomType = OPENED
             maletinTop.isEnabled = true
             maletinBottom.isEnabled = true
-            tvTitle.text = getString(R.string.maletin_title_1)
+            tvTopText.text = getString(R.string.maletin_title_1)
             maletinTop.setImageResource(R.drawable.ic_maletin_one_opened)
             maletinBottom.setImageResource(R.drawable.ic_maletin_two_opened)
-            btnContinue.text = getString(R.string.maletion_close)
+            btnContinue.text = getString(R.string.maletin_close)
             btnContinue.visibility = View.INVISIBLE
         }
     }
 
     override fun setListeners() {
         binding.apply {
-            btnInstructions.setOnClickListener { showInstructions() }
-
             maletinTop.setOnClickListener {
                 when (maletinTopType) {
                     OPENED -> {
@@ -69,9 +83,14 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
                     CLOSED -> {
                         maletinTop.isEnabled = false
                         maletinBottom.isEnabled = false
-                        if (moneyPlace == TOP) maletinTop.setImageResource(R.drawable.ic_maletin_one_money)
-                        else maletinTop.setImageResource(R.drawable.ic_maletin_one_opened)
-                        mode = REPLAY
+                        if (moneyPlace == TOP) {
+                            maletinTop.setImageResource(R.drawable.ic_maletin_one_money)
+                            tvTopText.text = getString(R.string.maletin_finish_win)
+                        } else {
+                            maletinTop.setImageResource(R.drawable.ic_maletin_one_opened)
+                            tvTopText.text = getString(R.string.maletin_finish_loose)
+                        }
+                        mode = START_AGAIN
                         btnContinue.text = getString(R.string.maletin_again)
                         btnContinue.visibility = View.VISIBLE
                     }
@@ -90,9 +109,14 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
                     CLOSED -> {
                         maletinTop.isEnabled = false
                         maletinBottom.isEnabled = false
-                        if (moneyPlace == BOTTOM) maletinBottom.setImageResource(R.drawable.ic_maletin_two_money)
-                        else maletinBottom.setImageResource(R.drawable.ic_maletin_two_opened)
-                        mode = REPLAY
+                        if (moneyPlace == BOTTOM) {
+                            maletinBottom.setImageResource(R.drawable.ic_maletin_two_money)
+                            tvTopText.text = getString(R.string.maletin_finish_win)
+                        } else {
+                            maletinBottom.setImageResource(R.drawable.ic_maletin_two_opened)
+                            tvTopText.text = getString(R.string.maletin_finish_loose)
+                        }
+                        mode = START_AGAIN
                         btnContinue.text = getString(R.string.maletin_again)
                         btnContinue.visibility = View.VISIBLE
                     }
@@ -101,8 +125,8 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
 
             btnContinue.setOnClickListener {
                 when (mode) {
-                    CLOSE -> {
-                        tvTitle.text = getString(R.string.maletin_title_2)
+                    CLOSE_MALETINS -> {
+                        tvTopText.text = getString(R.string.maletin_title_2)
                         maletinTop.setImageResource(R.drawable.ic_maletin_one_closed)
                         maletinTopType = CLOSED
                         maletinBottom.setImageResource(R.drawable.ic_maletin_two_closed)
@@ -110,7 +134,7 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
                         btnContinue.visibility = View.INVISIBLE
                     }
 
-                    REPLAY -> {
+                    START_AGAIN -> {
                         times++
                         shouldShowAd()
                         setInitialConfig()
@@ -119,7 +143,6 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
             }
         }
     }
-
 
     private fun showInstructions() =
         activity?.let { InstructionsDialog(MALETIN).show(it.supportFragmentManager, "") }
