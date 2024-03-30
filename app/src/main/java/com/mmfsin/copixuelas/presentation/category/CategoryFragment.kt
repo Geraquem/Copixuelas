@@ -11,7 +11,6 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
-import com.mmfsin.copixuelas.data.local.getIntroPhrase
 import com.mmfsin.copixuelas.databinding.FragmentCategoryBinding
 import com.mmfsin.copixuelas.domain.models.CategoryType
 import com.mmfsin.copixuelas.domain.models.CategoryType.AVQP
@@ -52,7 +51,6 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
             llButtons.visibility = View.GONE
         }
         setCategoriesData()
-//        showWarningDialog()
         setBannerInvisible()
         setInitialAnimations()
     }
@@ -78,18 +76,27 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         binding.apply {
             val main = (activity as MainActivity)
             if (main.firstTime) {
-                llTop.animateY(-500f, 10)
-                llButtons.animateY(1500f, 10)
-                countDown(500) {
-                    llTop.visibility = View.VISIBLE
-                    llTop.animateY(0f, 500)
-                    llButtons.visibility = View.VISIBLE
-                    llButtons.animateY(0f, 500)
+                val warningDialog = WarningDialog {
+                    animateViews()
+                    main.firstTime = false
                 }
-                main.firstTime = false
+                warningDialog.show(main.supportFragmentManager, "")
             } else {
                 llTop.visibility = View.VISIBLE
                 llButtons.visibility = View.VISIBLE
+            }
+        }
+    }
+
+    private fun animateViews() {
+        binding.apply {
+            llTop.animateY(-500f, 10)
+            llButtons.animateY(1500f, 10)
+            countDown(250) {
+                llTop.visibility = View.VISIBLE
+                llTop.animateY(0f, 500)
+                llButtons.visibility = View.VISIBLE
+                llButtons.animateY(0f, 500)
             }
         }
     }
@@ -157,14 +164,6 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     private fun onCategoryLongClick(type: CategoryType) {
         val dialog = InstructionsDialog(type)
         activity?.let { dialog.show(it.supportFragmentManager, "") }
-    }
-
-    private fun showWarningDialog() {
-        activity?.let {
-            val main = (activity as MainActivity)
-            if (main.showWarningDialog) WarningDialog().show(it.supportFragmentManager, "")
-            main.showWarningDialog = false
-        }
     }
 
     override fun onAttach(context: Context) {

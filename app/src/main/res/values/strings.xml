@@ -15,9 +15,9 @@
     <string name="error_btn">Aceptar</string>
 
     <!-- Warning Dialog -->
-    <string name="warning_text_title">CUIDADO</string>
-    <string name="warning_text_one">CONSUMIR ALCOHOL ES PERJUDICIAL PARA LA SALUD.</string>
-    <string name="warning_text_two">UTILIZANDO ESTA APLICACIÓN ASUME SER RESPONSABLE DE TODAS LAS REPERCUSIONES QUE EL USO DE COPIXULEAS PUDIESE GENERAR.</string>
+    <string name="warning_text_title">Advertencia</string>
+    <string name="warning_text_one">Consumir alcohol es perjudicial para la salud.</string>
+    <string name="warning_text_two" tools:ignore="Typos">Al utilizar esta aplicación asume ser el responsable de todas las repercusiones que el uso de Copixuelas pudiese generar.</string>
     <string name="warning_text_three"><b>SI BEBES, NO CONDUZCAS.</b></string>
     <string name="warning_text_btn">ENTENDIDO</string>
 
