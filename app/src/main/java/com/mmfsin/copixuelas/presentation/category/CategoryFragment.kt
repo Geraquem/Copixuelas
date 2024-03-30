@@ -43,10 +43,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getCategories()
-
-        /** delete */
-        findNavController().navigate(CategoryFragmentDirections.actionMainToMaletin())
+        viewModel.getFunnyPhrase()
     }
 
     override fun setUI() {
@@ -58,7 +55,6 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
 //        showWarningDialog()
         setBannerInvisible()
         setInitialAnimations()
-        binding.tvPhrase.text = getIntroPhrase()
     }
 
     private fun setBannerInvisible() =
@@ -141,7 +137,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     override fun observe() {
         viewModel.event.observe(this) { event ->
             when (event) {
-                is CategoryEvent.GetCategories -> {}
+                is CategoryEvent.GetFunnyPhrase -> binding.tvPhrase.text = event.phrase
                 is CategoryEvent.SWW -> {}
             }
         }

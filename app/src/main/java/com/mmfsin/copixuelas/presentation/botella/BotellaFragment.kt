@@ -35,7 +35,7 @@ class BotellaFragment : BaseFragment<FragmentBotellaBinding, BotellaViewModel>()
 
     override fun setUI() {
         setUpToolbar()
-//        showInstructions()
+        showInstructions()
         setAdViewBackground()
         binding.btnSpin.visibility = View.VISIBLE
     }
@@ -58,7 +58,7 @@ class BotellaFragment : BaseFragment<FragmentBotellaBinding, BotellaViewModel>()
     private fun setAdViewBackground() {
         (activity as MainActivity).apply {
             setAdViewBackGroundColor(R.color.bg_botella)
-            bannerVisible(false)
+            bannerVisible()
         }
     }
 
