@@ -9,9 +9,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.databinding.FragmentCategoryBinding
+import com.mmfsin.copixuelas.domain.models.Category
 import com.mmfsin.copixuelas.domain.models.CategoryType
 import com.mmfsin.copixuelas.domain.models.CategoryType.AVQP
 import com.mmfsin.copixuelas.domain.models.CategoryType.BOTELLA
@@ -24,6 +26,8 @@ import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Co
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMaletin
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMoneda
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToQPrefieres
+import com.mmfsin.copixuelas.presentation.category.adapter.CategoryAdapter
+import com.mmfsin.copixuelas.presentation.category.interfaces.ICategoryListener
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 import com.mmfsin.copixuelas.presentation.warning.WarningDialog
 import com.mmfsin.copixuelas.utils.animateY
@@ -31,7 +35,8 @@ import com.mmfsin.copixuelas.utils.countDown
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel>() {
+class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel>(),
+    ICategoryListener {
 
     override val viewModel: CategoryViewModel by viewModels()
     private lateinit var mContext: Context
@@ -77,7 +82,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
             val main = (activity as MainActivity)
             if (main.firstTime) {
                 val warningDialog = WarningDialog {
-                    animateViews()
+                  //  animateViews()
                     main.firstTime = false
                 }
                 warningDialog.show(main.supportFragmentManager, "")
@@ -144,13 +149,25 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     override fun observe() {
         viewModel.event.observe(this) { event ->
             when (event) {
-                is CategoryEvent.GetFunnyPhrase -> binding.tvPhrase.text = event.phrase
+                is CategoryEvent.GetFunnyPhrase -> {
+                    binding.tvPhrase.text = event.phrase
+                    viewModel.getCategories()
+                }
+
+                is CategoryEvent.GetCategories -> setCategories(event.categories)
                 is CategoryEvent.SWW -> {}
             }
         }
     }
 
-    private fun onCategoryClick(type: CategoryType) {
+    private fun setCategories(categories: List<Category>) {
+        binding.rvCategories.apply {
+            layoutManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+            adapter = CategoryAdapter(categories, this@CategoryFragment)
+        }
+    }
+
+    override fun onCategoryClick(type: CategoryType) {
         val action = when (type) {
             AVQP -> actionMainToAVQP()
             MONEDA -> actionMainToMoneda()
@@ -161,7 +178,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         findNavController().navigate(action)
     }
 
-    private fun onCategoryLongClick(type: CategoryType) {
+    override fun onCategoryLongClick(type: CategoryType) {
         val dialog = InstructionsDialog(type)
         activity?.let { dialog.show(it.supportFragmentManager, "") }
     }
