@@ -102,7 +102,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/category_separator"
+                    android:layout_marginBottom="@dimen/category_bottom"
                     android:clipChildren="false"
                     android:clipToPadding="false"
                     android:gravity="center"
@@ -113,7 +113,7 @@
                         layout="@layout/item_category" />
 
                     <Space
-                        android:layout_width="@dimen/category_separator"
+                        android:layout_width="@dimen/category_space"
                         android:layout_height="match_parent" />
 
                     <include
@@ -126,7 +126,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/category_separator"
+                    android:layout_marginBottom="@dimen/category_bottom"
                     android:clipChildren="false"
                     android:clipToPadding="false"
                     android:gravity="center"
@@ -137,7 +137,7 @@
                         layout="@layout/item_category" />
 
                     <Space
-                        android:layout_width="@dimen/category_separator"
+                        android:layout_width="@dimen/category_space"
                         android:layout_height="match_parent" />
 
                     <include
@@ -150,7 +150,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/category_separator"
+                    android:layout_marginBottom="@dimen/category_bottom"
                     android:clipChildren="false"
                     android:clipToPadding="false"
                     android:gravity="center"
@@ -161,7 +161,7 @@
                         layout="@layout/item_category" />
 
                     <Space
-                        android:layout_width="@dimen/category_separator"
+                        android:layout_width="@dimen/category_space"
                         android:layout_height="match_parent" />
 
                     <include
@@ -178,8 +178,8 @@
 
     <ImageView
         android:id="@+id/unicorn"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_gravity="end"
         android:background="@drawable/unircorn"
         android:contentDescription="@string/content_description"

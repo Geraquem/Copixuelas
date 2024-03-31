@@ -92,7 +92,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         binding.apply {
             llTop.animateY(-500f, 10)
             llButtons.animateY(1500f, 10)
-            countDown(250) {
+            countDown(150) {
                 llTop.visibility = View.VISIBLE
                 llTop.animateY(0f, 500)
                 llButtons.visibility = View.VISIBLE
