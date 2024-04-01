@@ -1,5 +1,7 @@
 package com.mmfsin.copixuelas.presentation.mimica
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
@@ -16,6 +18,7 @@ import com.mmfsin.copixuelas.databinding.FragmentMimicaBinding
 import com.mmfsin.copixuelas.domain.models.CategoryType.MIMICA
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
+import com.mmfsin.copixuelas.utils.countDown
 import com.mmfsin.copixuelas.utils.showErrorDialog
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -47,7 +50,10 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
         setUpToolbar()
 //        showInstructions()
         setAdViewBackground()
-        binding.loading.root.visibility = View.VISIBLE
+        binding.apply {
+            tvMimic.visibility = View.INVISIBLE
+            loading.root.visibility = View.VISIBLE
+        }
     }
 
     private fun setUpToolbar() {
@@ -60,25 +66,32 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
         }
     }
 
+    private val listener = object : AnimatorListenerAdapter() {
+
+    }
+
     @SuppressLint("ClickableViewAccessibility")
     override fun setListeners() {
         binding.apply {
-            ivImage.setOnTouchListener { _, event ->
+            rlCard.setOnTouchListener { _, event ->
                 when (event.action) {
                     ACTION_DOWN -> {
-                        originalRotation = ivImage.rotation
+                        originalRotation = rlCard.rotation
                         longPressRunnable = Runnable {
                             longPressDetected = true
-                            ivImage.animate().rotationY(ivImage.rotation - 180f).start()
+                            val animation = rlCard.animate().rotationY(rlCard.rotation - 180f)
+                            animation.start()
+                            countDown(200) { tvMimic.visibility = View.VISIBLE }
                         }
-                        ivImage.postDelayed(longPressRunnable, 250)
+                        rlCard.postDelayed(longPressRunnable, 250)
                         longPressDetected = false
                         true
                     }
 
                     ACTION_UP, ACTION_CANCEL -> {
-                        ivImage.animate().rotationY(originalRotation).start()
-                        ivImage.removeCallbacks(longPressRunnable)
+                        tvMimic.visibility = View.INVISIBLE
+                        rlCard.animate().rotationY(originalRotation).start()
+                        rlCard.removeCallbacks(longPressRunnable)
                         true
                     }
 
