@@ -126,6 +126,21 @@
             app:layout_constraintRight_toRightOf="@id/rl_card"
             app:layout_constraintTop_toBottomOf="@id/rl_card" />
 
+        <TextView
+            android:id="@+id/tv_time"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/moneda_font"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/mimic_timer_restart"
+            android:textColor="@color/white"
+            android:textSize="48sp"
+            app:layout_constraintLeft_toLeftOf="@id/rl_card"
+            app:layout_constraintRight_toRightOf="@id/rl_card"
+            app:layout_constraintTop_toBottomOf="@id/rl_card" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView

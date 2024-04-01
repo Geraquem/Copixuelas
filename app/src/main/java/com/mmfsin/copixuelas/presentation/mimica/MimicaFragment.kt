@@ -3,11 +3,11 @@ package com.mmfsin.copixuelas.presentation.mimica
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
+import android.os.CountDownTimer
 import android.view.LayoutInflater
 import android.view.MotionEvent.*
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
@@ -18,7 +18,6 @@ import com.mmfsin.copixuelas.domain.models.CategoryType.MIMICA
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 import com.mmfsin.copixuelas.utils.animateX
-import com.mmfsin.copixuelas.utils.animateY
 import com.mmfsin.copixuelas.utils.countDown
 import com.mmfsin.copixuelas.utils.showErrorDialog
 import dagger.hilt.android.AndroidEntryPoint
@@ -38,6 +37,7 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
     private var originalRotation = 0f
     private var longPressDetected = false
     private var longPressRunnable: Runnable? = null
+    private var timer: CountDownTimer? = null
 
     override fun inflateView(inflater: LayoutInflater, container: ViewGroup?) =
         FragmentMimicaBinding.inflate(inflater, container, false)
@@ -52,6 +52,7 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
 //        showInstructions()
         setAdViewBackground()
         binding.apply {
+            tvTime.alpha = 0f
             loading.root.visibility = View.VISIBLE
         }
     }
@@ -92,10 +93,11 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
                 }
             }
 
-            btnStart.setOnClickListener { }
+            btnStart.setOnClickListener { startCountDown() }
 
             btnNext.setOnClickListener {
                 btnNext.isEnabled = false
+                resetCountDown()
                 rlCard.animateX(2000f, 300)
                 position++
                 if (position > data.size - 1) position = 0
@@ -131,6 +133,34 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
             } catch (e: Exception) {
                 error()
             }
+        }
+    }
+
+    private fun startCountDown() {
+        binding.apply {
+            btnStart.isEnabled = false
+            btnStart.animate().alpha(0f).setDuration(200).start()
+            tvTime.animate().alpha(1f).setDuration(200).start()
+            timer = object : CountDownTimer(60000, 1000) {
+                override fun onTick(millisUntilFinished: Long) {
+                    val secondsLeft = millisUntilFinished / 1000
+                    tvTime.text = secondsLeft.toString()
+                }
+
+                override fun onFinish() {
+
+                }
+            }.start()
+        }
+    }
+
+    private fun resetCountDown() {
+        binding.apply {
+            btnStart.isEnabled = true
+            timer?.cancel()
+            btnStart.animate().alpha(1f).setDuration(200).start()
+            tvTime.animate().alpha(0f).setDuration(200).start()
+            tvTime.text = getString(R.string.mimic_timer_restart)
         }
     }
 

@@ -74,5 +74,6 @@
     <string name="mimic_title">Mantén pulsado la tarjeta\npara ver la frase</string>
     <string name="mimic_start"><b>EMPEZAR</b></string>
     <string name="mimic_other"><b>OTRA PRUEBA</b></string>
+    <string name="mimic_timer_restart">59</string>
 
 </resources>
