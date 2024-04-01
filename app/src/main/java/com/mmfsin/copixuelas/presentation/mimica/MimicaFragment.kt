@@ -4,11 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.MotionEvent.*
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
@@ -16,7 +14,6 @@ import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.databinding.FragmentMimicaBinding
 import com.mmfsin.copixuelas.domain.models.CategoryType.MIMICA
-import com.mmfsin.copixuelas.domain.models.CategoryType.MONEDA
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
 import com.mmfsin.copixuelas.utils.showErrorDialog
@@ -34,6 +31,10 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
     private var position = 0
     private var actualMimic: String? = null
 
+    private var originalRotation = 0f
+    private var longPressDetected = false
+    private var longPressRunnable: Runnable? = null
+
     override fun inflateView(inflater: LayoutInflater, container: ViewGroup?) =
         FragmentMimicaBinding.inflate(inflater, container, false)
 
@@ -44,7 +45,7 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
 
     override fun setUI() {
         setUpToolbar()
-        showInstructions()
+//        showInstructions()
         setAdViewBackground()
         binding.loading.root.visibility = View.VISIBLE
     }
@@ -65,18 +66,25 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
             ivImage.setOnTouchListener { _, event ->
                 when (event.action) {
                     ACTION_DOWN -> {
-                        ivImage.setImageResource(R.drawable.ic_moneda)
+                        originalRotation = ivImage.rotation
+                        longPressRunnable = Runnable {
+                            longPressDetected = true
+                            ivImage.animate().rotationY(ivImage.rotation - 180f).start()
+                        }
+                        ivImage.postDelayed(longPressRunnable, 250)
+                        longPressDetected = false
+                        true
                     }
 
                     ACTION_UP, ACTION_CANCEL -> {
-                        ivImage.setImageResource(R.drawable.ic_moneda_cruz)
+                        ivImage.animate().rotationY(originalRotation).start()
+                        ivImage.removeCallbacks(longPressRunnable)
+                        true
                     }
 
-                    else -> {}
+                    else -> false
                 }
-                true
             }
-
 
 //            btnNext.setOnClickListener{
 //                position++

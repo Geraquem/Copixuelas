@@ -1,7 +1,6 @@
 package com.mmfsin.copixuelas.utils
 
 import android.animation.Animator
-import android.animation.Animator.AnimatorListener
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.os.CountDownTimer
@@ -9,13 +8,9 @@ import android.text.SpannableString
 import android.text.TextPaint
 import android.text.style.URLSpan
 import android.view.View
-import android.view.animation.Animation
-import android.view.animation.Animation.AnimationListener
-import android.view.animation.RotateAnimation
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import com.mmfsin.copixuelas.base.dialog.ErrorDialog
-import kotlin.random.Random
 
 fun TextView.removeLinksUnderline() {
     val spannable = SpannableString(text)
@@ -50,7 +45,7 @@ fun View.animateY(pos: Float, duration: Long) =
 fun View.animateX(pos: Float, duration: Long) =
     this.animate().translationX(pos).setDuration(duration)
 
-fun View.flip(action: () -> Unit) {
+fun View.flipCoint(action: () -> Unit) {
     this.animate().apply {
         duration = 1500
         rotationYBy(5040f)
