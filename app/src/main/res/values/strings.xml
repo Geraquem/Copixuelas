@@ -70,4 +70,9 @@
     <string name="maletin_finish_win">¡Habéis ganado!</string>
     <string name="maletin_finish_loose">Habéis perdido\nHay castigo</string>
 
+    <!-- MIMICA -->
+    <string name="mimic_title">Mantén pulsado la tarjeta\npara ver la frase</string>
+    <string name="mimic_start"><b>EMPEZAR</b></string>
+    <string name="mimic_other"><b>OTRA PRUEBA</b></string>
+
 </resources>

@@ -24,42 +24,129 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.95" />
 
-    <RelativeLayout
-        android:id="@+id/rl_card"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="0dp"
-        android:layout_height="250dp"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginVertical="24dp"
-        android:background="@drawable/bg_tv_mimic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="@id/gl_left"
-        app:layout_constraintRight_toRightOf="@id/gl_right"
+        android:layout_height="0dp"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:orientation="vertical"
+        android:paddingVertical="24dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_next"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar">
 
-        <ImageView
-            android:id="@+id/iv_mimic_logo"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_centerInParent="true"
-            android:contentDescription="@string/content_description"
-            android:src="@drawable/ic_error" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl2_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl2_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <TextView
+            android:id="@+id/tv_mimic_title"
+            style="@style/MediumTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:alpha="0.5"
+            android:fontFamily="@font/avqp_font"
+            android:gravity="center"
+            android:text="@string/mimic_title"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            app:layout_constraintLeft_toLeftOf="@id/gl2_left"
+            app:layout_constraintRight_toRightOf="@id/gl2_right"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/rl_card"
+            android:layout_width="0dp"
+            android:layout_height="250dp"
+            android:layout_marginHorizontal="42dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_tv_mimic"
+            android:elevation="6dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_mimic_title">
+
+            <ImageView
+                android:id="@+id/iv_mimic_logo"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_centerInParent="true"
+                android:contentDescription="@string/content_description"
+                android:src="@drawable/ic_error" />
+
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/tv_mimic"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:layout_marginHorizontal="42dp"
             android:fontFamily="@font/avqp_font"
             android:gravity="center"
             android:padding="16dp"
-            android:scaleX="-1"
             android:textAllCaps="true"
             android:textColor="@color/white"
             android:textSize="24sp"
-            app:layout_constraintTop_toBottomOf="parent"
-            tools:text="Frase de mímica" />
+            app:layout_constraintBottom_toTopOf="@id/btn_start"
+            app:layout_constraintLeft_toLeftOf="@id/gl2_left"
+            app:layout_constraintRight_toRightOf="@id/gl2_right"
+            app:layout_constraintTop_toBottomOf="@id/tv_mimic_title"
+            tools:text="Frase de mimica" />
 
-    </RelativeLayout>
+        <TextView
+            android:id="@+id/btn_start"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:alpha="0.75"
+            android:background="@drawable/bg_white_box"
+            android:backgroundTint="@color/bg_mimic_dark"
+            android:elevation="6dp"
+            android:fontFamily="@font/moneda_font"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/mimic_start"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            app:layout_constraintLeft_toLeftOf="@id/rl_card"
+            app:layout_constraintRight_toRightOf="@id/rl_card"
+            app:layout_constraintTop_toBottomOf="@id/rl_card" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/btn_next"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:alpha="0.75"
+        android:background="@drawable/bg_white_box"
+        android:backgroundTint="@color/bg_mimic_dark"
+        android:elevation="6dp"
+        android:fontFamily="@font/moneda_font"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="@string/mimic_other"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/gl_left"
+        app:layout_constraintRight_toRightOf="@id/gl_right" />
 
     <include
         android:id="@+id/loading"

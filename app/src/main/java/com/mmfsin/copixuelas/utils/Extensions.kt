@@ -45,7 +45,7 @@ fun View.animateY(pos: Float, duration: Long) =
 fun View.animateX(pos: Float, duration: Long) =
     this.animate().translationX(pos).setDuration(duration)
 
-fun View.flipCoint(action: () -> Unit) {
+fun View.flipCoin(action: () -> Unit) {
     this.animate().apply {
         duration = 1500
         rotationYBy(5040f)

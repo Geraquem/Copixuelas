@@ -1,7 +1,5 @@
 package com.mmfsin.copixuelas.presentation.mimica
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
@@ -9,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.MotionEvent.*
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
@@ -18,6 +17,8 @@ import com.mmfsin.copixuelas.databinding.FragmentMimicaBinding
 import com.mmfsin.copixuelas.domain.models.CategoryType.MIMICA
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.instructions.InstructionsDialog
+import com.mmfsin.copixuelas.utils.animateX
+import com.mmfsin.copixuelas.utils.animateY
 import com.mmfsin.copixuelas.utils.countDown
 import com.mmfsin.copixuelas.utils.showErrorDialog
 import dagger.hilt.android.AndroidEntryPoint
@@ -51,7 +52,6 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
 //        showInstructions()
         setAdViewBackground()
         binding.apply {
-            tvMimic.visibility = View.INVISIBLE
             loading.root.visibility = View.VISIBLE
         }
     }
@@ -66,10 +66,6 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
         }
     }
 
-    private val listener = object : AnimatorListenerAdapter() {
-
-    }
-
     @SuppressLint("ClickableViewAccessibility")
     override fun setListeners() {
         binding.apply {
@@ -79,14 +75,7 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
                         originalRotation = rlCard.rotation
                         longPressRunnable = Runnable {
                             longPressDetected = true
-                            val animation = rlCard.animate().rotationY(rlCard.rotation - 180f)
-                            animation.setListener(object : AnimatorListenerAdapter() {
-                                override fun onAnimationEnd(animation: Animator?) {
-                                    super.onAnimationEnd(animation)
-                                    tvMimic.visibility = View.VISIBLE
-                                }
-                            })
-                            animation.start()
+                            rlCard.animateX(-2000f, 300)
                         }
                         rlCard.postDelayed(longPressRunnable, 250)
                         longPressDetected = false
@@ -94,15 +83,7 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
                     }
 
                     ACTION_UP, ACTION_CANCEL -> {
-                        tvMimic.visibility = View.INVISIBLE
-                        val animation = rlCard.animate().rotationY(originalRotation)
-                        animation.setListener(object : AnimatorListenerAdapter() {
-                            override fun onAnimationEnd(animation: Animator?) {
-                                super.onAnimationEnd(animation)
-                                tvMimic.visibility = View.INVISIBLE
-                            }
-                        })
-                        animation.start()
+                        rlCard.animateX(0f, 300)
                         rlCard.removeCallbacks(longPressRunnable)
                         true
                     }
@@ -111,11 +92,19 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
                 }
             }
 
-//            btnNext.setOnClickListener{
-//                position++
-//                if (position > data.size - 1) position = 0
-//                setData()
-//            }
+            btnStart.setOnClickListener { }
+
+            btnNext.setOnClickListener {
+                btnNext.isEnabled = false
+                rlCard.animateX(2000f, 300)
+                position++
+                if (position > data.size - 1) position = 0
+                setData()
+                countDown(750) {
+                    rlCard.animateX(0f, 300)
+                    btnNext.isEnabled = true
+                }
+            }
         }
     }
 
@@ -138,8 +127,7 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
             try {
                 actualMimic = data[position]
                 tvMimic.text = actualMimic
-                //set
-                shouldShowAd()
+//                shouldShowAd()
             } catch (e: Exception) {
                 error()
             }
