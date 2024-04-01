@@ -86,103 +86,20 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.95" />
 
-            <LinearLayout
-                android:id="@+id/ll_buttons"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_categories"
+                style="@style/scroll_no_effects"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:clipChildren="false"
                 android:clipToPadding="false"
-                android:orientation="vertical"
-                android:paddingTop="32dp"
-                android:visibility="gone"
-                app:layout_constraintLeft_toLeftOf="@id/gl_left"
-                app:layout_constraintRight_toRightOf="@id/gl_right"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/category_bottom"
-                    android:clipChildren="false"
-                    android:clipToPadding="false"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <include
-                        android:id="@+id/btn_avqp"
-                        layout="@layout/item_category" />
-
-                    <Space
-                        android:layout_width="@dimen/category_space"
-                        android:layout_height="match_parent" />
-
-                    <include
-                        android:id="@+id/btn_moneda"
-                        layout="@layout/item_category" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/category_bottom"
-                    android:clipChildren="false"
-                    android:clipToPadding="false"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <include
-                        android:id="@+id/btn_qprefieres"
-                        layout="@layout/item_category" />
-
-                    <Space
-                        android:layout_width="@dimen/category_space"
-                        android:layout_height="match_parent" />
-
-                    <include
-                        android:id="@+id/btn_botella"
-                        layout="@layout/item_category" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginBottom="@dimen/category_bottom"
-                    android:clipChildren="false"
-                    android:clipToPadding="false"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <include
-                        android:id="@+id/btn_maletin"
-                        layout="@layout/item_category" />
-
-                    <Space
-                        android:layout_width="@dimen/category_space"
-                        android:layout_height="match_parent" />
-
-                    <include
-                        android:id="@+id/btn_more_games"
-                        layout="@layout/item_category" />
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv_categories"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:paddingTop="32dp"
-                android:paddingBottom="200dp"
+                android:paddingVertical="32dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="@id/gl_left"
                 app:layout_constraintRight_toRightOf="@id/gl_right"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:itemCount="3"
+                tools:listitem="@layout/item_category" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

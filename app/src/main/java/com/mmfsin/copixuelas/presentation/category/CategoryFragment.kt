@@ -18,6 +18,7 @@ import com.mmfsin.copixuelas.domain.models.CategoryType
 import com.mmfsin.copixuelas.domain.models.CategoryType.AVQP
 import com.mmfsin.copixuelas.domain.models.CategoryType.BOTELLA
 import com.mmfsin.copixuelas.domain.models.CategoryType.MALETIN
+import com.mmfsin.copixuelas.domain.models.CategoryType.MIMICA
 import com.mmfsin.copixuelas.domain.models.CategoryType.MONEDA
 import com.mmfsin.copixuelas.domain.models.CategoryType.QPREFIERES
 import com.mmfsin.copixuelas.presentation.MainActivity
@@ -53,9 +54,8 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     override fun setUI() {
         binding.apply {
             llTop.visibility = View.GONE
-            llButtons.visibility = View.GONE
+            rvCategories.visibility = View.GONE
         }
-        setCategoriesData()
         setBannerInvisible()
         setInitialAnimations()
     }
@@ -63,32 +63,18 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     private fun setBannerInvisible() =
         (activity as MainActivity).bannerVisible(isVisible = false)
 
-    private fun setCategoriesData() {
-        binding.apply {
-            btnMoneda.apply {
-                image.setImageResource(R.drawable.category_moneda)
-            }
-            btnQprefieres.apply {
-                image.setImageResource(R.drawable.category_qprefieres)
-            }
-            btnMaletin.apply {
-                image.setImageResource(R.drawable.category_maletin)
-            }
-        }
-    }
-
     private fun setInitialAnimations() {
         binding.apply {
             val main = (activity as MainActivity)
             if (main.firstTime) {
                 val warningDialog = WarningDialog {
-                  //  animateViews()
+                    animateViews()
                     main.firstTime = false
                 }
                 warningDialog.show(main.supportFragmentManager, "")
             } else {
                 llTop.visibility = View.VISIBLE
-                llButtons.visibility = View.VISIBLE
+                rvCategories.visibility = View.VISIBLE
             }
         }
     }
@@ -96,53 +82,22 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     private fun animateViews() {
         binding.apply {
             llTop.animateY(-500f, 10)
-            llButtons.animateY(1500f, 10)
+            rvCategories.animateY(1500f, 10)
             countDown(150) {
                 llTop.visibility = View.VISIBLE
                 llTop.animateY(0f, 500)
-                llButtons.visibility = View.VISIBLE
-                llButtons.animateY(0f, 500)
+                rvCategories.visibility = View.VISIBLE
+                rvCategories.animateY(0f, 500)
             }
         }
     }
 
     override fun setListeners() {
         binding.apply {
-            btnAvqp.container.setOnClickListener { onCategoryClick(AVQP) }
-            btnMoneda.container.setOnClickListener { onCategoryClick(MONEDA) }
-            btnQprefieres.container.setOnClickListener { onCategoryClick(QPREFIERES) }
-            btnBotella.container.setOnClickListener { onCategoryClick(BOTELLA) }
-            btnMaletin.container.setOnClickListener { onCategoryClick(MALETIN) }
-            btnMoreGames.container.setOnClickListener {
-                val url = getString(R.string.mmfsinURL)
-                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
-            }
-        }
-        setLongListeners()
-    }
-
-    private fun setLongListeners() {
-        binding.apply {
-            btnAvqp.container.setOnLongClickListener {
-                onCategoryLongClick(AVQP)
-                true
-            }
-            btnMoneda.container.setOnLongClickListener {
-                onCategoryLongClick(MONEDA)
-                true
-            }
-            btnQprefieres.container.setOnLongClickListener {
-                onCategoryLongClick(QPREFIERES)
-                true
-            }
-            btnBotella.container.setOnLongClickListener {
-                onCategoryLongClick(BOTELLA)
-                true
-            }
-            btnMaletin.container.setOnLongClickListener {
-                onCategoryLongClick(MALETIN)
-                true
-            }
+//            btnMoreGames.container.setOnClickListener {
+//                val url = getString(R.string.mmfsinURL)
+//                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(url)))
+//            }
         }
     }
 
@@ -174,6 +129,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
             QPREFIERES -> actionMainToQPrefieres()
             BOTELLA -> actionMainToBotella()
             MALETIN -> actionMainToMaletin()
+            MIMICA -> actionMainToMaletin()
         }
         findNavController().navigate(action)
     }
