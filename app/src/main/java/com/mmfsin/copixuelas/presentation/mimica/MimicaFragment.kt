@@ -1,10 +1,14 @@
 package com.mmfsin.copixuelas.presentation.mimica
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.MotionEvent
+import android.view.MotionEvent.*
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
@@ -55,8 +59,25 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
         }
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     override fun setListeners() {
         binding.apply {
+            ivImage.setOnTouchListener { _, event ->
+                when (event.action) {
+                    ACTION_DOWN -> {
+                        ivImage.setImageResource(R.drawable.ic_moneda)
+                    }
+
+                    ACTION_UP, ACTION_CANCEL -> {
+                        ivImage.setImageResource(R.drawable.ic_moneda_cruz)
+                    }
+
+                    else -> {}
+                }
+                true
+            }
+
+
 //            btnNext.setOnClickListener{
 //                position++
 //                if (position > data.size - 1) position = 0
