@@ -80,8 +80,13 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
                         longPressRunnable = Runnable {
                             longPressDetected = true
                             val animation = rlCard.animate().rotationY(rlCard.rotation - 180f)
+                            animation.setListener(object : AnimatorListenerAdapter() {
+                                override fun onAnimationEnd(animation: Animator?) {
+                                    super.onAnimationEnd(animation)
+                                    tvMimic.visibility = View.VISIBLE
+                                }
+                            })
                             animation.start()
-                            countDown(200) { tvMimic.visibility = View.VISIBLE }
                         }
                         rlCard.postDelayed(longPressRunnable, 250)
                         longPressDetected = false
@@ -90,7 +95,14 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
 
                     ACTION_UP, ACTION_CANCEL -> {
                         tvMimic.visibility = View.INVISIBLE
-                        rlCard.animate().rotationY(originalRotation).start()
+                        val animation = rlCard.animate().rotationY(originalRotation)
+                        animation.setListener(object : AnimatorListenerAdapter() {
+                            override fun onAnimationEnd(animation: Animator?) {
+                                super.onAnimationEnd(animation)
+                                tvMimic.visibility = View.INVISIBLE
+                            }
+                        })
+                        animation.start()
                         rlCard.removeCallbacks(longPressRunnable)
                         true
                     }
@@ -122,13 +134,16 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
     }
 
     private fun setData() {
-//        try {
-//            actualMimic = data[position]
-//            //set
-//            shouldShowAd()
-//        } catch (e: Exception) {
-//            error()
-//        }
+        binding.apply {
+            try {
+                actualMimic = data[position]
+                tvMimic.text = actualMimic
+                //set
+                shouldShowAd()
+            } catch (e: Exception) {
+                error()
+            }
+        }
     }
 
     private fun showInstructions() {
