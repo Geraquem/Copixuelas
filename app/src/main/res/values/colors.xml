@@ -38,4 +38,8 @@
 
     <color name="bg_maletin">#FFEECD</color>
     <color name="bg_maletin_dark">#C5AD80</color>
+
+    <color name="bg_mimic">#95CCB2</color>
+    <color name="bg_mimic_dark">#65937D</color>
+
 </resources>

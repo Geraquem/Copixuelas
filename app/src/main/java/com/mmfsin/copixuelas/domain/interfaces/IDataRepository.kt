@@ -8,4 +8,5 @@ interface IDataRepository {
     fun getAvqpData(): List<AvqpData>
     fun getMonedaData(): List<String>
     fun getQPrefieresData(): List<QPrefieresData>
+    fun getMimicaData(): List<String>
 }

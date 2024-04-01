@@ -30,6 +30,10 @@
         <action
             android:id="@+id/action_main_to_Maletin"
             app:destination="@id/maletinFragment" />
+
+        <action
+            android:id="@+id/action_main_to_Mimic"
+            app:destination="@id/mimicFragment" />
     </fragment>
 
     <fragment
@@ -61,5 +65,11 @@
         android:name="com.mmfsin.copixuelas.presentation.maletin.MaletinFragment"
         android:label="maletinFragment"
         tools:layout="@layout/fragment_maletin" />
+
+    <fragment
+        android:id="@+id/mimicFragment"
+        android:name="com.mmfsin.copixuelas.presentation.mimica.MimicaFragment"
+        android:label="mimicFragment"
+        tools:layout="@layout/fragment_mimica" />
 
 </navigation>

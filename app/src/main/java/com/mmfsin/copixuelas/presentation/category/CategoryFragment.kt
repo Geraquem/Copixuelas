@@ -1,8 +1,6 @@
 package com.mmfsin.copixuelas.presentation.category
 
 import android.content.Context
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -10,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.databinding.FragmentCategoryBinding
 import com.mmfsin.copixuelas.domain.models.Category
@@ -25,6 +22,7 @@ import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToAVQP
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToBotella
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMaletin
+import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMimic
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMoneda
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToQPrefieres
 import com.mmfsin.copixuelas.presentation.category.adapter.CategoryAdapter
@@ -129,7 +127,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
             QPREFIERES -> actionMainToQPrefieres()
             BOTELLA -> actionMainToBotella()
             MALETIN -> actionMainToMaletin()
-            MIMICA -> actionMainToMaletin()
+            MIMICA -> actionMainToMimic()
         }
         findNavController().navigate(action)
     }
