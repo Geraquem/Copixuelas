@@ -62,8 +62,8 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
             maletinTop.isEnabled = true
             maletinBottom.isEnabled = true
             tvTopText.text = getString(R.string.maletin_title_1)
-            maletinTop.setImageResource(R.drawable.ic_maletin_one_opened)
-            maletinBottom.setImageResource(R.drawable.ic_maletin_two_opened)
+            maletinTop.setImageResource(R.drawable.ic_malet_empty)
+            maletinBottom.setImageResource(R.drawable.ic_malet_empty)
             btnContinue.text = getString(R.string.maletin_close)
             btnContinue.visibility = View.INVISIBLE
         }
@@ -75,8 +75,8 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
                 when (maletinTopType) {
                     OPENED -> {
                         moneyPlace = TOP
-                        maletinTop.setImageResource(R.drawable.ic_maletin_one_money)
-                        maletinBottom.setImageResource(R.drawable.ic_maletin_two_opened)
+                        maletinTop.setImageResource(R.drawable.ic_malet_money)
+                        maletinBottom.setImageResource(R.drawable.ic_malet_empty)
                         btnContinue.visibility = View.VISIBLE
                     }
 
@@ -84,10 +84,10 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
                         maletinTop.isEnabled = false
                         maletinBottom.isEnabled = false
                         if (moneyPlace == TOP) {
-                            maletinTop.setImageResource(R.drawable.ic_maletin_one_money)
+                            maletinTop.setImageResource(R.drawable.ic_malet_money)
                             tvTopText.text = getString(R.string.maletin_finish_win)
                         } else {
-                            maletinTop.setImageResource(R.drawable.ic_maletin_one_opened)
+                            maletinTop.setImageResource(R.drawable.ic_malet_empty)
                             tvTopText.text = getString(R.string.maletin_finish_loose)
                         }
                         mode = START_AGAIN
@@ -101,8 +101,8 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
                 when (maletinBottomType) {
                     OPENED -> {
                         moneyPlace = BOTTOM
-                        maletinTop.setImageResource(R.drawable.ic_maletin_one_opened)
-                        maletinBottom.setImageResource(R.drawable.ic_maletin_two_money)
+                        maletinTop.setImageResource(R.drawable.ic_malet_empty)
+                        maletinBottom.setImageResource(R.drawable.ic_malet_money)
                         btnContinue.visibility = View.VISIBLE
                     }
 
@@ -110,10 +110,10 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
                         maletinTop.isEnabled = false
                         maletinBottom.isEnabled = false
                         if (moneyPlace == BOTTOM) {
-                            maletinBottom.setImageResource(R.drawable.ic_maletin_two_money)
+                            maletinBottom.setImageResource(R.drawable.ic_malet_money)
                             tvTopText.text = getString(R.string.maletin_finish_win)
                         } else {
-                            maletinBottom.setImageResource(R.drawable.ic_maletin_two_opened)
+                            maletinBottom.setImageResource(R.drawable.ic_malet_empty)
                             tvTopText.text = getString(R.string.maletin_finish_loose)
                         }
                         mode = START_AGAIN
@@ -127,9 +127,9 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
                 when (mode) {
                     CLOSE_MALETINS -> {
                         tvTopText.text = getString(R.string.maletin_title_2)
-                        maletinTop.setImageResource(R.drawable.ic_maletin_one_closed)
+                        maletinTop.setImageResource(R.drawable.ic_malet_closed)
                         maletinTopType = CLOSED
-                        maletinBottom.setImageResource(R.drawable.ic_maletin_two_closed)
+                        maletinBottom.setImageResource(R.drawable.ic_malet_closed)
                         maletinBottomType = CLOSED
                         btnContinue.visibility = View.INVISIBLE
                     }

@@ -37,7 +37,7 @@ class GetCategoriesUseCase @Inject constructor(
             Category(
                 type = BOTELLA,
                 title = R.string.category_botella,
-                image = R.drawable.bg_white_box
+                image = R.drawable.category_botella
             )
         )
         categories.add(
@@ -51,7 +51,7 @@ class GetCategoriesUseCase @Inject constructor(
             Category(
                 type = MIMICA,
                 title = R.string.category_mimica,
-                image = R.drawable.bg_white_box
+                image = R.drawable.category_mimic
             )
         )
         return categories

@@ -145,7 +145,7 @@
                 android:id="@+id/tv_spin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="42dp"
+                android:layout_marginBottom="38dp"
                 android:fontFamily="@font/moneda_font"
                 android:text="@string/moneda_spin"
                 android:textAllCaps="true"
@@ -159,7 +159,7 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="24dp"
                 android:contentDescription="@string/content_description"
-                android:src="@drawable/ic_moneda_neutro" />
+                android:src="@drawable/ic_moneda" />
 
             <ImageView
                 android:id="@+id/shadow"

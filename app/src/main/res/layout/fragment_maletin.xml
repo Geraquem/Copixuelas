@@ -91,7 +91,7 @@
                     android:layout_gravity="center"
                     android:layout_marginBottom="24dp"
                     android:contentDescription="@string/content_description"
-                    android:src="@drawable/ic_maletin_one_opened" />
+                    android:src="@drawable/ic_malet_empty" />
 
                 <ImageView
                     android:id="@+id/maletin_bottom"
@@ -99,7 +99,7 @@
                     android:layout_height="200dp"
                     android:layout_gravity="center"
                     android:contentDescription="@string/content_description"
-                    android:src="@drawable/ic_maletin_two_opened" />
+                    android:src="@drawable/ic_malet_money" />
 
             </LinearLayout>
 

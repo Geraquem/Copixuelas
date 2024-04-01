@@ -105,7 +105,7 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
                 tvQuestion.text = actualQuestion
                 question = actualQuestion
                 ivCoin.isClickable = true
-                ivCoin.setImageResource(R.drawable.ic_moneda_neutro)
+                ivCoin.setImageResource(R.drawable.ic_moneda)
                 tvSpin.text = getString(R.string.moneda_spin)
                 btnReplay.visibility = View.INVISIBLE
                 clPhaseOne.visibility = View.VISIBLE
