@@ -47,9 +47,6 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel.getFunnyPhrase()
-
-        /** delete */
-        findNavController().navigate(CategoryFragmentDirections.actionMainToMimic())
     }
 
     override fun setUI() {

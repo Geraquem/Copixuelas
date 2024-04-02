@@ -23,7 +23,7 @@ class CategoryAdapter(
             binding.apply {
                 tvText.text = context.getString(category.title)
                 tvText.typeface = getFont(context, R.font.avqp_font)
-                Glide.with(context).load(category.image).into(image)
+                image.setImageResource(category.image)
             }
         }
     }

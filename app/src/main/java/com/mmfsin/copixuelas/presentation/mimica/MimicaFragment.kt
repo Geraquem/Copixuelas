@@ -2,14 +2,25 @@ package com.mmfsin.copixuelas.presentation.mimica
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Context.VIBRATOR_SERVICE
+import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.VibrationEffect
+import android.os.VibrationEffect.DEFAULT_AMPLITUDE
+import android.os.VibrationEffect.createOneShot
+import android.os.Vibrator
+import android.os.VibratorManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent.*
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getSystemService
+import androidx.core.content.getSystemService
 import androidx.core.content.res.ResourcesCompat
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
@@ -98,7 +109,7 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
             btnNext.setOnClickListener {
                 btnNext.isEnabled = false
                 resetCountDown()
-                rlCard.animateX(2000f, 300)
+                if (rlCard.alpha != 0f) rlCard.animateX(2000f, 300)
                 position++
                 if (position > data.size - 1) position = 0
                 setData()
@@ -141,14 +152,16 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
             btnStart.isEnabled = false
             btnStart.animate().alpha(0f).setDuration(200).start()
             tvTime.animate().alpha(1f).setDuration(200).start()
-            timer = object : CountDownTimer(60000, 1000) {
+            timer = object : CountDownTimer(5000, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
-                    val secondsLeft = millisUntilFinished / 1000
+                    val secondsLeft = (millisUntilFinished / 1000) + 1
                     tvTime.text = secondsLeft.toString()
                 }
 
                 override fun onFinish() {
-
+                    rlCard.animate().alpha(0f).setDuration(200).start()
+                    tvTime.text = getString(R.string.mimic_timer_zero)
+                    vibratePhone()
                 }
             }.start()
         }
@@ -157,10 +170,21 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
     private fun resetCountDown() {
         binding.apply {
             btnStart.isEnabled = true
+            rlCard.animate().alpha(1f).setDuration(200).start()
             timer?.cancel()
             btnStart.animate().alpha(1f).setDuration(200).start()
-            tvTime.animate().alpha(0f).setDuration(200).start()
-            tvTime.text = getString(R.string.mimic_timer_restart)
+            tvTime.animate().alpha(0f).setDuration(10).start()
+        }
+    }
+
+    private fun vibratePhone() {
+        try {
+            val vibrator = getSystemService(mContext, Vibrator::class.java)
+            if (vibrator?.hasVibrator() == true) {
+                vibrator.vibrate(createOneShot(1500, DEFAULT_AMPLITUDE))
+            }
+        } catch (e: Exception) {
+            Log.e("VIBRATOR", "vibration error")
         }
     }
 
@@ -190,5 +214,10 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
         if (position != 0 && position % 8 == 0) {
             activity?.let { (it as MainActivity).showInterstitial() }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        timer?.cancel()
     }
 }
