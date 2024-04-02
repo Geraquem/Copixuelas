@@ -85,7 +85,7 @@
                 android:layout_centerInParent="true"
                 android:alpha="0.35"
                 android:contentDescription="@string/content_description"
-                android:src="@drawable/mimic_logo" />
+                android:src="@drawable/logo_mimic" />
 
         </RelativeLayout>
 

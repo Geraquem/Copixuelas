@@ -26,7 +26,7 @@ class InstructionsDialog(private val type: CategoryType) : BaseDialog<DialogInst
             QPREFIERES -> R.string.inst_qprefieres
             BOTELLA -> R.string.inst_botella
             MALETIN -> R.string.inst_maletin
-            MIMICA -> R.string.app_name
+            MIMICA -> R.string.inst_mimica
         }
         binding.tvInstructions.text = getText(text)
     }

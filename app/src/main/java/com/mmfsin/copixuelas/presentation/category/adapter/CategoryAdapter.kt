@@ -9,6 +9,8 @@ import com.bumptech.glide.Glide
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.databinding.ItemCategoryBinding
 import com.mmfsin.copixuelas.domain.models.Category
+import com.mmfsin.copixuelas.domain.models.CategoryType
+import com.mmfsin.copixuelas.domain.models.CategoryType.*
 import com.mmfsin.copixuelas.presentation.category.interfaces.ICategoryListener
 
 class CategoryAdapter(
@@ -24,7 +26,16 @@ class CategoryAdapter(
                 tvText.text = context.getString(category.title)
                 tvText.typeface = getFont(context, R.font.avqp_font)
                 image.setImageResource(category.image)
+                checkIfHideShadow(category.type)
             }
+        }
+
+        private fun checkIfHideShadow(type: CategoryType) {
+            val visibility = when (type) {
+                MONEDA, QPREFIERES, MALETIN -> View.VISIBLE
+                else -> View.GONE
+            }
+            binding.shadow.visibility = visibility
         }
     }
 

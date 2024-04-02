@@ -16,7 +16,7 @@ class GetCategoriesUseCase @Inject constructor(
             Category(
                 type = AVQP,
                 title = R.string.category_avqp,
-                image = R.drawable.bg_white_box
+                image = R.drawable.category_avqp
             )
         )
         categories.add(

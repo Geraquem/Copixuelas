@@ -152,7 +152,8 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
             btnStart.isEnabled = false
             btnStart.animate().alpha(0f).setDuration(200).start()
             tvTime.animate().alpha(1f).setDuration(200).start()
-            timer = object : CountDownTimer(5000, 1000) {
+            /** un minuto para adivinar */
+            timer = object : CountDownTimer(59000, 1000) {
                 override fun onTick(millisUntilFinished: Long) {
                     val secondsLeft = (millisUntilFinished / 1000) + 1
                     tvTime.text = secondsLeft.toString()

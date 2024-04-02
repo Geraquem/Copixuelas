@@ -37,9 +37,10 @@
             tools:src="@drawable/category_moneda" />
 
         <ImageView
+            android:id="@+id/shadow"
             android:layout_width="138dp"
             android:layout_height="138dp"
-            android:alpha="0.2"
+            android:alpha="0.15"
             android:contentDescription="@string/content_description"
             android:src="@color/black"
             app:layout_constraintBottom_toBottomOf="parent"

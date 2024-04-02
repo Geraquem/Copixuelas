@@ -29,7 +29,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Cada vez que alguien pida un cigarro se toma un chupito",
+                second = "A partir de ahora, cada vez que alguien pida un cigarro se toma un chupito",
                 third = "A ver si te crees que el tabaco lo regalan",
                 isRule = true
             )
@@ -42,7 +42,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Nadie puede señalar a nada ni a nadie\n\nQuien señale, bebe",
+                second = "A partir de ahora nadie puede señalar a nada ni a nadie\n\nQuien señale, bebe",
                 isRule = true
             )
         )
@@ -223,14 +223,14 @@ fun getBbddAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "No os podéis llamar ni por el nombre ni por apodos\n\nQuien lo haga, bebe",
+                second = "A partir de ahora no os podéis llamar ni por el nombre ni por apodos\n\nQuien lo haga, bebe",
                 isRule = true
             )
         )
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Cada vez que alguien diga un taco o insulte, bebe",
+                second = "A partir de ahora cada vez que alguien diga un taco o insulte, bebe",
                 third = "Vamos a llevarnos bien ¿vale?",
                 isRule = true
             )
@@ -250,7 +250,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Quien pida un hielo en vez de cogerlo por cuenta propia bebe",
+                second = "A partir de ahora quien pida un hielo en vez de cogerlo por cuenta propia, bebe",
                 third = "Por vago",
                 isRule = true
             )
@@ -509,7 +509,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                second = "Mándale un WhatsApp a tu última conversación (que no esté presente) y dile '¿Y cuándo me comes la boca?'\n\n Si no quieres chupito",
+                second = "Mándale un WhatsApp a tu última conversación (que no esté presente) y dile '¿Cuándo me comes la boca?'\n\n Si no quieres chupito",
                 third = "Reza por que no sea nadie de tu familia"
             )
         )
@@ -553,7 +553,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Cada vez que alguien mire el móvil, todo el mundo bebe",
+                second = "A partir de ahora cada vez que alguien mire el móvil, todo el mundo bebe",
                 isRule = true
             )
         )
@@ -699,7 +699,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Todo el mundo tiene que beber con el meñique levantado\n\nQuien no lo haga bebe otra vez",
+                second = "A partir de ahora todo el mundo tiene que beber con el meñique levantado\n\nQuien no lo haga bebe otra vez",
                 isRule = true
             )
         )
@@ -741,7 +741,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Cada vez que tú te acabes la copa, todo el mundo se toma un chupito",
+                second = "A partir de ahora cada vez que tú te acabes la copa, todo el mundo se toma un chupito",
                 isRule = true
             )
         )
@@ -792,7 +792,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Cada vez que alguien diga la palabra VASO, bebe",
+                second = "A partir de ahora cada vez que alguien diga la palabra VASO, bebe",
                 isRule = true
             )
         )

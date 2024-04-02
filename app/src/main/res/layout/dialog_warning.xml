@@ -13,8 +13,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_bottom_dialog"
-        android:backgroundTint="@color/cancel"
-        android:paddingVertical="16dp"
+        android:backgroundTint="@color/instructions"
+        android:paddingVertical="12dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
