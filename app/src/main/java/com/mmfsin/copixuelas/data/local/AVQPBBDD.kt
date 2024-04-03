@@ -6,7 +6,7 @@ fun getBbddAVQPData(): List<AvqpData> {
     return mutableListOf<AvqpData>().apply {
         add(
             AvqpData(
-                second = "Elige a una persona\n\nTodo el mundo tiene que ignorarle hasta que se acabe su copa"
+                second = "Elige a una persona\n\nTodo el mundo tiene que ignorarla hasta que se acabe su copa"
             )
         )
         add(
@@ -17,7 +17,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "REGLA",
-                second = "Solo tú puedes ponerte disimuladamente un dedo en la nariz\n\nEl resto te tiene que copiar, el último en hacerlo bebe",
+                second = "Cuando quieras puedes ponerte disimuladamente un dedo en la nariz\n\nEl resto te tiene que copiar, el último en hacerlo bebe",
                 isRule = true
             )
         )
@@ -55,7 +55,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "Hay que regular el pH",
-                second = "Si ayer alguien salió de fiesta, bebe",
+                second = "Si ayer alguien salió de fiesta, bebe\n\nSi nadie ha bebido bebes tú",
             )
         )
         add(
@@ -164,8 +164,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                second = "Date un pico a la vez con el de tu izquierda y tu derecha",
-                third = "Luego un chupito cada uno por lo bien que lo habéis hecho"
+                second = "Date un pico a la vez con el de tu izquierda y tu derecha\n\nLuego bebéis y brindáis por lo bien que lo habéis hecho",
             )
         )
         add(
@@ -210,7 +209,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                second = "Huele los pies de la persona de tu izquierda o bebe de la botella",
+                second = "Huele los pies de la persona de tu izquierda o bebe",
             )
         )
         add(
@@ -242,9 +241,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                first = "",
                 second = "Durante una ronda no se puede decir la letra ‘e’\n\nquien la diga, b b ",
-                third = ""
             )
         )
         add(
@@ -395,12 +392,6 @@ fun getBbddAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                first = "No hay vasos que valgan",
-                second = "Mezclate una copa en la boca",
-            )
-        )
-        add(
-            AvqpData(
                 first = "MODO INFLUENCER",
                 second = "Sube una foto a Instagram diciendo 'Sois todos imbéciles'\n\nSi no quieres tómate un chupito",
             )
@@ -509,8 +500,13 @@ fun getBbddAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                second = "Mándale un WhatsApp a tu última conversación (que no esté presente) y dile '¿Cuándo me comes la boca?'\n\n Si no quieres chupito",
+                second = "Mándale un WhatsApp a tu última conversación (que no esté presente) y dile '¿Cuándo me comes la boca?'\n\n Si no quieres, chupito",
                 third = "Reza por que no sea nadie de tu familia"
+            )
+        )
+        add(
+            AvqpData(
+                second = "Dale un trago al vaso de todo el mundo",
             )
         )
         add(
@@ -531,7 +527,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         add(
             AvqpData(
                 first = "ABRAZAMOS LOS EXTREMOS",
-                second = "Dale un pico a la persona más joven y luego a la más mayor del grupo\n\n Luego un chupito los 3",
+                second = "Dale un pico a la persona más joven y luego a la más mayor del grupo\n\n Luego bebéis los 3",
             )
         )
         add(

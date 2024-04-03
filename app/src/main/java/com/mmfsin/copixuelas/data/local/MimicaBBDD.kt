@@ -56,7 +56,7 @@ fun getBbddMimicaData(): List<String> {
         add("Ir al gym en tirantes")
         add("Mucho calor en verano")
         add("Encontrarte una araña en un zapato")
-        add("Harry potter jugando al quiddich")
+        add("Harry potter jugando al Quidditch")
         add("Que te hagan un mal corte de pelo")
         add("Morderte las uñas de los nervios")
         add("Viajar a Argentina")
