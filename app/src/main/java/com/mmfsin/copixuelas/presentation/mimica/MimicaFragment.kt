@@ -60,7 +60,7 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
 
     override fun setUI() {
         setUpToolbar()
-//        showInstructions()
+        showInstructions()
         setAdViewBackground()
         binding.apply {
             tvTime.alpha = 0f

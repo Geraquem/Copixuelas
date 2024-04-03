@@ -149,7 +149,7 @@
         android:id="@+id/btn_next"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="24dp"
         android:alpha="0.75"
         android:background="@drawable/bg_white_box"
         android:backgroundTint="@color/bg_mimic_dark"
