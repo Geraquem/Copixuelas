@@ -2,25 +2,19 @@ package com.mmfsin.copixuelas.presentation.mimica
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.Context.VIBRATOR_SERVICE
-import android.os.Build
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.os.VibrationEffect
 import android.os.VibrationEffect.DEFAULT_AMPLITUDE
 import android.os.VibrationEffect.createOneShot
 import android.os.Vibrator
-import android.os.VibratorManager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent.*
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.ContextCompat.getSystemService
-import androidx.core.content.getSystemService
 import androidx.core.content.res.ResourcesCompat
-import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
@@ -70,7 +64,8 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
 
     private fun setUpToolbar() {
         binding.toolbar.apply {
-            toolbar.setBackgroundColor(ContextCompat.getColor(mContext, R.color.bg_mimic_dark))
+            activity?.window?.statusBarColor = getColor(requireContext(), R.color.bg_mimic_dark)
+            toolbar.setBackgroundColor(getColor(mContext, R.color.bg_mimic_dark))
             ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
             tvTitle.text = getString(R.string.category_mimica)
             tvTitle.typeface = ResourcesCompat.getFont(mContext, R.font.moneda_font)

@@ -5,9 +5,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
 import com.mmfsin.copixuelas.databinding.FragmentCategoryBinding
 import com.mmfsin.copixuelas.domain.models.Category
@@ -53,6 +56,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         binding.apply {
             llTop.visibility = View.GONE
             rvCategories.visibility = View.GONE
+            changeStatusBarColor(R.color.instructions)
         }
         setBannerInvisible()
         setInitialAnimations()
@@ -73,6 +77,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
             } else {
                 llTop.visibility = View.VISIBLE
                 rvCategories.visibility = View.VISIBLE
+                changeStatusBarColor(R.color.bg_category_dark)
             }
         }
     }
@@ -82,6 +87,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
             llTop.animateY(-500f, 10)
             rvCategories.animateY(1500f, 10)
             countDown(120) {
+                changeStatusBarColor(R.color.bg_category_dark)
                 llTop.visibility = View.VISIBLE
                 llTop.animateY(0f, 500)
                 rvCategories.visibility = View.VISIBLE
@@ -135,6 +141,10 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
     override fun onCategoryLongClick(type: CategoryType) {
         val dialog = InstructionsDialog(type)
         activity?.let { dialog.show(it.supportFragmentManager, "") }
+    }
+
+    private fun changeStatusBarColor(color: Int) {
+        activity?.window?.statusBarColor = getColor(requireContext(), color)
     }
 
     override fun onAttach(context: Context) {

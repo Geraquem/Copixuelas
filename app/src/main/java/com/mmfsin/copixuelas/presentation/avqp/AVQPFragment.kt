@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.res.ResourcesCompat.getFont
 import androidx.core.view.isVisible
 import androidx.fragment.app.viewModels
@@ -55,7 +55,8 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
 
     private fun setUpToolbar() {
         binding.toolbar.apply {
-            toolbar.setBackgroundColor(ContextCompat.getColor(mContext, R.color.bg_avqp))
+            activity?.window?.statusBarColor = getColor(requireContext(), R.color.bg_avqp)
+            toolbar.setBackgroundColor(getColor(mContext, R.color.bg_avqp))
             ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
             tvTitle.text = getString(R.string.category_avqp)
             tvTitle.typeface = getFont(mContext, R.font.avqp_font)

@@ -4,7 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.res.ResourcesCompat
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragmentNoVM
@@ -46,7 +46,8 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
 
     private fun setUpToolbar() {
         binding.toolbar.apply {
-            toolbar.setBackgroundColor(ContextCompat.getColor(mContext, R.color.bg_maletin_dark))
+            activity?.window?.statusBarColor = getColor(requireContext(), R.color.bg_maletin_dark)
+            toolbar.setBackgroundColor(getColor(mContext, R.color.bg_maletin_dark))
             ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
             tvTitle.text = getString(R.string.category_maletin)
             tvTitle.typeface = ResourcesCompat.getFont(mContext, R.font.maletin_font)

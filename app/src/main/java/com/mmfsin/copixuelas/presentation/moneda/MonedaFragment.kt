@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.viewModels
 import com.mmfsin.copixuelas.R
@@ -52,7 +52,8 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
 
     private fun setUpToolbar() {
         binding.toolbar.apply {
-            toolbar.setBackgroundColor(ContextCompat.getColor(mContext, R.color.bg_moneda_dark))
+            activity?.window?.statusBarColor = getColor(requireContext(), R.color.bg_moneda_dark)
+            toolbar.setBackgroundColor(getColor(mContext, R.color.bg_moneda_dark))
             ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
             tvTitle.text = getString(R.string.category_moneda)
             tvTitle.typeface = ResourcesCompat.getFont(mContext, R.font.moneda_font)

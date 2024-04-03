@@ -48,6 +48,8 @@ class QPrefieresFragment : BaseFragment<FragmentQueprefieresBinding, QPrefieresV
 
     private fun setUpToolbar() {
         binding.toolbar.apply {
+            activity?.window?.statusBarColor =
+                getColor(requireContext(), R.color.bg_qprefieres_button)
             toolbar.setBackgroundColor(getColor(mContext, R.color.bg_qprefieres_button))
             ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
             ivBack.setColorFilter(getColor(mContext, R.color.black))
