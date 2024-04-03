@@ -9,11 +9,10 @@
     <application
         android:name=".base.App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher_copixuelas"
+        android:icon="@mipmap/ic_launcher_app"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_copixuelas_round"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.Copixuelas">
+        android:roundIcon="@mipmap/ic_launcher_app_round"
+        android:supportsRtl="true">
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-4515698012373396~1752845078" />

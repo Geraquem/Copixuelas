@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
     private var mInterstitialAd: InterstitialAd? = null
 
-    var showWarningDialog = true
     var firstTime = true
 
     override fun onCreate(savedInstanceState: Bundle?) {

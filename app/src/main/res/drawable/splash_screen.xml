@@ -2,12 +2,12 @@
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <shape>
-            <solid android:color="@color/bg_logo" />
+            <solid android:color="@color/ic_launcher_app_background" />
         </shape>
     </item>
     <item
         android:width="200dp"
         android:height="200dp"
-        android:drawable="@drawable/ic_error"
+        android:drawable="@drawable/ic_launcher_app_foreground"
         android:gravity="center" />
 </layer-list>
