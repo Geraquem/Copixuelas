@@ -38,7 +38,7 @@
     <string name="inst_qprefieres"><b>Debate</b> con el grupo e intenta convencer de tu elección al resto.\n\nA la de tres, <b>votáis</b>.\n\nLa minoría tiene castigo.</string>
     <string name="inst_botella">Poned el móvil en el centro de la mesa.\n\nDespués girad la botella dos veces.\n\nLas dos personas a las que apunte la botella tendrán que darse <b>un besito</b>.</string>
     <string name="inst_maletin">Una persona pone el dinero en un maletín <b>sin que nadie le vea</b>.\n\nDespués los cierra y le dice al resto dónde ha guardado el dinero <b><u>pudiendo mentir</u></b>.\n\nSi se acierta dónde está guardado el dinero, <b>ganáis</b>.\n\nSi se falla, hay castigo.</string>
-    <string name="inst_mimica">Mantén pulsado la tarjeta para leer la frase.\n\nDespués pulsa el botón <b>Empezar</b> y representa mediante mímica, <b>sin hablar ni hacer ruidos</b>, la frase que has leído.\n\nTendrás <b>un minuto</b>, si durante ese minuto el resto de personas adivinan la frase, ganáis.\n\nSi falláis, todo el mundo recibe un castigo.</string>
+    <string name="inst_mimica">Mantén pulsado la tarjeta para leer la frase.\n\nDespués pulsa el botón <b>empezar</b> y representa mediante mímica, <b>sin hablar ni hacer ruidos</b>, la frase que has leído.\n\nTendrás <b>un minuto</b>, si durante ese minuto el resto de personas adivinan la frase, ganáis.\n\nSi falláis, todo el mundo recibe un castigo.</string>
     <string name="inst_btn">Entendido</string>
 
     <!-- AVQP -->
