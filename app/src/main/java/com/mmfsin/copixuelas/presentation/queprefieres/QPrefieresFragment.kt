@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.getColor
 import androidx.core.content.res.ResourcesCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.viewModels
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.base.BaseFragment
@@ -48,6 +49,7 @@ class QPrefieresFragment : BaseFragment<FragmentQueprefieresBinding, QPrefieresV
 
     private fun setUpToolbar() {
         binding.toolbar.apply {
+            handleStatusBarIcons(setDarkIcons = true)
             activity?.window?.statusBarColor =
                 getColor(requireContext(), R.color.bg_qprefieres_button)
             toolbar.setBackgroundColor(getColor(mContext, R.color.bg_qprefieres_button))
@@ -58,6 +60,14 @@ class QPrefieresFragment : BaseFragment<FragmentQueprefieresBinding, QPrefieresV
             tvTitle.typeface = ResourcesCompat.getFont(mContext, R.font.qprefieres_font)
             ivInstructions.setOnClickListener { showInstructions() }
             ivInstructions.setColorFilter(getColor(mContext, R.color.black))
+        }
+    }
+
+    private fun handleStatusBarIcons(setDarkIcons: Boolean) {
+        activity?.let {
+            val window = it.window
+            val controller = WindowInsetsControllerCompat(window, window.decorView)
+            controller.isAppearanceLightStatusBars = setDarkIcons
         }
     }
 
@@ -133,6 +143,11 @@ class QPrefieresFragment : BaseFragment<FragmentQueprefieresBinding, QPrefieresV
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mContext = context
+    }
+
+    override fun onDestroy() {
+        handleStatusBarIcons(setDarkIcons = false)
+        super.onDestroy()
     }
 
     private fun shouldShowAd() {
