@@ -38,8 +38,10 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun bannerVisible(isVisible: Boolean = true) {
-        binding.adView.isVisible = isVisible
-        binding.frameBanner.isVisible = isVisible
+        binding.apply {
+            adView.isVisible = isVisible
+            frameBanner.isVisible = isVisible
+        }
     }
 
     fun setAdViewBackGroundColor(color: Int) =
