@@ -58,7 +58,7 @@ fun View.spinTheBottle(spins: Float, duration: Long, lastRotation: Float, onEnd:
     val rotationAnimator = ObjectAnimator.ofFloat(this, View.ROTATION, lastRotation, spins)
     rotationAnimator.duration = duration
     rotationAnimator.addListener(object : AnimatorListenerAdapter() {
-        override fun onAnimationEnd(animation: Animator?) {
+        override fun onAnimationEnd(animation: Animator) {
             super.onAnimationEnd(animation)
             onEnd()
         }
