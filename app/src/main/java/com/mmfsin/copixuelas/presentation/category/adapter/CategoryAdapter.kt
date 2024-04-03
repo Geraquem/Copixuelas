@@ -50,7 +50,7 @@ class CategoryAdapter(
         holder.bind(category)
         holder.binding.root.setOnClickListener { listener.onCategoryClick(category.type) }
         holder.binding.root.setOnLongClickListener {
-            listener.onCategoryLongClick(category.type)
+            listener.onCategoryLongClick(category.type, category.title)
             true
         }
     }

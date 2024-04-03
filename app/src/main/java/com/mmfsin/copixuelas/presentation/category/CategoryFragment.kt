@@ -138,8 +138,8 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         findNavController().navigate(action)
     }
 
-    override fun onCategoryLongClick(type: CategoryType) {
-        val dialog = InstructionsDialog(type)
+    override fun onCategoryLongClick(type: CategoryType, name: Int) {
+        val dialog = InstructionsDialog(type, title = name)
         activity?.let { dialog.show(it.supportFragmentManager, "") }
     }
 
