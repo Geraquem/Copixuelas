@@ -135,7 +135,7 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
             try {
                 actualMimic = data[position]
                 tvMimic.text = actualMimic
-//                shouldShowAd()
+                shouldShowAd()
             } catch (e: Exception) {
                 error()
             }

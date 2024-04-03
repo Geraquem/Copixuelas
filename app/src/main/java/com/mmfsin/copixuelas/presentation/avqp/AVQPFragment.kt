@@ -163,7 +163,7 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
     }
 
     private fun shouldShowAd() {
-        if (position != 0 && position % 20 == 0) {
+        if (position != 0 && position % 15 == 0) {
             (activity as MainActivity).showInterstitial()
         }
     }

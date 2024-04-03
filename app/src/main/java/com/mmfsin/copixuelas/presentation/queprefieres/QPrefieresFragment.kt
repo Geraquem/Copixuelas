@@ -151,7 +151,7 @@ class QPrefieresFragment : BaseFragment<FragmentQueprefieresBinding, QPrefieresV
     }
 
     private fun shouldShowAd() {
-        if (position != 0 && position % 20 == 0) {
+        if (position != 0 && position % 15 == 0) {
             activity?.let { (it as MainActivity).showInterstitial() }
         }
     }
