@@ -2,6 +2,7 @@ package com.mmfsin.copixuelas.presentation.moneda
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -140,7 +141,8 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
     }
 
     private fun checkIfShowDialog(result: CoinResult) {
-        when (result) {
+        val resulta = CoinResult.CARA
+        when (resulta) {
             CRUZ -> {
                 question?.let { question ->
                     countDown(200) {
@@ -150,7 +152,13 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
                 } ?: run { error() }
             }
 
-            CARA -> binding.btnReplay.visibility = View.VISIBLE
+            CARA -> {
+                try {
+                    binding.btnReplay.visibility = View.VISIBLE
+                } catch (e: Exception) {
+                    Log.e("Moneda Fragment error:", e.message.toString())
+                }
+            }
         }
     }
 
