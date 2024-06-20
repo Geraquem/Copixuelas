@@ -141,8 +141,7 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
     }
 
     private fun checkIfShowDialog(result: CoinResult) {
-        val resulta = CoinResult.CARA
-        when (resulta) {
+        when (result) {
             CRUZ -> {
                 question?.let { question ->
                     countDown(200) {
