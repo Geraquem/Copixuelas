@@ -143,7 +143,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                second = "Bebe todo el mundo que haya f*llando alguna vez usando esposas o látigos",
+                second = "Bebe todo el mundo que haya tenido SADO",
             )
         )
         add(
@@ -293,7 +293,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                second = "Manda un whatsapp al primer chat que tengas (que no esté presente) diciéndole que te han detenido por hacer nudismo\n\nSi te rajas, chupito",
+                second = "Manda un whatsapp al primer chat que tengas (que no esté presente) diciéndole que te han detenido por entrar disfrazado de cerdo en una iglesia\n\nSi te rajas, chupito",
             )
         )
         add(
@@ -356,11 +356,6 @@ fun getBbddAVQPData(): List<AvqpData> {
             AvqpData(
                 second = "Todo aquel que lleve un condón encima bebe",
                 third = "A ver si borracho por lo menos tiras un poco de fichas"
-            )
-        )
-        add(
-            AvqpData(
-                second = "Chupa el dedo de la persona de tu izquierda de manera sensual\n\nEl resto decide si resulta sexy o no\n\nSi sale que no o no quieres hacerlo, bebes",
             )
         )
         add(
@@ -583,7 +578,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                second = "Sube una foto a alguna red social con el culo al aire\n\nSi no quieres, acábate la copa",
+                second = "Sube una foto a alguna red social de tus fosas nasales\n\nSi no quieres, acábate la copa",
             )
         )
         add(
@@ -770,7 +765,7 @@ fun getBbddAVQPData(): List<AvqpData> {
         )
         add(
             AvqpData(
-                second = "Bebe todo el mundo que haya echado un polvo de más de 3 horas",
+                second = "Bebe todo el mundo que haya estado más de 3 horas haciendo guarrerías en la cama",
                 third = "Menudo agotamiento"
             )
         )
