@@ -79,7 +79,7 @@ fun getBbddPointingData(): List<String> {
         add("¿Quién sería el más probable en ir a una orgía solo por probar?")
         add("¿A quién le mandarías un nude si tuvieras que enviárselo a alguien del grupo? No vale tu pareja.")
         add("Si tuvieras que enseñarle a alguien un vídeo porno tuyo, ¿a quién se lo enseñarías?")
-        add("¿Con quién podrías tener sexo una noche y seguir siendo tan amigos como siempre?")
+        add("¿Con quién podrías tener s*xo una noche y seguir siendo tan amigos como siempre?")
         add("¿Quién se ha liado con la persona más fea?")
         add("¿Quién chuparía los pies de un desconocido por 100 euros?")
         add("¿Quién podría fingir ser otra persona para ligar?")

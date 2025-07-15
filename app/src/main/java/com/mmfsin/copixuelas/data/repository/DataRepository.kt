@@ -15,7 +15,7 @@ class DataRepository @Inject constructor() : IDataRepository {
     override fun getFunnyPhrase(): String = getIntroPhrase()
     override fun getAvqpData(): List<AvqpData> = getBbddAVQPData().shuffled()
     override fun getMonedaData(): List<String> = getBbbddMonedaData().shuffled()
-    override fun getPointingData(): List<String> = getBbddPointingData()//.shuffled()
+    override fun getPointingData(): List<String> = getBbddPointingData().shuffled()
     override fun getQPrefieresData(): List<QPrefieresData> = getBbddQPrefieresData().shuffled()
     override fun getMimicaData(): List<String> = getBbddMimicaData().shuffled()
 }

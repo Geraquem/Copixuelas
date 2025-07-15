@@ -21,7 +21,7 @@ class GetCategoriesUseCase @Inject constructor(
             Category(
                 type = AVQP,
                 title = R.string.category_avqp,
-                image = R.drawable.ic_launcher_background,
+                image = R.drawable.category_avqp,
                 order = 1
             )
         )
@@ -74,6 +74,6 @@ class GetCategoriesUseCase @Inject constructor(
                 order = 5
             )
         )
-        return categories
+        return categories.sortedBy { it.order }
     }
 }
