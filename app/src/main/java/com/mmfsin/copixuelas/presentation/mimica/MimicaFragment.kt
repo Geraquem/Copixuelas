@@ -53,6 +53,7 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
     }
 
     override fun setUI() {
+        changeStatusBarColor()
         setUpToolbar()
         showInstructions()
         setAdViewBackground()
@@ -62,9 +63,15 @@ class MimicaFragment : BaseFragment<FragmentMimicaBinding, MimicaViewModel>() {
         }
     }
 
+    private fun changeStatusBarColor() {
+        if (activity is MainActivity) (activity as MainActivity).changeStatusBarColor(
+            color = R.color.bg_mimic_dark,
+            darkIcons = false
+        )
+    }
+
     private fun setUpToolbar() {
         binding.toolbar.apply {
-            activity?.window?.statusBarColor = getColor(requireContext(), R.color.bg_mimic_dark)
             toolbar.setBackgroundColor(getColor(mContext, R.color.bg_mimic_dark))
             ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
             tvTitle.text = getString(R.string.category_mimica)

@@ -38,15 +38,22 @@ class MaletinFragment : BaseFragmentNoVM<FragmentMaletinBinding>() {
         FragmentMaletinBinding.inflate(inflater, container, false)
 
     override fun setUI() {
+        changeStatusBarColor()
         setUpToolbar()
         showInstructions()
         setAdViewBackground()
         setInitialConfig()
     }
 
+    private fun changeStatusBarColor() {
+        if (activity is MainActivity) (activity as MainActivity).changeStatusBarColor(
+            color = R.color.bg_maletin_dark,
+            darkIcons = false
+        )
+    }
+
     private fun setUpToolbar() {
         binding.toolbar.apply {
-            activity?.window?.statusBarColor = getColor(requireContext(), R.color.bg_maletin_dark)
             toolbar.setBackgroundColor(getColor(mContext, R.color.bg_maletin_dark))
             ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
             tvTitle.text = getString(R.string.category_maletin)

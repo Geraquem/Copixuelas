@@ -1,17 +1,16 @@
 package com.mmfsin.copixuelas.presentation
 
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
-import android.view.View
+import android.view.WindowInsets
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.core.view.isVisible
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.LoadAdError
-import com.google.android.gms.ads.MobileAds
 import com.google.android.gms.ads.interstitial.InterstitialAd
 import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback
-import com.google.firebase.messaging.FirebaseMessaging
 import com.mmfsin.copixuelas.R
 import com.mmfsin.copixuelas.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,6 +34,26 @@ class MainActivity : AppCompatActivity() {
         val adRequest = AdRequest.Builder().build()
         binding.adView.loadAd(adRequest)
         loadInterstitial(AdRequest.Builder().build())
+    }
+
+    fun changeStatusBarColor(color: Int, darkIcons: Boolean) {
+        // Android 15+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.VANILLA_ICE_CREAM) {
+            window.decorView.setOnApplyWindowInsetsListener { view, insets ->
+                val statusBarInsets = insets.getInsets(WindowInsets.Type.statusBars())
+                view.setBackgroundColor(ContextCompat.getColor(this, color))
+                view.setPadding(0, statusBarInsets.top, 0, 0)
+                insets
+            }
+
+        } else {
+            // For Android 14 and below
+            @Suppress("DEPRECATION")
+            window.statusBarColor = ContextCompat.getColor(this, color)
+        }
+
+        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars =
+            darkIcons
     }
 
     fun bannerVisible(isVisible: Boolean = true) {

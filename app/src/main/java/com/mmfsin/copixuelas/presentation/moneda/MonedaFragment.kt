@@ -45,15 +45,22 @@ class MonedaFragment : BaseFragment<FragmentMonedaBinding, MonedaViewModel>() {
     }
 
     override fun setUI() {
+        changeStatusBarColor()
         setUpToolbar()
         showInstructions()
         setAdViewBackground()
         binding.loading.root.visibility = View.VISIBLE
     }
 
+    private fun changeStatusBarColor() {
+        if (activity is MainActivity) (activity as MainActivity).changeStatusBarColor(
+            color = R.color.bg_moneda_dark,
+            darkIcons = false
+        )
+    }
+
     private fun setUpToolbar() {
         binding.toolbar.apply {
-            activity?.window?.statusBarColor = getColor(requireContext(), R.color.bg_moneda_dark)
             toolbar.setBackgroundColor(getColor(mContext, R.color.bg_moneda_dark))
             ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
             tvTitle.text = getString(R.string.category_moneda)

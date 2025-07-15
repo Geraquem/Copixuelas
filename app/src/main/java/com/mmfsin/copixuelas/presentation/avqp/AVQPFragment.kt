@@ -42,6 +42,7 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
     }
 
     override fun setUI() {
+        changeStatusBarColor()
         setUpToolbar()
         showInstructions()
         setAdViewBackground()
@@ -53,9 +54,15 @@ class AVQPFragment : BaseFragment<FragmentAvqpBinding, AVQPViewModel>() {
         }
     }
 
+    private fun changeStatusBarColor() {
+        if (activity is MainActivity) (activity as MainActivity).changeStatusBarColor(
+            color = R.color.bg_avqp,
+            darkIcons = false
+        )
+    }
+
     private fun setUpToolbar() {
         binding.toolbar.apply {
-            activity?.window?.statusBarColor = getColor(requireContext(), R.color.bg_avqp)
             toolbar.setBackgroundColor(getColor(mContext, R.color.bg_avqp))
             ivBack.setOnClickListener { activity?.onBackPressedDispatcher?.onBackPressed() }
             tvTitle.text = getString(R.string.category_avqp)
