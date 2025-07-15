@@ -7,6 +7,7 @@ interface IDataRepository {
     fun getFunnyPhrase(): String
     fun getAvqpData(): List<AvqpData>
     fun getMonedaData(): List<String>
+    fun getPointingData(): List<String>
     fun getQPrefieresData(): List<QPrefieresData>
     fun getMimicaData(): List<String>
 }

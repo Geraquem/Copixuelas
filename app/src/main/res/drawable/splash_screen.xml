@@ -6,8 +6,8 @@
         </shape>
     </item>
     <item
-        android:width="200dp"
-        android:height="200dp"
-        android:drawable="@drawable/ic_launcher_app_foreground"
+        android:width="150dp"
+        android:height="150dp"
+        android:drawable="@drawable/logo_resize"
         android:gravity="center" />
 </layer-list>

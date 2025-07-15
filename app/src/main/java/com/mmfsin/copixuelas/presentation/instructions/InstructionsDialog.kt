@@ -12,6 +12,7 @@ import com.mmfsin.copixuelas.domain.models.CategoryType.MALETIN
 import com.mmfsin.copixuelas.domain.models.CategoryType.MIMICA
 import com.mmfsin.copixuelas.domain.models.CategoryType.MONEDA
 import com.mmfsin.copixuelas.domain.models.CategoryType.QPREFIERES
+import com.mmfsin.copixuelas.domain.models.CategoryType.SENALACION
 
 class InstructionsDialog(private val type: CategoryType, private val title: Int? = null) :
     BaseDialog<DialogInstructionsBinding>() {
@@ -30,6 +31,7 @@ class InstructionsDialog(private val type: CategoryType, private val title: Int?
                 MONEDA -> R.string.inst_moneda
                 QPREFIERES -> R.string.inst_qprefieres
                 BOTELLA -> R.string.inst_botella
+                SENALACION -> R.string.inst_pointing
                 MALETIN -> R.string.inst_maletin
                 MIMICA -> R.string.inst_mimica
             }

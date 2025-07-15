@@ -5,6 +5,7 @@ enum class CategoryType {
     MONEDA,
     QPREFIERES,
     BOTELLA,
+    SENALACION,
     MALETIN,
     MIMICA,
 }

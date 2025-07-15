@@ -33,6 +33,9 @@
     <color name="bg_qprefieres_button">#C7EABA</color>
     <color name="bg_qprefieres_dark">#869388</color>
 
+    <color name="bg_pointing">#FFCDA1</color>
+    <color name="bg_pointing_dark">#D5A276</color>
+
     <color name="bg_botella">#FAE1FB</color>
     <color name="bg_botella_dark">#AD7AA6</color>
 

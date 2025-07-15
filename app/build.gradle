@@ -9,12 +9,13 @@ plugins {
 }
 
 android {
-    compileSdk 33
+    namespace "com.mmfsin.copixuelas"
+    compileSdk 35
 
     defaultConfig {
         applicationId "com.mmfsin.copixuelas"
         minSdk 26
-        targetSdk 33
+        targetSdk 35
         versionCode 13
         versionName "1.2.3"
 
@@ -80,8 +81,8 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging-ktx:23.2.1'
 
     //Hilt
-    implementation "com.google.dagger:hilt-android:$hiltVersion"
-    kapt "com.google.dagger:hilt-compiler:$hiltVersion"
+    implementation "com.google.dagger:hilt-android:2.50"
+    kapt "com.google.dagger:hilt-compiler:2.50"
 
     //Google services
     implementation 'com.google.android.gms:play-services-ads:22.1.0'

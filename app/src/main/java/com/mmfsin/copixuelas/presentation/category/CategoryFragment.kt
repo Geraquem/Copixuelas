@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.core.content.ContextCompat.getColor
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -21,12 +20,14 @@ import com.mmfsin.copixuelas.domain.models.CategoryType.MALETIN
 import com.mmfsin.copixuelas.domain.models.CategoryType.MIMICA
 import com.mmfsin.copixuelas.domain.models.CategoryType.MONEDA
 import com.mmfsin.copixuelas.domain.models.CategoryType.QPREFIERES
+import com.mmfsin.copixuelas.domain.models.CategoryType.SENALACION
 import com.mmfsin.copixuelas.presentation.MainActivity
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToAVQP
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToBotella
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMaletin
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMimic
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToMoneda
+import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToPointing
 import com.mmfsin.copixuelas.presentation.category.CategoryFragmentDirections.Companion.actionMainToQPrefieres
 import com.mmfsin.copixuelas.presentation.category.adapter.CategoryAdapter
 import com.mmfsin.copixuelas.presentation.category.interfaces.ICategoryListener
@@ -130,6 +131,7 @@ class CategoryFragment : BaseFragment<FragmentCategoryBinding, CategoryViewModel
         val action = when (type) {
             AVQP -> actionMainToAVQP()
             MONEDA -> actionMainToMoneda()
+            SENALACION -> actionMainToPointing()
             QPREFIERES -> actionMainToQPrefieres()
             BOTELLA -> actionMainToBotella()
             MALETIN -> actionMainToMaletin()

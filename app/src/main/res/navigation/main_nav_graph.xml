@@ -20,6 +20,10 @@
             app:destination="@id/monedaFirstFragment" />
 
         <action
+            android:id="@+id/action_main_to_Pointing"
+            app:destination="@id/pointingFragment" />
+
+        <action
             android:id="@+id/action_main_to_QPrefieres"
             app:destination="@id/qprefieresFragment" />
 
@@ -47,6 +51,12 @@
         android:name="com.mmfsin.copixuelas.presentation.moneda.MonedaFragment"
         android:label="monedaFirstFragment"
         tools:layout="@layout/fragment_moneda" />
+
+    <fragment
+        android:id="@+id/pointingFragment"
+        android:name="com.mmfsin.copixuelas.presentation.pointing.PointingFragment"
+        android:label="pointingFragment"
+        tools:layout="@layout/fragment_pointing" />
 
     <fragment
         android:id="@+id/qprefieresFragment"

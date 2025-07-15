@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
     var firstTime = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        Thread.sleep(500)
+        Thread.sleep(300)
         setTheme(R.style.Theme_Copixuelas)
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
